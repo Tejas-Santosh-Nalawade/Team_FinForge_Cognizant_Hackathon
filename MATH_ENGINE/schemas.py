@@ -322,18 +322,28 @@ class FinancialStatementsIngestionSchema(BaseModel):
             if "current_data" in values and "prior_data" in values:
                 curr = values["current_data"]
                 prior = values["prior_data"]
-                
-                curr_bs = curr.get("balance_sheet") or curr.get("bs")
-                prior_bs = prior.get("balance_sheet") or prior.get("bs")
-                
-                curr_is = curr.get("income_statement") or curr.get("inc")
-                prior_is = prior.get("income_statement") or prior.get("inc")
 
-                curr_cf = curr.get("cash_flow_statement") or curr.get("cf")
-                prior_cf = prior.get("cash_flow_statement") or prior.get("cf") or curr_cf
+                if hasattr(curr, "model_dump"):
+                    curr = curr.model_dump()
+                elif isinstance(curr, object) and not isinstance(curr, dict) and hasattr(curr, "__dict__"):
+                    curr = curr.__dict__
 
-                equity = curr.get("equity_statement") or curr.get("stockholders_equity")
-                fn = curr.get("footnotes") or curr.get("schedules") or {}
+                if hasattr(prior, "model_dump"):
+                    prior = prior.model_dump()
+                elif isinstance(prior, object) and not isinstance(prior, dict) and hasattr(prior, "__dict__"):
+                    prior = prior.__dict__
+
+                curr_bs = curr.get("balance_sheet") or curr.get("bs") if isinstance(curr, dict) else None
+                prior_bs = prior.get("balance_sheet") or prior.get("bs") if isinstance(prior, dict) else None
+                
+                curr_is = curr.get("income_statement") or curr.get("inc") if isinstance(curr, dict) else None
+                prior_is = prior.get("income_statement") or prior.get("inc") if isinstance(prior, dict) else None
+
+                curr_cf = curr.get("cash_flow_statement") or curr.get("cf") if isinstance(curr, dict) else None
+                prior_cf = (prior.get("cash_flow_statement") or prior.get("cf") or curr_cf) if isinstance(prior, dict) else curr_cf
+
+                equity = curr.get("equity_statement") or curr.get("stockholders_equity") if isinstance(curr, dict) else None
+                fn = (curr.get("footnotes") or curr.get("schedules") or {}) if isinstance(curr, dict) else {}
 
                 values["statements"] = {
                     "balance_sheet": {"current_period": curr_bs, "prior_period": prior_bs},
@@ -343,9 +353,9 @@ class FinancialStatementsIngestionSchema(BaseModel):
                 }
 
                 values["schedules"] = {
-                    "accounts_receivable_aging": fn.get("ar_aging") or fn.get("accounts_receivable_aging"),
-                    "ppe_schedule": fn.get("ppe_sched") or fn.get("ppe_schedule"),
-                    "debt_maturities": fn.get("debt_maturity") or fn.get("debt_maturities")
+                    "accounts_receivable_aging": fn.get("ar_aging") or fn.get("accounts_receivable_aging") if isinstance(fn, dict) else getattr(fn, "ar_aging", None),
+                    "ppe_schedule": fn.get("ppe_sched") or fn.get("ppe_schedule") if isinstance(fn, dict) else getattr(fn, "ppe_sched", None),
+                    "debt_maturities": fn.get("debt_maturity") or fn.get("debt_maturities") if isinstance(fn, dict) else getattr(fn, "debt_maturity", None)
                 }
 
             # If legacy statements & schedules are passed, populate current_data and prior_data
