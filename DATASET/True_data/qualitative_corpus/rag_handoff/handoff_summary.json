@@ -1,0 +1,37 @@
+{
+  "created_at": "2026-08-18T23:16:05.675458",
+  "purpose": "Clean qualitative corpus prepared for downstream RAG ingestion.",
+  "total_records": 240,
+  "documents": [
+    {
+      "source_jsonl": "CREDIT_RISK_Lending_and_Loan_Portfolio_Risk_Management_2026.jsonl",
+      "records": 113,
+      "categories": [
+        "CREDIT_RISK"
+      ],
+      "document_names": [
+        "Lending_and_Loan_Portfolio_Risk_Management_2026"
+      ]
+    },
+    {
+      "source_jsonl": "US_GAAP_ASC_326_ASU_2016-13.jsonl",
+      "records": 127,
+      "categories": [
+        "US_GAAP"
+      ],
+      "document_names": [
+        "ASC_326_ASU_2016-13"
+      ]
+    }
+  ],
+  "categories": {
+    "CREDIT_RISK": 113,
+    "US_GAAP": 127
+  },
+  "validation": {
+    "empty_text": 0,
+    "missing_metadata": 0,
+    "duplicate_ids": 0
+  },
+  "output_file": "DATASET\\True_data\\qualitative_corpus\\rag_handoff\\qualitative_rag_handoff.jsonl"
+}
