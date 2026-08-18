@@ -1,0 +1,197 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "FinancialStatementsIngestionSchema",
+  "description": "Standardized Financial Statement Input Ingestion Contract (Nested Folder Structure)",
+  "type": "object",
+  "required": [
+    "metadata",
+    "prior_data",
+    "current_data"
+  ],
+  "properties": {
+    "metadata": {
+      "type": "object",
+      "required": [
+        "client_name",
+        "period",
+        "currency",
+        "scale"
+      ],
+      "properties": {
+        "client_name": { "type": "string", "example": "Apex Global Technologies Inc." },
+        "period": { "type": "string", "format": "date", "example": "2025-12-31" },
+        "currency": { "type": "string", "example": "USD" },
+        "scale": { "type": "string", "example": "EXACT" },
+        "framework": { "type": "string", "example": "US GAAP / IFRS" },
+        "review_stage": { "type": "string", "example": "CY_DRAFT_FS" }
+      }
+    },
+    "prior_data": {
+      "type": "object",
+      "description": "Prior period audited financial statement values & trial balance.",
+      "required": [
+        "balance_sheet",
+        "income_statement"
+      ],
+      "properties": {
+        "balance_sheet": { "$ref": "#/definitions/BalanceSheetValues" },
+        "income_statement": { "$ref": "#/definitions/IncomeStatementValues" },
+        "final_trial_balance": { "type": "object", "description": "Final Trial Balance Excel/JSON data" }
+      }
+    },
+    "current_data": {
+      "type": "object",
+      "description": "Current period preliminary financial statement values, schedules & trial balance.",
+      "required": [
+        "balance_sheet",
+        "income_statement",
+        "cash_flow_statement"
+      ],
+      "properties": {
+        "preliminary_trial_balance": { "type": "object", "description": "Preliminary Trial Balance Excel/JSON data" },
+        "balance_sheet": { "$ref": "#/definitions/BalanceSheetValues" },
+        "income_statement": { "$ref": "#/definitions/IncomeStatementValues" },
+        "cash_flow_statement": { "$ref": "#/definitions/CashFlowValues" },
+        "equity_statement": { "$ref": "#/definitions/EquityStatementValues" },
+        "footnotes": {
+          "type": "object",
+          "properties": {
+            "ar_aging": { "$ref": "#/definitions/ARAgingValues" },
+            "ppe_sched": { "$ref": "#/definitions/PPEScheduleValues" },
+            "debt_maturity": { "$ref": "#/definitions/DebtMaturitiesValues" }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "BalanceSheetValues": {
+      "type": "object",
+      "required": [
+        "total_assets",
+        "total_liabilities",
+        "total_equity"
+      ],
+      "properties": {
+        "cash_and_cash_equivalents": { "type": "number", "example": 12450000.0 },
+        "accounts_receivable_net": { "type": "number", "example": 3920000.0 },
+        "inventory": { "type": "number", "example": 1400000.0 },
+        "prepaid_expenses": { "type": "number", "example": 330000.0 },
+        "total_current_assets": { "type": "number", "example": 18100000.0 },
+        "ppe_net": { "type": "number", "example": 7800000.0 },
+        "intangible_assets": { "type": "number", "example": 1200000.0 },
+        "total_non_current_assets": { "type": "number", "example": 9000000.0 },
+        "total_assets": { "type": "number", "example": 27100000.0 },
+        "accounts_payable": { "type": "number", "example": 1880000.0 },
+        "accrued_expenses": { "type": "number", "example": 420000.0 },
+        "short_term_debt": { "type": "number", "example": 0.0 },
+        "current_portion_of_lt_debt": { "type": "number", "example": 850000.0 },
+        "total_current_liabilities": { "type": "number", "example": 3150000.0 },
+        "long_term_debt": { "type": "number", "example": 4000000.0 },
+        "total_non_current_liabilities": { "type": "number", "example": 4650000.0 },
+        "total_liabilities": { "type": "number", "example": 7800000.0 },
+        "common_stock": { "type": "number", "example": 2000000.0 },
+        "additional_paid_in_capital": { "type": "number", "example": 380000.0 },
+        "retained_earnings": { "type": "number", "example": 16920000.0 },
+        "aoci": { "type": "number", "example": 0.0 },
+        "treasury_stock": { "type": "number", "example": 0.0 },
+        "total_equity": { "type": "number", "example": 19300000.0 }
+      }
+    },
+    "IncomeStatementValues": {
+      "type": "object",
+      "required": [
+        "revenue",
+        "cogs",
+        "gross_profit",
+        "total_operating_expenses",
+        "operating_income",
+        "net_income"
+      ],
+      "properties": {
+        "revenue": { "type": "number", "example": 22000000.0 },
+        "cogs": { "type": "number", "example": 12760000.0 },
+        "gross_profit": { "type": "number", "example": 9240000.0 },
+        "sga_expense": { "type": "number", "example": 1950000.0 },
+        "rd_expense": { "type": "number", "example": 3100000.0 },
+        "depreciation_amortization": { "type": "number", "example": 1150000.0 },
+        "total_operating_expenses": { "type": "number", "example": 6200000.0 },
+        "operating_income": { "type": "number", "example": 3040000.0 },
+        "interest_expense": { "type": "number", "example": 210000.0 },
+        "non_operating_income": { "type": "number", "example": 0.0 },
+        "income_tax_expense": { "type": "number", "example": 500000.0 },
+        "net_income": { "type": "number", "example": 2330000.0 }
+      }
+    },
+    "CashFlowValues": {
+      "type": "object",
+      "required": [
+        "net_income_starting",
+        "operating_cash_flow",
+        "investing_cash_flow",
+        "financing_cash_flow",
+        "net_cash_change",
+        "ending_cash"
+      ],
+      "properties": {
+        "net_income_starting": { "type": "number", "example": 2330000.0 },
+        "depreciation_addback": { "type": "number", "example": 1150000.0 },
+        "working_capital_changes": { "type": "number", "example": 2970000.0 },
+        "operating_cash_flow": { "type": "number", "example": 6450000.0 },
+        "capital_expenditures": { "type": "number", "example": -2000000.0 },
+        "investing_cash_flow": { "type": "number", "example": -2000000.0 },
+        "debt_repayments_or_borrowings": { "type": "number", "example": -500000.0 },
+        "dividends_paid": { "type": "number", "example": 0.0 },
+        "financing_cash_flow": { "type": "number", "example": -500000.0 },
+        "net_cash_change": { "type": "number", "example": 3950000.0 },
+        "beginning_cash": { "type": "number", "example": 8500000.0 },
+        "ending_cash": { "type": "number", "example": 12450000.0 }
+      }
+    },
+    "EquityStatementValues": {
+      "type": "object",
+      "properties": {
+        "beginning_retained_earnings": { "type": "number", "example": 14590000.0 },
+        "net_income": { "type": "number", "example": 2330000.0 },
+        "dividends_declared": { "type": "number", "example": 0.0 },
+        "ending_retained_earnings": { "type": "number", "example": 16920000.0 }
+      }
+    },
+    "ARAgingValues": {
+      "type": "object",
+      "properties": {
+        "current": { "type": "number", "example": 2600000.0 },
+        "days_1_30": { "type": "number", "example": 825000.0 },
+        "days_31_60": { "type": "number", "example": 400000.0 },
+        "days_61_90": { "type": "number", "example": 175000.0 },
+        "days_over_90": { "type": "number", "example": 0.0 },
+        "gross_ar": { "type": "number", "example": 4000000.0 },
+        "allowance_for_credit_losses": { "type": "number", "example": 80000.0 },
+        "net_ar": { "type": "number", "example": 3920000.0 }
+      }
+    },
+    "PPEScheduleValues": {
+      "type": "object",
+      "properties": {
+        "gross_ppe": { "type": "number", "example": 11200000.0 },
+        "accumulated_depreciation": { "type": "number", "example": 3400000.0 },
+        "net_ppe": { "type": "number", "example": 7800000.0 },
+        "additions_capex": { "type": "number", "example": 2000000.0 },
+        "disposals": { "type": "number", "example": 0.0 },
+        "depreciation_expense": { "type": "number", "example": 1150000.0 }
+      }
+    },
+    "DebtMaturitiesValues": {
+      "type": "object",
+      "properties": {
+        "year_1": { "type": "number", "example": 850000.0 },
+        "year_2": { "type": "number", "example": 1200000.0 },
+        "year_3": { "type": "number", "example": 1500000.0 },
+        "year_4": { "type": "number", "example": 1300000.0 },
+        "year_5": { "type": "number", "example": 0.0 },
+        "thereafter": { "type": "number", "example": 0.0 },
+        "total_debt": { "type": "number", "example": 4850000.0 }
+      }
+    }
+  }
+}

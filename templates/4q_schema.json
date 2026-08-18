@@ -1,0 +1,31 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RollingForecast4Q",
+  "description": "Forward-looking 4-Quarter dynamic rolling financial forecast",
+  "type": "object",
+  "required": ["company", "base_fiscal_year", "currency", "scale", "quarterly_projections"],
+  "properties": {
+    "company": { "type": "string", "example": "AsterNova Technologies Ltd." },
+    "base_fiscal_year": { "type": "string", "pattern": "^FY[0-9]{4}$", "example": "FY2026" },
+    "currency": { "type": "string", "example": "INR" },
+    "scale": { "type": "string", "enum": ["EXACT", "THOUSANDS", "MILLIONS", "BILLIONS"], "example": "MILLIONS" },
+    "quarterly_projections": {
+      "type": "array",
+      "minItems": 4,
+      "maxItems": 4,
+      "items": {
+        "type": "object",
+        "required": ["period", "quarter", "revenue"],
+        "properties": {
+          "period": { "type": "string", "pattern": "^FY[0-9]{4}-Q[1-4]$", "example": "FY2026-Q1" },
+          "quarter": { "type": "integer", "minimum": 1, "maximum": 4, "example": 1 },
+          "revenue": { "type": "number", "example": 351.13 },
+          "cogs": { "type": "number", "example": 138.02 },
+          "opex": { "type": "number", "example": 138.68 },
+          "operating_income": { "type": "number", "example": 74.43 },
+          "capex": { "type": "number", "example": 15.20 }
+        }
+      }
+    }
+  }
+}

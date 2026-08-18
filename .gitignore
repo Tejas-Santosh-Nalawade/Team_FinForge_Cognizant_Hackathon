@@ -1,3 +1,33 @@
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Pytest cache
+.pytest_cache/
+
+# Coverage / Test artifacts
+.coverage
+htmlcov/
+
+# Environment files
+.env
+venv/
+env/
+ENV/
+
+# Distribution / packages
+*.zip
+*.tar.gz
+*.egg-info/
+dist/
+build/
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.swp
+.DS_Store
 # ------------------------------------------------------------------------------
 # Central gitignore for the whole repo
 # ------------------------------------------------------------------------------

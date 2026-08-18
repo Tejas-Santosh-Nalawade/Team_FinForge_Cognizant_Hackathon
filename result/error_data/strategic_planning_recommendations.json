@@ -1,0 +1,44 @@
+{
+  "executive_summary": {
+    "company": "AsterNova Technologies Ltd.",
+    "planning_horizon": "8-Quarter Rolling Strategic Forecast (FY2026-Q1 to FY2027-Q4)",
+    "total_projected_revenue_8q": 3051.84,
+    "total_projected_net_income_8q": 424.72,
+    "total_free_cash_flow_8q": 346.62,
+    "ending_cash_reserves_8q": 849.42,
+    "debt_covenant_headroom_status": "STRONG_CLEARANCE",
+    "cash_buffer_adequacy": "ADEQUATE (> 1 Month OpEx Buffer Maintained)"
+  },
+  "capital_allocation_policy": [
+    {
+      "pillar": "CapEx Reinvestment",
+      "allocation_rule": "5.0% of Top-Line Revenue",
+      "target_objective": "Modernization of IT infrastructure and plant asset maintenance.",
+      "status": "APPROVED_CF_GUARD_02_COMPLIANT"
+    },
+    {
+      "pillar": "Working Capital Optimization",
+      "allocation_rule": "DSO: 52.3d, DIO: 52.0d, DPO: 36.2d (CCC = 68.1d)",
+      "target_objective": "Preserve working capital efficiency and prevent cash drag.",
+      "status": "HEALTHY_BENCHMARK_COMPLIANT"
+    },
+    {
+      "pillar": "Debt Principal Service",
+      "allocation_rule": "INR 8.50M quarterly principal amortization",
+      "target_objective": "De-leverage total debt obligations while maintaining interest coverage > 15.0x.",
+      "status": "COVENANT_CLEARANCE_SECURED"
+    }
+  ],
+  "risk_mitigation_matrix": [
+    {
+      "risk_factor": "Volume Softening",
+      "sensitivity": "1.0% drop in QoQ volume growth reduces annual net income by INR ~3.2M",
+      "mitigation_strategy": "Maintain dynamic headcount expansion guardrail (H_t scaling)."
+    },
+    {
+      "risk_factor": "Inflationary Expense Drag",
+      "sensitivity": "50 bps increase in OpEx ratio reduces 8Q Free Cash Flow by INR ~15.0M",
+      "mitigation_strategy": "Enforce IS_GUARD_03 ceiling (OpEx <= 80% Revenue)."
+    }
+  ]
+}
