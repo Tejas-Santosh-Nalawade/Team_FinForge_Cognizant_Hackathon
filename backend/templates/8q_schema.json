@@ -1,0 +1,33 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "RollingForecast8Q",
+  "description": "Multi-year 8-Quarter rolling strategic forecast covering 2 complete fiscal cycles",
+  "type": "object",
+  "required": ["company", "start_period", "end_period", "currency", "scale", "quarterly_projections"],
+  "properties": {
+    "company": { "type": "string", "example": "AsterNova Technologies Ltd." },
+    "start_period": { "type": "string", "pattern": "^FY[0-9]{4}-Q[1-4]$", "example": "FY2026-Q1" },
+    "end_period": { "type": "string", "pattern": "^FY[0-9]{4}-Q[1-4]$", "example": "FY2027-Q4" },
+    "currency": { "type": "string", "example": "INR" },
+    "scale": { "type": "string", "enum": ["EXACT", "THOUSANDS", "MILLIONS", "BILLIONS"], "example": "MILLIONS" },
+    "quarterly_projections": {
+      "type": "array",
+      "minItems": 8,
+      "maxItems": 8,
+      "items": {
+        "type": "object",
+        "required": ["period", "fiscal_year", "quarter", "revenue"],
+        "properties": {
+          "period": { "type": "string", "pattern": "^FY[0-9]{4}-Q[1-4]$", "example": "FY2027-Q4" },
+          "fiscal_year": { "type": "string", "pattern": "^FY[0-9]{4}$", "example": "FY2027" },
+          "quarter": { "type": "integer", "minimum": 1, "maximum": 4, "example": 4 },
+          "revenue": { "type": "number", "example": 407.01 },
+          "cogs": { "type": "number", "example": 159.95 },
+          "opex": { "type": "number", "example": 160.77 },
+          "operating_income": { "type": "number", "example": 86.29 },
+          "capex": { "type": "number", "example": 17.65 }
+        }
+      }
+    }
+  }
+}
