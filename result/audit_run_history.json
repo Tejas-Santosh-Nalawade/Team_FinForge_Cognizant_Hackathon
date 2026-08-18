@@ -1,0 +1,103 @@
+{
+  "title": "FinForge Audit & Analytics Versioned Run History",
+  "last_updated": "2026-08-18T22:08:29.740364",
+  "total_runs_recorded": 4,
+  "runs": [
+    {
+      "run_id": "RUN_20260818_220701_ERROR_DATA",
+      "timestamp": "2026-08-18T22:07:01.264360",
+      "dataset": "error_data",
+      "remediated": false,
+      "overall_gate_status": "REJECTED",
+      "total_procedures_run": 56,
+      "procedures_passed": 37,
+      "findings_count": 19,
+      "aje_remediations": {
+        "accepted_count": 0,
+        "waived_count": 0
+      },
+      "output_files": [
+        "result/error_data/audit_tieouts_report.pdf",
+        "result/error_data/audit_tieouts_report.json",
+        "result/error_data/fpa_analytics_report.pdf",
+        "result/error_data/fpa_analytics_report.json",
+        "result/error_data/forecast_4q.json",
+        "result/error_data/forecast_8q.json",
+        "result/error_data/strategic_planning_recommendations.json",
+        "result/error_data/fpa_strategic_planning_recommendations.pdf"
+      ]
+    },
+    {
+      "run_id": "RUN_20260818_220702_TRUE_DATA",
+      "timestamp": "2026-08-18T22:07:02.353914",
+      "dataset": "true_data",
+      "remediated": false,
+      "overall_gate_status": "CLEARED",
+      "total_procedures_run": 56,
+      "procedures_passed": 56,
+      "findings_count": 0,
+      "aje_remediations": {
+        "accepted_count": 0,
+        "waived_count": 0
+      },
+      "output_files": [
+        "result/true_data/audit_tieouts_report.pdf",
+        "result/true_data/audit_tieouts_report.json",
+        "result/true_data/fpa_analytics_report.pdf",
+        "result/true_data/fpa_analytics_report.json",
+        "result/true_data/forecast_4q.json",
+        "result/true_data/forecast_8q.json",
+        "result/true_data/strategic_planning_recommendations.json",
+        "result/true_data/fpa_strategic_planning_recommendations.pdf"
+      ]
+    },
+    {
+      "run_id": "RUN_20260818_220828_ERROR_DATA",
+      "timestamp": "2026-08-18T22:08:28.669985",
+      "dataset": "error_data",
+      "remediated": false,
+      "overall_gate_status": "REJECTED",
+      "total_procedures_run": 56,
+      "procedures_passed": 37,
+      "findings_count": 19,
+      "aje_remediations": {
+        "accepted_count": 0,
+        "waived_count": 0
+      },
+      "output_files": [
+        "result/error_data/audit_tieouts_report.pdf",
+        "result/error_data/audit_tieouts_report.json",
+        "result/error_data/fpa_analytics_report.pdf",
+        "result/error_data/fpa_analytics_report.json",
+        "result/error_data/forecast_4q.json",
+        "result/error_data/forecast_8q.json",
+        "result/error_data/strategic_planning_recommendations.json",
+        "result/error_data/fpa_strategic_planning_recommendations.pdf"
+      ]
+    },
+    {
+      "run_id": "RUN_20260818_220829_TRUE_DATA",
+      "timestamp": "2026-08-18T22:08:29.740364",
+      "dataset": "true_data",
+      "remediated": false,
+      "overall_gate_status": "CLEARED",
+      "total_procedures_run": 56,
+      "procedures_passed": 56,
+      "findings_count": 0,
+      "aje_remediations": {
+        "accepted_count": 0,
+        "waived_count": 0
+      },
+      "output_files": [
+        "result/true_data/audit_tieouts_report.pdf",
+        "result/true_data/audit_tieouts_report.json",
+        "result/true_data/fpa_analytics_report.pdf",
+        "result/true_data/fpa_analytics_report.json",
+        "result/true_data/forecast_4q.json",
+        "result/true_data/forecast_8q.json",
+        "result/true_data/strategic_planning_recommendations.json",
+        "result/true_data/fpa_strategic_planning_recommendations.pdf"
+      ]
+    }
+  ]
+}

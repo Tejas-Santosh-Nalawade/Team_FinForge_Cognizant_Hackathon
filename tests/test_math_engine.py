@@ -172,6 +172,12 @@ def test_structured_report_generation(mock_financial_data):
     assert len(structured_report["procedures"]) == 56
     assert structured_report["conclusion"]["total_procedures_run"] == 56
 
+    # Verify Stage 3 Analytics Payload
+    analytics = structured_report.get("analytics", {})
+    assert "bva_attainment" in analytics
+    assert "cash_runway_velocity" in analytics
+    assert analytics["cash_runway_velocity"]["cash_runway_months"] > 0
+
 
 def test_load_true_data_folder():
     true_data_path = Path("Data/True_data")
@@ -182,6 +188,7 @@ def test_load_true_data_folder():
         engine = MathEngine(report_schema)
         audit_report = engine.generate_structured_audit_report()
         assert audit_report["conclusion"]["total_procedures_run"] == 56
+        assert audit_report["conclusion"]["overall_status"] == "CLEARED"
 
 
 def test_load_error_data_folder():
@@ -194,3 +201,45 @@ def test_load_error_data_folder():
         audit_report = engine.generate_structured_audit_report()
         assert audit_report["conclusion"]["total_procedures_run"] == 56
         assert len(audit_report["findings"]) > 0
+
+
+def test_pdf_deliverables_generation(mock_financial_data, tmp_path: Path):
+    from math_engine import generate_audit_tieouts_pdf, generate_fpa_analytics_pdf
+    report = FinancialStatementsIngestionSchema(**mock_financial_data)
+    engine = MathEngine(report)
+    structured_report = engine.generate_structured_audit_report()
+
+    path_a = tmp_path / "audit_tieouts_report.pdf"
+    path_b = tmp_path / "fpa_analytics_report.pdf"
+
+    generate_audit_tieouts_pdf(structured_report, path_a)
+    generate_fpa_analytics_pdf(structured_report, path_b)
+
+    assert path_a.exists() and path_a.stat().st_size > 0
+    assert path_b.exists() and path_b.stat().st_size > 0
+
+
+def test_forecasting_engine(tmp_path: Path):
+    from math_engine import ForecastingEngine, generate_all_forecasting_charts, generate_strategic_pdf_report
+    forecaster = ForecastingEngine()
+
+    p4q = forecaster.generate_4q_json_payload()
+    p8q = forecaster.generate_8q_json_payload()
+    rec = forecaster.generate_strategic_recommendations_payload()
+
+    assert len(p4q["quarterly_projections"]) == 4
+    assert len(p8q["quarterly_projections"]) == 8
+    assert "total_projected_revenue_8q" in rec["executive_summary"]
+
+    full_res = forecaster.run_projections(total_quarters=8)
+    chart_paths = generate_all_forecasting_charts(full_res["projections"], tmp_path / "charts")
+
+    assert chart_paths["chart_1"].exists()
+    assert chart_paths["chart_2"].exists()
+    assert chart_paths["chart_3"].exists()
+
+    pdf_path = tmp_path / "fpa_strategic_planning_recommendations.pdf"
+    generate_strategic_pdf_report(full_res, chart_paths, pdf_path)
+    assert pdf_path.exists() and pdf_path.stat().st_size > 0
+
+

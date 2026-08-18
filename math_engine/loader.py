@@ -229,6 +229,20 @@ def load_dataset_from_folder(folder_path: Union[str, Path]) -> FinancialStatemen
         footnotes=footnotes,
     )
 
+    # Attach AOB and Operational Drivers data if present
+    aob_file = folder / "aob.xlsx"
+    drivers_file = folder / "operational_drivers.xlsx"
+
+    if aob_file.exists():
+        aob_dict = parse_excel_key_values(aob_file)
+        setattr(current_data, "aob", aob_dict)
+        setattr(current_data, "annual_operating_budget", aob_dict)
+
+    if drivers_file.exists():
+        drv_dict = parse_excel_key_values(drivers_file)
+        setattr(current_data, "operational_drivers", drv_dict)
+        setattr(current_data, "drivers", drv_dict)
+
     metadata = Metadata(
         client_name="AsterNova Technologies Ltd.",
         period="2026-03-31",

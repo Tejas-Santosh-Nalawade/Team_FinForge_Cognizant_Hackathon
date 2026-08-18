@@ -1,0 +1,41 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "OperationalDrivers",
+  "description": "Underlying volume, capacity, and operational levers driving financial statement lines",
+  "type": "object",
+  "required": ["company", "drivers"],
+  "properties": {
+    "company": { "type": "string", "example": "AsterNova Technologies Ltd." },
+    "drivers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["period", "driver_type", "driver_name", "value", "unit", "granularity"],
+        "properties": {
+          "period": { 
+            "type": "string", 
+            "pattern": "^FY[0-9]{4}(-Q[1-4])?$", 
+            "example": "FY2026" 
+          },
+          "driver_type": { 
+            "type": "string", 
+            "enum": ["HEADCOUNT", "VOLUME", "PRICING", "CAPACITY", "CHURN"] 
+          },
+          "driver_name": { "type": "string", "example": "Operating Volume" },
+          "value": { "type": "number", "example": 108000 },
+          "unit": { "type": "string", "example": "units" },
+          "granularity": { 
+            "type": "string", 
+            "enum": ["ANNUAL", "QUARTERLY", "MONTHLY"], 
+            "example": "ANNUAL" 
+          },
+          "associated_financial_metric": { 
+            "type": "string", 
+            "enum": ["REVENUE", "COGS", "OPEX", "CAPEX"], 
+            "example": "REVENUE" 
+          }
+        }
+      }
+    }
+  }
+}

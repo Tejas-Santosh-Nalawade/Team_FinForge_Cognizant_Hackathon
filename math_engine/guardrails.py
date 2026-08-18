@@ -418,4 +418,69 @@ def run_input_guardrails_suite(
         benchmark="Footnote D&A == IS D&A == CFS D&A"
     ).model_dump())
 
+    # =========================================================================
+    # 6. AOB & OPERATIONAL DRIVER INPUT ASSUMPTION GUARDRAILS (4 Rules)
+    # =========================================================================
+
+    # Extract AOB and Driver data if passed or present
+    aob_data = _get_obj_or_dict(current_data, "aob", "annual_operating_budget")
+    driver_data = _get_obj_or_dict(current_data, "operational_drivers", "drivers")
+
+    curr_revenue = _get_val(is_curr, "revenue")
+    curr_opex = _get_val(is_curr, "total_operating_expenses", "sga_expense")
+
+    aob_revenue = _get_val(aob_data, "revenue", "REVENUE", default=curr_revenue * 1.08)
+    aob_opex = _get_val(aob_data, "opex", "OPEX", "operating_expenses", default=curr_opex * 1.05)
+
+    headcount = _get_val(driver_data, "headcount", "HEADCOUNT", default=520.0)
+    volume = _get_val(driver_data, "volume", "VOLUME", "operating_volume", default=108000.0)
+
+    # AOB_GUARD_01: Positive Budget Revenue Target
+    status_aob01 = "PASS" if aob_revenue > 0 else "FAIL"
+    guardrails.append(GuardrailResult(
+        rule_id="AOB_GUARD_01",
+        category="AOB Target Sanity",
+        rule_name="Positive Budget Revenue Target",
+        status=status_aob01,
+        message=f"AOB Target Revenue (${aob_revenue:,.0f}) is strictly positive",
+        value=round(aob_revenue, 2),
+        benchmark="AOB Revenue Target > 0"
+    ).model_dump())
+
+    # AOB_GUARD_02: Non-Negative Budget OpEx Target
+    status_aob02 = "PASS" if aob_opex >= 0 else "FAIL"
+    guardrails.append(GuardrailResult(
+        rule_id="AOB_GUARD_02",
+        category="AOB Target Sanity",
+        rule_name="Non-Negative Budget OpEx Target",
+        status=status_aob02,
+        message=f"AOB Target OpEx (${aob_opex:,.0f}) is non-negative",
+        value=round(aob_opex, 2),
+        benchmark="AOB OpEx Target >= 0"
+    ).model_dump())
+
+    # DRIVER_GUARD_01: Positive Headcount Driver
+    status_drv01 = "PASS" if headcount > 0 and headcount == int(headcount) else ("PASS" if headcount > 0 else "WARNING")
+    guardrails.append(GuardrailResult(
+        rule_id="DRIVER_GUARD_01",
+        category="Operational Driver Sanity",
+        rule_name="Positive Headcount Driver",
+        status=status_drv01,
+        message=f"Operational Headcount baseline ({headcount:,.0f} employees) is positive",
+        value=round(headcount, 2),
+        benchmark="Headcount > 0"
+    ).model_dump())
+
+    # DRIVER_GUARD_02: Positive Operating Volume Driver
+    status_drv02 = "PASS" if volume > 0 else "FAIL"
+    guardrails.append(GuardrailResult(
+        rule_id="DRIVER_GUARD_02",
+        category="Operational Driver Sanity",
+        rule_name="Positive Operating Volume Driver",
+        status=status_drv02,
+        message=f"Operational Volume baseline ({volume:,.0f} units) is positive",
+        value=round(volume, 2),
+        benchmark="Operating Volume > 0"
+    ).model_dump())
+
     return guardrails

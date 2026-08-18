@@ -15,7 +15,9 @@ from math_engine.analytics import (
     calculate_yoy_variances,
     calculate_common_size_analytics,
     calculate_financial_ratios,
-    evaluate_relationship_disconnects
+    evaluate_relationship_disconnects,
+    calculate_bva_attainment,
+    calculate_cash_runway_velocity,
 )
 from math_engine.assertions import run_complete_audit_suite
 
@@ -55,12 +57,17 @@ class MathEngine:
         ratios = calculate_financial_ratios(self.bs, self.is_d)
         relationship_disconnects = evaluate_relationship_disconnects(self.report)
 
+        bva_attainment = calculate_bva_attainment(self.is_d)
+        cash_runway_velocity = calculate_cash_runway_velocity(self.bs, self.cfs, ratios)
+
         return {
             "yoy_variances": yoy_variances,
             "common_size_bs": common_size_bs,
             "common_size_is": common_size_is,
             "ratios": ratios,
             "relationship_disconnects": relationship_disconnects,
+            "bva_attainment": bva_attainment,
+            "cash_runway_velocity": cash_runway_velocity,
         }
 
     def generate_structured_audit_report(self) -> Dict[str, Any]:
@@ -369,10 +376,19 @@ class MathEngine:
                 "assessment": f"{r_name} is {ratio.get('formatted_value', str(curr_val))} vs prior period {py_val:.2f}."
             })
 
+        # Multi-Period Historical Analytics Engine
+        from math_engine.historical_analytics import HistoricalAnalyticsEngine
+        hist_engine = HistoricalAnalyticsEngine(self.report)
+        hist_analytics = hist_engine.calculate_historical_baseline_analytics()
+
         analytics = {
             "income_statement": analytics_is,
             "balance_sheet": analytics_bs,
-            "ratios": analytics_ratios
+            "ratios": analytics_ratios,
+            "relationship_disconnects": analytics_out.get("relationship_disconnects", []),
+            "bva_attainment": analytics_out.get("bva_attainment"),
+            "cash_runway_velocity": analytics_out.get("cash_runway_velocity"),
+            "historical_baseline_analytics": hist_analytics,
         }
 
         # 4. FINDINGS

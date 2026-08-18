@@ -7,512 +7,6 @@
     "framework": "US GAAP / IFRS",
     "review_stage": "CY_DRAFT_FS"
   },
-  "procedures": [
-    {
-      "step": 1,
-      "category": "mathematical accuracy",
-      "procedure": "Balance Sheet Equilibrium: Total Assets == Total Liabilities + Total Stockholders' Equity",
-      "reference": "MATH_01",
-      "status": "FAIL",
-      "issue": "Discrepancy of $149.54: Expected $1,369.62, Actual $1,519.16",
-      "resolution": "Audit Action: REJECTED - Investigate source extraction and post audit adjustment."
-    },
-    {
-      "step": 2,
-      "category": "mathematical accuracy",
-      "procedure": "Current Assets Footing: Total Current Assets == Cash + AR + Inventory + Prepaid Expenses",
-      "reference": "MATH_02",
-      "status": "FAIL",
-      "issue": "Discrepancy of $359.61: Expected $1,050.56, Actual $690.95",
-      "resolution": "Audit Action: REJECTED - Investigate source extraction and post audit adjustment."
-    },
-    {
-      "step": 3,
-      "category": "mathematical accuracy",
-      "procedure": "Total Assets Footing: Total Assets == Total Current Assets + Total Non-Current Assets",
-      "reference": "MATH_03",
-      "status": "FAIL",
-      "issue": "Discrepancy of $373.44: Expected $1,145.72, Actual $1,519.16",
-      "resolution": "Audit Action: REJECTED - Investigate source extraction and post audit adjustment."
-    },
-    {
-      "step": 4,
-      "category": "mathematical accuracy",
-      "procedure": "Current Liabilities Footing: Total Current Liabilities == AP + Short-Term Debt + Current LT Debt + Accrued Expenses",
-      "reference": "MATH_04",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 5,
-      "category": "mathematical accuracy",
-      "procedure": "Total Liabilities Footing: Total Liabilities == Total Current Liabilities + Total Non-Current Liabilities",
-      "reference": "MATH_05",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 6,
-      "category": "mathematical accuracy",
-      "procedure": "Stockholders' Equity Footing: Equity == Common Stock + APIC + Retained Earnings + AOCI - Treasury Stock",
-      "reference": "MATH_06",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 7,
-      "category": "mathematical accuracy",
-      "procedure": "Gross Profit Calculation: Gross Profit == Revenue - Cost of Goods Sold",
-      "reference": "MATH_07",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 8,
-      "category": "mathematical accuracy",
-      "procedure": "Operating Income Calculation: Operating Income == Gross Profit - Operating Expenses",
-      "reference": "MATH_08",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 9,
-      "category": "mathematical accuracy",
-      "procedure": "Net Income Calculation: Net Income == Operating Income + Non-Operating Income - Interest Expense - Income Tax Expense",
-      "reference": "MATH_09",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 10,
-      "category": "mathematical accuracy",
-      "procedure": "Cash Flow Net Change: Net Change in Cash == Operating CF + Investing CF + Financing CF",
-      "reference": "MATH_10",
-      "status": "FAIL",
-      "issue": "Discrepancy of $39.97: Expected $242.68, Actual $202.71",
-      "resolution": "Audit Action: REJECTED - Investigate source extraction and post audit adjustment."
-    },
-    {
-      "step": 11,
-      "category": "mathematical accuracy",
-      "procedure": "Cash Flow Ending Cash: Ending Cash == Beginning Cash + Net Change in Cash",
-      "reference": "MATH_11",
-      "status": "FAIL",
-      "issue": "Discrepancy of $130.49: Expected $468.24, Actual $598.73",
-      "resolution": "Audit Action: REJECTED - Investigate source extraction and post audit adjustment."
-    },
-    {
-      "step": 12,
-      "category": "internal consistency and cross statement tie outs",
-      "procedure": "Net Income Reconciliation: IS Net Income == CFS Operating CF Starting Net Income",
-      "reference": "TIEOUT_01",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 13,
-      "category": "internal consistency and cross statement tie outs",
-      "procedure": "Ending Cash Tie-Out: CFS Ending Cash == Balance Sheet Cash & Cash Equivalents",
-      "reference": "TIEOUT_02",
-      "status": "FAIL",
-      "issue": "Discrepancy of $90.51: Expected $508.22, Actual $598.73",
-      "resolution": "Audit Action: REJECTED - Investigate source extraction and post audit adjustment."
-    },
-    {
-      "step": 14,
-      "category": "internal consistency and cross statement tie outs",
-      "procedure": "Depreciation Cross-Check: IS Depreciation Expense == CFS Non-Cash D&A Add-back",
-      "reference": "TIEOUT_03",
-      "status": "FLAGGED",
-      "issue": "Discrepancy of $31.02: Expected $28.45, Actual $59.47",
-      "resolution": "Audit Action: REVIEW REQUIRED - Investigate source extraction and post audit adjustment."
-    },
-    {
-      "step": 15,
-      "category": "internal consistency and cross statement tie outs",
-      "procedure": "Retained Earnings Roll-Forward: Ending RE == Beginning RE + Current Net Income - Dividends Declared",
-      "reference": "TIEOUT_04",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 16,
-      "category": "prior year comparative tie-outs",
-      "procedure": "Comparative Assets: Current Report PY Total Assets == Audited Prior-Year Total Assets",
-      "reference": "PY_01",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 17,
-      "category": "prior year comparative tie-outs",
-      "procedure": "Comparative Cash: Current Report PY Cash == Audited Prior-Year Cash",
-      "reference": "PY_02",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 18,
-      "category": "prior year comparative tie-outs",
-      "procedure": "Comparative Retained Earnings: Current Report PY Retained Earnings == Audited Prior-Year Retained Earnings",
-      "reference": "PY_03",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 19,
-      "category": "prior year comparative tie-outs",
-      "procedure": "Comparative Revenue: Current Report PY Revenue == Audited Prior-Year Revenue",
-      "reference": "PY_04",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 20,
-      "category": "prior year comparative tie-outs",
-      "procedure": "Comparative Net Income: Current Report PY Net Income == Audited Prior-Year Net Income",
-      "reference": "PY_05",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 21,
-      "category": "disclosure and footnote schedule tie-outs",
-      "procedure": "AR Aging Schedule Footing: Gross AR (Footnote) == Sum of Aging Buckets",
-      "reference": "NOTE_01",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 22,
-      "category": "disclosure and footnote schedule tie-outs",
-      "procedure": "Net AR Footnote Calculation: Net AR (Footnote) == Gross AR - Allowance for Credit Losses",
-      "reference": "NOTE_02",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 23,
-      "category": "disclosure and footnote schedule tie-outs",
-      "procedure": "AR Footnote to Balance Sheet: Note Net AR == Balance Sheet Net Accounts Receivable",
-      "reference": "NOTE_03",
-      "status": "FAIL",
-      "issue": "Discrepancy of $77.39: Expected $341.79, Actual $264.40",
-      "resolution": "Audit Action: REJECTED - Investigate source extraction and post audit adjustment."
-    },
-    {
-      "step": 24,
-      "category": "disclosure and footnote schedule tie-outs",
-      "procedure": "PP&E Footnote Net Book Value: Ending Net PP&E == Ending Gross PP&E - Ending Accumulated Depreciation",
-      "reference": "NOTE_04",
-      "status": "FAIL",
-      "issue": "Discrepancy of $115.40: Expected $368.89, Actual $253.49",
-      "resolution": "Audit Action: REJECTED - Investigate source extraction and post audit adjustment."
-    },
-    {
-      "step": 25,
-      "category": "disclosure and footnote schedule tie-outs",
-      "procedure": "PP&E Footnote to Balance Sheet: Note Net PP&E == Balance Sheet Net Property, Plant & Equipment",
-      "reference": "NOTE_05",
-      "status": "FAIL",
-      "issue": "Discrepancy of $115.40: Expected $368.89, Actual $253.49",
-      "resolution": "Audit Action: REJECTED - Investigate source extraction and post audit adjustment."
-    },
-    {
-      "step": 26,
-      "category": "disclosure and footnote schedule tie-outs",
-      "procedure": "Debt Maturity Schedule Sum: Total Future Debt Maturities == Sum of Scheduled Debt",
-      "reference": "NOTE_06",
-      "status": "FAIL",
-      "issue": "Discrepancy of $44.25: Expected $472.45, Actual $428.20",
-      "resolution": "Audit Action: REJECTED - Investigate source extraction and post audit adjustment."
-    },
-    {
-      "step": 27,
-      "category": "disclosure and footnote schedule tie-outs",
-      "procedure": "Short-Term Debt Maturity Match: Year 1 Debt Maturity == Balance Sheet Current Portion of LT Debt",
-      "reference": "NOTE_07",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 28,
-      "category": "disclosure and footnote schedule tie-outs",
-      "procedure": "Long-Term Debt Maturity Match: Sum of Years 2-Thereafter Maturities == Balance Sheet Long-Term Debt",
-      "reference": "NOTE_08",
-      "status": "FAIL",
-      "issue": "Discrepancy of $80.62: Expected $325.79, Actual $406.41",
-      "resolution": "Audit Action: REJECTED - Investigate source extraction and post audit adjustment."
-    },
-    {
-      "step": 29,
-      "category": "Horizontal & Vertical Analytics",
-      "procedure": "YoY Revenue Horizontal Variance Analysis",
-      "reference": "ANALYTICS_01",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 30,
-      "category": "Horizontal & Vertical Analytics",
-      "procedure": "YoY Expense Horizontal Variance Analysis",
-      "reference": "ANALYTICS_02",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 31,
-      "category": "Horizontal & Vertical Analytics",
-      "procedure": "Vertical Common-Size Balance Sheet Analysis",
-      "reference": "ANALYTICS_03",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 32,
-      "category": "Horizontal & Vertical Analytics",
-      "procedure": "Vertical Common-Size Income Statement Analysis",
-      "reference": "ANALYTICS_04",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 33,
-      "category": "Analytics Variance Flagging",
-      "procedure": "Flag Material YoY Line Item Variances (> 20.0% and > $1,000,000)",
-      "reference": "FLAG_01",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 34,
-      "category": "Relationship Disconnect Audit",
-      "procedure": "Checks if AR growth significantly outpaces revenue expansion",
-      "reference": "REL_01",
-      "status": "FLAGGED",
-      "issue": "Metric value 38.76 exceeded threshold 20.0",
-      "resolution": "Audit Implication: Premature revenue recognition, unrecorded sales returns, or under-provisioning of credit losses."
-    },
-    {
-      "step": 35,
-      "category": "Relationship Disconnect Audit",
-      "procedure": "Checks for divergence between revenue and cost of goods sold growth rates",
-      "reference": "REL_02",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 36,
-      "category": "Relationship Disconnect Audit",
-      "procedure": "Checks if inventory buildup outpaces cost of goods sold growth",
-      "reference": "REL_03",
-      "status": "FLAGGED",
-      "issue": "Metric value 61.34 exceeded threshold 25.0",
-      "resolution": "Audit Implication: Slow-moving or obsolete inventory, or improper capitalization of period expenses."
-    },
-    {
-      "step": 37,
-      "category": "Relationship Disconnect Audit",
-      "procedure": "Checks if PP&E expands while depreciation expense decreases",
-      "reference": "REL_04",
-      "status": "FLAGGED",
-      "issue": "Metric value -26.92 exceeded threshold 0.0",
-      "resolution": "Audit Implication: Omitted depreciation expense, improper useful-life extensions, or unrecorded asset retirements."
-    },
-    {
-      "step": 38,
-      "category": "Relationship Disconnect Audit",
-      "procedure": "Checks if debt balance increases while interest expense decreases",
-      "reference": "REL_05",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 39,
-      "category": "Relationship Disconnect Audit",
-      "procedure": "Checks if pre-tax profit increases while tax expense decreases",
-      "reference": "REL_06",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 40,
-      "category": "Financial Ratio - Liquidity",
-      "procedure": "Evaluate Current Ratio against benchmark 1.00x to 3.00x",
-      "reference": "RATIO_01",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 41,
-      "category": "Financial Ratio - Liquidity",
-      "procedure": "Evaluate Quick Ratio (Acid-Test) against benchmark >= 1.00x",
-      "reference": "RATIO_02",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 42,
-      "category": "Financial Ratio - Leverage",
-      "procedure": "Evaluate Debt-to-Equity Ratio against benchmark 0.10x to 4.00x",
-      "reference": "RATIO_03",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 43,
-      "category": "Financial Ratio - Solvency",
-      "procedure": "Evaluate Interest Coverage Ratio against benchmark >= 2.50x",
-      "reference": "RATIO_04",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 44,
-      "category": "Financial Ratio - Activity",
-      "procedure": "Evaluate Days Sales Outstanding (DSO) against benchmark 30 to 90 Days",
-      "reference": "RATIO_05",
-      "status": "FLAGGED",
-      "issue": "Ratio Days Sales Outstanding (DSO) value (92.1 Days) outside benchmark (30 to 90 Days)",
-      "resolution": "Review liquidity and leverage risk exposure with treasury."
-    },
-    {
-      "step": 45,
-      "category": "Financial Ratio - Activity",
-      "procedure": "Evaluate Days Inventory Outstanding (DIO) against benchmark <= 90 Days",
-      "reference": "RATIO_06",
-      "status": "FLAGGED",
-      "issue": "Ratio Days Inventory Outstanding (DIO) value (107.3 Days) outside benchmark (<= 90 Days)",
-      "resolution": "Review liquidity and leverage risk exposure with treasury."
-    },
-    {
-      "step": 46,
-      "category": "Financial Ratio - Activity",
-      "procedure": "Evaluate Days Payable Outstanding (DPO) against benchmark <= 90 Days",
-      "reference": "RATIO_07",
-      "status": "FLAGGED",
-      "issue": "Ratio Days Payable Outstanding (DPO) value (105.7 Days) outside benchmark (<= 90 Days)",
-      "resolution": "Review liquidity and leverage risk exposure with treasury."
-    },
-    {
-      "step": 47,
-      "category": "Financial Ratio - Activity",
-      "procedure": "Evaluate Cash Conversion Cycle (CCC) against benchmark <= 90 Days",
-      "reference": "RATIO_08",
-      "status": "FLAGGED",
-      "issue": "Ratio Cash Conversion Cycle (CCC) value (93.7 Days) outside benchmark (<= 90 Days)",
-      "resolution": "Review liquidity and leverage risk exposure with treasury."
-    },
-    {
-      "step": 48,
-      "category": "Financial Ratio - Profitability",
-      "procedure": "Evaluate Gross Profit Margin against benchmark 10.0% to 90.0%",
-      "reference": "RATIO_09",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 49,
-      "category": "Financial Ratio - Profitability",
-      "procedure": "Evaluate Operating Profit Margin against benchmark >= 15.0%",
-      "reference": "RATIO_10",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 50,
-      "category": "Financial Ratio - Profitability",
-      "procedure": "Evaluate Effective Tax Rate against benchmark 15.0% to 35.0%",
-      "reference": "RATIO_11",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 51,
-      "category": "Input Assumption Guardrail",
-      "procedure": "Revenue Growth Rate Rule",
-      "reference": "IS_GUARD_01",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 52,
-      "category": "Input Assumption Guardrail",
-      "procedure": "OpEx to Revenue Ratio",
-      "reference": "IS_GUARD_03",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 53,
-      "category": "Input Assumption Guardrail",
-      "procedure": "Cash Buffer Rule",
-      "reference": "BS_GUARD_01",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 54,
-      "category": "Input Assumption Guardrail",
-      "procedure": "CapEx to Revenue Ratio",
-      "reference": "CF_GUARD_02",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 55,
-      "category": "Input Assumption Guardrail",
-      "procedure": "Dividend Payout Ratio",
-      "reference": "CF_GUARD_03",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    },
-    {
-      "step": 56,
-      "category": "Input Assumption Guardrail",
-      "procedure": "Contingent Liabilities Threshold",
-      "reference": "NOTE_GUARD_02",
-      "status": "PASS",
-      "issue": null,
-      "resolution": "no action required."
-    }
-  ],
   "analytics": {
     "income_statement": [
       {
@@ -863,7 +357,192 @@
         "status": "PASS",
         "assessment": "Effective Tax Rate is 18.4% vs prior period 21.29."
       }
-    ]
+    ],
+    "relationship_disconnects": [
+      {
+        "rule_id": "REL_01",
+        "rule_name": "Revenue vs Accounts Receivable Growth Disconnect",
+        "category": "Relationship Disconnect",
+        "description": "Checks if AR growth significantly outpaces revenue expansion",
+        "expected": 0.0,
+        "actual": 0.0,
+        "difference": 0.0,
+        "confidence": 0.95,
+        "recommended_action": "",
+        "audit_implication": "Premature revenue recognition, unrecorded sales returns, or under-provisioning of credit losses.",
+        "metric_value": 38.76,
+        "threshold": 20.0,
+        "status": "FAIL",
+        "evidence": []
+      },
+      {
+        "rule_id": "REL_02",
+        "rule_name": "Revenue vs COGS Expansion Disconnect",
+        "category": "Relationship Disconnect",
+        "description": "Checks for divergence between revenue and cost of goods sold growth rates",
+        "expected": 0.0,
+        "actual": 0.0,
+        "difference": 0.0,
+        "confidence": 0.95,
+        "recommended_action": "",
+        "audit_implication": "Unrecorded purchases, inventory misstatement, or aggressive margin inflation.",
+        "metric_value": 3.05,
+        "threshold": 15.0,
+        "status": "PASS",
+        "evidence": []
+      },
+      {
+        "rule_id": "REL_03",
+        "rule_name": "Inventory vs COGS Growth Disconnect",
+        "category": "Relationship Disconnect",
+        "description": "Checks if inventory buildup outpaces cost of goods sold growth",
+        "expected": 0.0,
+        "actual": 0.0,
+        "difference": 0.0,
+        "confidence": 0.95,
+        "recommended_action": "",
+        "audit_implication": "Slow-moving or obsolete inventory, or improper capitalization of period expenses.",
+        "metric_value": 61.34,
+        "threshold": 25.0,
+        "status": "FAIL",
+        "evidence": []
+      },
+      {
+        "rule_id": "REL_04",
+        "rule_name": "CapEx / PP&E Expansion vs Depreciation Inversion",
+        "category": "Relationship Disconnect",
+        "description": "Checks if PP&E expands while depreciation expense decreases",
+        "expected": 0.0,
+        "actual": 0.0,
+        "difference": 0.0,
+        "confidence": 0.95,
+        "recommended_action": "",
+        "audit_implication": "Omitted depreciation expense, improper useful-life extensions, or unrecorded asset retirements.",
+        "metric_value": -26.92,
+        "threshold": 0.0,
+        "status": "FAIL",
+        "evidence": []
+      },
+      {
+        "rule_id": "REL_05",
+        "rule_name": "Debt Incurrence vs Interest Expense Inversion",
+        "category": "Relationship Disconnect",
+        "description": "Checks if debt balance increases while interest expense decreases",
+        "expected": 0.0,
+        "actual": 0.0,
+        "difference": 0.0,
+        "confidence": 0.95,
+        "recommended_action": "",
+        "audit_implication": "Unrecorded interest expense, unaccrued interest liabilities, or misclassified loan fees.",
+        "metric_value": 1.62,
+        "threshold": 0.0,
+        "status": "PASS",
+        "evidence": []
+      },
+      {
+        "rule_id": "REL_06",
+        "rule_name": "Profit Growth vs Tax Expense Inversion",
+        "category": "Relationship Disconnect",
+        "description": "Checks if pre-tax profit increases while tax expense decreases",
+        "expected": 0.0,
+        "actual": 0.0,
+        "difference": 0.0,
+        "confidence": 0.95,
+        "recommended_action": "",
+        "audit_implication": "Understated income tax provision or unrecorded tax liabilities.",
+        "metric_value": -18.21,
+        "threshold": 0.0,
+        "status": "PASS",
+        "evidence": []
+      }
+    ],
+    "bva_attainment": {
+      "bva_line_items": [
+        {
+          "line_item": "Revenue",
+          "actual_amount": 1354.66,
+          "budget_amount": 1463.03,
+          "dollar_variance": -108.37,
+          "pct_variance": -7.41,
+          "attainment_pct": 92.59,
+          "status": "ON TARGET"
+        },
+        {
+          "line_item": "Cost of Goods Sold",
+          "actual_amount": 532.49,
+          "budget_amount": 575.09,
+          "dollar_variance": -42.6,
+          "pct_variance": -7.41,
+          "attainment_pct": 92.59,
+          "status": "ON TARGET"
+        },
+        {
+          "line_item": "Operating Expenses",
+          "actual_amount": 535.02,
+          "budget_amount": 561.77,
+          "dollar_variance": -26.75,
+          "pct_variance": -4.76,
+          "attainment_pct": 95.24,
+          "status": "ON TARGET"
+        }
+      ],
+      "driver_unit_variances": {
+        "realized_revenue_per_unit": 12543.15,
+        "revenue_per_headcount": 2605115.38,
+        "opex_per_headcount": 1028884.62,
+        "actual_volume": 108000.0,
+        "actual_headcount": 520.0
+      }
+    },
+    "cash_runway_velocity": {
+      "cash_conversion_cycle_days": 93.7,
+      "total_cash_reserves": 508.22,
+      "trailing_operating_cash_flow": 234.05,
+      "monthly_net_cash_burn": 10.0,
+      "cash_runway_months": 50.8,
+      "runway_guardrail_status": "HEALTHY",
+      "runway_alert_triggered": false
+    },
+    "historical_baseline_analytics": {
+      "cagr_3yr": {
+        "revenue_cagr_pct": -2.81,
+        "gross_profit_cagr_pct": -1.74,
+        "opex_cagr_pct": 1.94,
+        "revenue_yoy_pct": -5.54,
+        "gross_profit_yoy_pct": -3.45,
+        "opex_yoy_pct": 3.91
+      },
+      "margin_trajectories": {
+        "current_gross_margin_pct": 60.69,
+        "prior_gross_margin_pct": 59.38,
+        "gross_margin_bps_shift": 131.0,
+        "current_operating_margin_pct": 21.2,
+        "prior_operating_margin_pct": 23.48,
+        "operating_margin_bps_shift": -228.0,
+        "current_net_margin_pct": 16.12,
+        "prior_net_margin_pct": 17.34,
+        "net_margin_bps_shift": -122.0
+      },
+      "driver_unit_cost_shifts": {
+        "current_rev_per_unit": 0.01,
+        "prior_rev_per_unit": 0.01,
+        "current_rev_per_employee": 2.61,
+        "prior_rev_per_employee": 2.93,
+        "current_opex_per_employee": 1.03,
+        "prior_opex_per_employee": 1.05
+      },
+      "working_capital_velocity_shifts": {
+        "current_dso_days": 92.1,
+        "prior_dso_days": 65.3,
+        "current_dio_days": 107.3,
+        "prior_dio_days": 64.2,
+        "current_dpo_days": 105.7,
+        "prior_dpo_days": 117.8,
+        "current_ccc_days": 93.7,
+        "prior_ccc_days": 11.7,
+        "ccc_days_shift": 82.0
+      }
+    }
   },
   "findings": [
     {

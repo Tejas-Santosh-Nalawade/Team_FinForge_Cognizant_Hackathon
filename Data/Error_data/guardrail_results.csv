@@ -15,3 +15,7 @@ EQ_GUARD_02,Equity Statement Sanity,Share Buyback Limits,PASS,710.8,Total Equity
 NOTE_GUARD_01,Disclosures & Notes Sanity,Bad Debt Provisions vs Accounts Receivable,PASS,3.68,1.0% to 5.0%,Allowance for Doubtful Accounts is 3.68% of Gross AR (Standard range: 1.0% to 5.0%)
 NOTE_GUARD_02,Disclosures & Notes Sanity,Contingent Liabilities Threshold,PASS,82.61,Exposure <= Cash Reserves,Single-risk max contingent exposure ($83) vs Cash reserves ($508) [Going Concern Risk Audit Tag: CLEAR]
 NOTE_GUARD_03,Disclosures & Notes Sanity,Depreciation Schedule Match,PASS,28.45,Footnote D&A == IS D&A == CFS D&A,Footnote Depreciation ($28) ties out to IS D&A ($28) and CFS D&A ($0)
+AOB_GUARD_01,AOB Target Sanity,Positive Budget Revenue Target,PASS,1463.03,AOB Revenue Target > 0,"AOB Target Revenue ($1,463) is strictly positive"
+AOB_GUARD_02,AOB Target Sanity,Non-Negative Budget OpEx Target,PASS,561.77,AOB OpEx Target >= 0,AOB Target OpEx ($562) is non-negative
+DRIVER_GUARD_01,Operational Driver Sanity,Positive Headcount Driver,PASS,520.0,Headcount > 0,Operational Headcount baseline (520 employees) is positive
+DRIVER_GUARD_02,Operational Driver Sanity,Positive Operating Volume Driver,PASS,108000.0,Operating Volume > 0,"Operational Volume baseline (108,000 units) is positive"

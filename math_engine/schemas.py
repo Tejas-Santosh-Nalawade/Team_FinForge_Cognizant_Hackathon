@@ -208,6 +208,10 @@ class CurrentData(BaseModel):
     cash_flow_statement: CashFlowValues = Field(..., description="Preliminary Current-Year Cash Flow Statement")
     equity_statement: Optional[StockholdersEquity] = Field(default=None, description="Statement of Stockholders Equity")
     footnotes: Optional[Footnotes] = Field(default_factory=Footnotes, description="Footnotes & Supplementary Schedules")
+    aob: Optional[Dict[str, float]] = Field(default_factory=dict, description="Annual Operating Budget data")
+    annual_operating_budget: Optional[Dict[str, float]] = Field(default_factory=dict, description="Annual Operating Budget alias")
+    operational_drivers: Optional[Dict[str, float]] = Field(default_factory=dict, description="Operational Drivers data")
+    drivers: Optional[Dict[str, float]] = Field(default_factory=dict, description="Operational Drivers alias")
 
 
 class AuditFlag(BaseModel):
@@ -218,7 +222,29 @@ class AuditFlag(BaseModel):
     expected: Any
     actual: Any
     source_ref: Optional[str] = ""
-    status: Optional[str] = "FAIL"
+    status: Optional[str] = None
+    difference: Optional[float] = 0.0
+
+    @model_validator(mode="before")
+    @classmethod
+    def compute_status_and_difference(cls, values: Any) -> Any:
+        if isinstance(values, dict):
+            expected = values.get("expected")
+            actual = values.get("actual")
+            if expected is not None and actual is not None:
+                try:
+                    exp_f = float(expected)
+                    act_f = float(actual)
+                    diff = round(abs(exp_f - act_f), 2)
+                    values["difference"] = diff
+                    if values.get("status") is None:
+                        values["status"] = "PASS" if diff <= 0.01 else "FAIL"
+                except (ValueError, TypeError):
+                    if values.get("status") is None:
+                        values["status"] = "PASS" if expected == actual else "FAIL"
+            elif values.get("status") is None:
+                values["status"] = "PASS" if expected == actual else "FAIL"
+        return values
 
 
 class YoYVariance(BaseModel):

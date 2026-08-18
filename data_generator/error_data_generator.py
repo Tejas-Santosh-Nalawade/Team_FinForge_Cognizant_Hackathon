@@ -682,12 +682,14 @@ def main():
     parser = argparse.ArgumentParser(description="Financial Statement Test Data Generator with Randomized Flaws")
     parser.add_argument("--format", choices=["excel", "pdf"], default="excel", help="Output format for statements and footnotes")
     parser.add_argument("--seed", type=int, default=SEED, help="Random seed")
+    parser.add_argument("--output-dir", type=str, default="Data/Error_data", help="Output directory path")
     parser.add_argument("--clean", action="store_true", help="Generate purely clean data without flaws")
     parser.add_argument("--flaws", type=int, default=10, help="Number of flaws to inject (default: at least 10)")
     args = parser.parse_args()
 
     rng = random.Random(args.seed)
     output_format = args.format
+    package_dir = Path(args.output_dir)
 
     print(f"Generating test data dataset [format={output_format.upper()}, seed={args.seed}]...")
 
@@ -905,6 +907,9 @@ def main():
 
     write_csv(package_dir / "guardrail_results.csv", gr, ["rule_id", "category", "rule_name", "status", "value", "benchmark", "message"])
     (package_dir / "injected_flaws_ground_truth.json").write_text(json.dumps(injected_flaws, indent=2), encoding="utf-8")
+
+    from data_generator.planning_generator import generate_planning_excel
+    generate_planning_excel(package_dir)
 
     print(f"Generated {len(injected_flaws)} randomized flaws.")
     print(f"Package saved to: {package_dir.resolve()}")

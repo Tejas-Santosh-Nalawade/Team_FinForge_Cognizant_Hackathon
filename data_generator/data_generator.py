@@ -164,11 +164,12 @@ def make_candidate(rng):
     prior_revenue = rng.uniform(1000.0, 1500.0)
     prior_gm = rng.uniform(0.50, 0.70)
     prior_cogs = prior_revenue * (1.0 - prior_gm)
-    prior_dso = rng.uniform(40.0, 70.0)
+    prior_dso = rng.uniform(40.0, 65.0)
     prior_ar_gross = prior_revenue * prior_dso / 365.0
     prior_allow = prior_ar_gross * rng.uniform(*R["allowance_pct"])
     prior_ar_net = prior_ar_gross - prior_allow
-    prior_inventory = prior_revenue * rng.uniform(0.06, 0.10)
+    prior_dio = rng.uniform(40.0, 65.0)
+    prior_inventory = prior_cogs * (prior_dio / 365.0)
     prior_prepaid = prior_revenue * rng.uniform(0.02, 0.04)
 
     prior_ppe_gross = prior_revenue * rng.uniform(0.25, 0.40)
@@ -183,7 +184,7 @@ def make_candidate(rng):
     if prior_ppe_net <= 0: raise ValueError("prior PPE net negative")
     prior_intangibles = prior_revenue * rng.uniform(0.04, 0.08)
 
-    prior_opex_ratio = rng.uniform(0.30, 0.48)
+    prior_opex_ratio = rng.uniform(0.30, 0.38)
     prior_opex = prior_revenue * prior_opex_ratio
     prior_sga_rd = prior_opex - prior_da
     if prior_sga_rd <= 0: raise ValueError("prior SG&A/R&D pool non-positive")
@@ -206,7 +207,7 @@ def make_candidate(rng):
     prior_current_liabilities = prior_revenue * rng.uniform(0.18, 0.30)
     prior_st_debt = prior_current_liabilities * rng.uniform(0.05, 0.15)
     prior_current_ltd = prior_current_liabilities * rng.uniform(0.10, 0.25)
-    prior_ap = cogs * (rng.uniform(40.0, 70.0) / 365.0)
+    prior_ap = prior_cogs * (rng.uniform(40.0, 70.0) / 365.0)
     prior_accrued = prior_current_liabilities - prior_st_debt - prior_current_ltd - prior_ap
     if prior_accrued <= 0: raise ValueError("prior accrued negative")
     prior_ltd = prior_revenue * rng.uniform(0.12, 0.25)
@@ -262,15 +263,16 @@ def make_candidate(rng):
     # CURRENT PERIOD
     growth = rng.uniform(R["revenue_growth"][0] + 0.05, R["revenue_growth"][1] - 0.05)
     revenue = prior_revenue * (1.0 + growth)
-    gross_margin = rng.uniform(0.50, 0.70)
+    gross_margin = max(min(prior_gm * rng.uniform(0.98, 1.02), 0.75), 0.45)
     cogs = revenue * (1.0 - gross_margin)
     gross_profit = revenue - cogs
 
-    dso = rng.uniform(R["dso"][0] + 5, R["dso"][1] - 5)
+    dso = max(min(prior_dso * rng.uniform(0.98, 1.02), 70.0), 35.0)
     ar_gross = revenue * dso / 365.0
     allowance = ar_gross * rng.uniform(*R["allowance_pct"])
     ar_net = ar_gross - allowance
-    inventory = revenue * rng.uniform(0.06, 0.10)
+    dio = max(min(prior_dio * rng.uniform(0.98, 1.02), 70.0), 35.0)
+    inventory = cogs * (dio / 365.0)
     prepaid = revenue * rng.uniform(0.02, 0.04)
 
     capex = revenue * rng.uniform(R["capex_ratio"][0] + 0.01, R["capex_ratio"][1] - 0.01)
@@ -286,7 +288,7 @@ def make_candidate(rng):
     if ppe_net <= 0: raise ValueError("current PPE net negative")
     intangible_assets = prior_intangibles * rng.uniform(0.98, 1.05)
 
-    total_opex = max(revenue * rng.uniform(0.30, 0.48), da + 10.0)
+    total_opex = max(revenue * rng.uniform(0.30, 0.38), da + 10.0)
     sga_rd = total_opex - da
     if sga_rd <= 0: raise ValueError("current SG&A/R&D pool non-positive")
     rd = sga_rd * rng.uniform(0.18, 0.35)
@@ -398,7 +400,7 @@ def make_candidate(rng):
             {"asset_class": "Buildings / real property", "gross_balance": q(building_gross), "useful_life_years": building_life},
         ],
     }
-    total_debt = short_term_debt + current_ltd + long_term_debt
+    total_debt = current_ltd + long_term_debt
     debt_schedule = debt_maturity(total_debt, current_ltd, rng)
 
     return {
@@ -760,6 +762,9 @@ def main():
     # Save Guardrail Results CSV Summary
     write_csv(output_dir / "guardrail_results.csv", gr, ["rule_id", "category", "rule_name", "status", "value", "benchmark", "message"])
     (output_dir / "injected_flaws_ground_truth.json").write_text(json.dumps([], indent=2), encoding="utf-8")
+
+    from data_generator.planning_generator import generate_planning_excel
+    generate_planning_excel(output_dir)
 
     print(f"Clean dataset successfully generated in {output_format.upper()} format into: {output_dir.resolve()}")
 
