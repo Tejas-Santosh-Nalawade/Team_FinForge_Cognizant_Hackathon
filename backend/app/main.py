@@ -1,11 +1,64 @@
+from contextlib import asynccontextmanager
+
 from fastapi import FastAPI
+from fastapi.middleware.cors import CORSMiddleware
 
-from backend.app.api.v1.analytics import router as analytics_router
+try:
+    from backend.app.api.v1.router import api_v1_router
+    from backend.app.config import settings
+    from backend.db.session import init_db
+except ModuleNotFoundError:
+    from app.api.v1.router import api_v1_router
+    from app.config import settings
+    from db.session import init_db
 
-app = FastAPI(title="AuditAI Backend", version="1.0.0")
-app.include_router(analytics_router)
+
+@asynccontextmanager
+async def lifespan(app: FastAPI):
+    # Initialize SQLite/Postgres DB tables
+    init_db()
+    yield
+
+
+app = FastAPI(
+    title=settings.APP_NAME,
+    version=settings.APP_VERSION,
+    description="Cognizant NPN • Enterprise FP&A & Financial Statement Audit Assurance Suite (ARCH-SPEC-WP514)",
+    lifespan=lifespan
+)
+
+# CORS configuration for local frontend development
+allowed_origins = [
+    "http://localhost:5173",
+    "http://127.0.0.1:5173",
+    "http://localhost:3000",
+    "http://127.0.0.1:3000",
+    "http://localhost:4173",
+    "http://127.0.0.1:4173",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=allowed_origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# Include v1 API endpoints
+app.include_router(api_v1_router, prefix=settings.API_V1_STR)
+
+
+@app.get("/")
+def root():
+    return {
+        "app": settings.APP_NAME,
+        "version": settings.APP_VERSION,
+        "status": "online",
+        "docs_url": "/docs"
+    }
 
 
 @app.get("/health")
-def healthcheck() -> dict:
-    return {"status": "ok"}
+def healthcheck():
+    return {"status": "healthy", "database": "connected"}

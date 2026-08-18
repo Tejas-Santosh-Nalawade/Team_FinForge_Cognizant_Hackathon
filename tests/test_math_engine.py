@@ -1,11 +1,13 @@
 # tests/test_math_engine.py
 from pathlib import Path
 import pytest
-from math_engine import (
-    FinancialStatementsIngestionSchema,
-    MathEngine,
-    load_dataset_from_folder,
-)
+from backend.app.core.assurance_engine.schemas import FinancialStatementsIngestionSchema
+from backend.app.core.assurance_engine.core import MathEngine
+from backend.app.core.engines.track_a_audit import TrackAAuditEngine
+from backend.app.core.engines.track_b_fpa import TrackBFPAEngine
+from backend.app.core.engines.resolution_engine import ResolutionEngine
+from backend.app.core.reporting.wp514_builder import WP514ReportBuilder
+from backend.app.core.parser.excel_generator import ExcelModelGenerator
 
 
 @pytest.fixture
@@ -172,74 +174,64 @@ def test_structured_report_generation(mock_financial_data):
     assert len(structured_report["procedures"]) == 56
     assert structured_report["conclusion"]["total_procedures_run"] == 56
 
-    # Verify Stage 3 Analytics Payload
-    analytics = structured_report.get("analytics", {})
-    assert "bva_attainment" in analytics
-    assert "cash_runway_velocity" in analytics
-    assert analytics["cash_runway_velocity"]["cash_runway_months"] > 0
+
+def test_track_a_audit_gate(mock_financial_data):
+    report = FinancialStatementsIngestionSchema(**mock_financial_data)
+    engine = TrackAAuditEngine(report)
+    result = engine.execute_audit_gate()
+
+    assert "branch" in result
+    assert "procedures" in result
+    assert result["total_procedures"] == 56
 
 
-def test_load_true_data_folder():
-    true_data_path = Path("Data/True_data")
-    if true_data_path.exists():
-        report_schema = load_dataset_from_folder(true_data_path)
-        assert report_schema.metadata.client_name == "AsterNova Technologies Ltd."
+def test_track_b_fpa_simulator(mock_financial_data):
+    report = FinancialStatementsIngestionSchema(**mock_financial_data)
+    fpa = TrackBFPAEngine(report)
 
-        engine = MathEngine(report_schema)
-        audit_report = engine.generate_structured_audit_report()
-        assert audit_report["conclusion"]["total_procedures_run"] == 56
-        assert audit_report["conclusion"]["overall_status"] == "CLEARED"
+    bva = fpa.compute_bva_attainment()
+    assert len(bva) > 0
 
+    liquidity = fpa.compute_liquidity_and_runway()
+    assert "cash_runway_months" in liquidity
 
-def test_load_error_data_folder():
-    error_data_path = Path("Data/Error_data")
-    if error_data_path.exists():
-        report_schema = load_dataset_from_folder(error_data_path)
-        assert report_schema.metadata.client_name == "AsterNova Technologies Ltd."
-
-        engine = MathEngine(report_schema)
-        audit_report = engine.generate_structured_audit_report()
-        assert audit_report["conclusion"]["total_procedures_run"] == 56
-        assert len(audit_report["findings"]) > 0
+    sim = fpa.simulate_scenario(sales_volume_delta_pct=5.0, pricing_delta_pct=2.0)
+    assert len(sim["trajectory_points"]) == 12
 
 
-def test_pdf_deliverables_generation(mock_financial_data, tmp_path: Path):
-    from math_engine import generate_audit_tieouts_pdf, generate_fpa_analytics_pdf
+def test_resolution_workflow(mock_financial_data):
+    report = FinancialStatementsIngestionSchema(**mock_financial_data)
+    decisions = [
+        {"rule_id": "MATH_01", "decision": "ACCEPTED", "notes": "Reconciled"},
+        {"rule_id": "RATIO_02", "decision": "WAIVED", "notes": "Management Waiver"}
+    ]
+    res = ResolutionEngine.apply_resolutions(report, decisions)
+    assert res["risk_status"] == "WAIVED_RISK"
+    assert res["risk_banner_active"] is True
+    assert res["waived_count"] == 1
+    assert res["accepted_count"] == 1
+
+
+def test_pdf_wp514_generation(mock_financial_data):
     report = FinancialStatementsIngestionSchema(**mock_financial_data)
     engine = MathEngine(report)
     structured_report = engine.generate_structured_audit_report()
 
-    path_a = tmp_path / "audit_tieouts_report.pdf"
-    path_b = tmp_path / "fpa_analytics_report.pdf"
-
-    generate_audit_tieouts_pdf(structured_report, path_a)
-    generate_fpa_analytics_pdf(structured_report, path_b)
-
-    assert path_a.exists() and path_a.stat().st_size > 0
-    assert path_b.exists() and path_b.stat().st_size > 0
+    pdf_bytes = WP514ReportBuilder.build_pdf(
+        engagement_data={"client_name": "Apex Global Technologies Inc.", "period": "2025-12-31", "risk_status": "CLEAN"},
+        report_data=structured_report
+    )
+    assert len(pdf_bytes) > 0
+    assert pdf_bytes.startswith(b"%PDF")
 
 
-def test_forecasting_engine(tmp_path: Path):
-    from math_engine import ForecastingEngine, generate_all_forecasting_charts, generate_strategic_pdf_report
-    forecaster = ForecastingEngine()
+def test_excel_generation(mock_financial_data):
+    report = FinancialStatementsIngestionSchema(**mock_financial_data)
+    engine = MathEngine(report)
+    structured_report = engine.generate_structured_audit_report()
 
-    p4q = forecaster.generate_4q_json_payload()
-    p8q = forecaster.generate_8q_json_payload()
-    rec = forecaster.generate_strategic_recommendations_payload()
-
-    assert len(p4q["quarterly_projections"]) == 4
-    assert len(p8q["quarterly_projections"]) == 8
-    assert "total_projected_revenue_8q" in rec["executive_summary"]
-
-    full_res = forecaster.run_projections(total_quarters=8)
-    chart_paths = generate_all_forecasting_charts(full_res["projections"], tmp_path / "charts")
-
-    assert chart_paths["chart_1"].exists()
-    assert chart_paths["chart_2"].exists()
-    assert chart_paths["chart_3"].exists()
-
-    pdf_path = tmp_path / "fpa_strategic_planning_recommendations.pdf"
-    generate_strategic_pdf_report(full_res, chart_paths, pdf_path)
-    assert pdf_path.exists() and pdf_path.stat().st_size > 0
-
-
+    xlsx_bytes = ExcelModelGenerator.generate_reconciled_workbook(
+        engagement_info={"client_name": "Apex Global Technologies Inc.", "period": "2025-12-31", "risk_status": "CLEAN"},
+        report_data=structured_report
+    )
+    assert len(xlsx_bytes) > 0

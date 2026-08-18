@@ -1,1 +1,1 @@
-"""Backend package for the AuditAI application."""
+"""Backend package for the FinForge application."""

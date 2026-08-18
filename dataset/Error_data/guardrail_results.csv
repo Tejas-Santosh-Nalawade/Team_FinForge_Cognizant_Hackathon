@@ -1,0 +1,17 @@
+rule_id,category,rule_name,status,value,benchmark,message
+IS_GUARD_01,Income Statement Sanity,Revenue Growth Rate Rule,PASS,-5.54,-30.0% to +50%,YoY Revenue Growth is -5.54% (Benchmark: -30.0% to +50%)
+IS_GUARD_02,Income Statement Sanity,Gross Profit Margin Rule,PASS,60.69,10.0% to 90.0%,"Gross Profit Margin is 60.69% (Standard range: 10.0% to 90.0%, GP must be >= 0 and <= Revenue)"
+IS_GUARD_03,Income Statement Sanity,OpEx to Revenue Ratio,PASS,39.49,15.0% to 80.0%,OpEx to Revenue Ratio is 39.49% (Standard range: 15.0% to 80.0%)
+IS_GUARD_04,Income Statement Sanity,Effective Tax Rate Rule,PASS,18.35,15.0% to 35.0%,Effective Tax Rate is 18.35% (Standard range: 15.0% to 35.0% of EBT)
+BS_GUARD_01,Balance Sheet Sanity,Cash Buffer Rule,PASS,11.4,>= 1.0 Month,"Cash Buffer represents 11.4 months of OpEx (Min required: >= 1.0 month, Cash >= 0)"
+BS_GUARD_02,Balance Sheet Sanity,Current Ratio Liquidity Check,PASS,2.75,1.00x to 3.00x,"Current Ratio is 2.75x (Standard range: 1.00x to 3.00x; <0.50x default risk, >10.00x cash hoarding)"
+BS_GUARD_03,Balance Sheet Sanity,Days Sales Outstanding (DSO),PASS,71.2,30 to 90 Days,"DSO is 71.2 Days (Standard range: 30 to 90 Days, AR < Revenue)"
+BS_GUARD_04,Balance Sheet Sanity,Debt-to-Equity Ratio,PASS,0.93,0.10x to 4.00x,Debt-to-Equity (Total Liabilities / Equity) is 0.93x (Standard range: 0.10x to 4.00x)
+CF_GUARD_01,Cash Flow Sanity,Operating Cash Flow vs Net Income Alignment,PASS,234.05,OCF mirrors Net Income trajectory,OCF ($234) trajectory mirrors Net Income ($218).
+CF_GUARD_02,Cash Flow Sanity,CapEx to Revenue Ratio,PASS,3.73,2.0% to 15.0%,CapEx to Revenue Ratio is 3.73% (Standard range: 2.0% to 15.0%)
+CF_GUARD_03,Cash Flow Sanity,Dividend Payout Ratio,PASS,21.75,0.0% to 80.0%,Dividend Payout is 21.75% of Net Income (Standard range: 0.0% to 80.0%)
+EQ_GUARD_01,Equity Statement Sanity,Retained Earnings Continuity Rule,PASS,426.73,Ending RE Roll-Forward Match,Ending Retained Earnings ($427) == Beg RE + Net Income - Dividends ($427)
+EQ_GUARD_02,Equity Statement Sanity,Share Buyback Limits,PASS,710.8,Total Equity >= 0,Total Shareholders' Equity ($711) remains positive
+NOTE_GUARD_01,Disclosures & Notes Sanity,Bad Debt Provisions vs Accounts Receivable,PASS,3.68,1.0% to 5.0%,Allowance for Doubtful Accounts is 3.68% of Gross AR (Standard range: 1.0% to 5.0%)
+NOTE_GUARD_02,Disclosures & Notes Sanity,Contingent Liabilities Threshold,PASS,82.61,Exposure <= Cash Reserves,Single-risk max contingent exposure ($83) vs Cash reserves ($508) [Going Concern Risk Audit Tag: CLEAR]
+NOTE_GUARD_03,Disclosures & Notes Sanity,Depreciation Schedule Match,PASS,28.45,Footnote D&A == IS D&A == CFS D&A,Footnote Depreciation ($28) ties out to IS D&A ($28) and CFS D&A ($0)

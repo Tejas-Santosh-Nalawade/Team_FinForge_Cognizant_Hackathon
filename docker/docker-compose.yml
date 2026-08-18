@@ -1,0 +1,27 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.backend
+    container_name: finforge-backend
+    ports:
+      - "8000:8000"
+    environment:
+      - DATABASE_URL=sqlite:///./finforge_audit.db
+      - R2_BUCKET_NAME=finforge-audit-vault
+      - GEMINI_MODEL=gemini-1.5-pro
+    volumes:
+      - ../result:/app/result
+      - ../finforge_audit.db:/app/finforge_audit.db
+
+  frontend:
+    build:
+      context: ..
+      dockerfile: docker/Dockerfile.frontend
+    container_name: finforge-frontend
+    ports:
+      - "3000:80"
+    depends_on:
+      - backend

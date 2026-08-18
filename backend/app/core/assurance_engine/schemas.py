@@ -318,6 +318,16 @@ class FinancialStatementsIngestionSchema(BaseModel):
     @classmethod
     def convert_nested_structure(cls, values: Any) -> Any:
         if isinstance(values, dict):
+            # Callers such as the scenario API may construct the nested Pydantic
+            # models first.  Normalize those instances before using dict access so
+            # both the JSON ingestion path and the programmatic API path share the
+            # same compatibility conversion.
+            values = values.copy()
+            for key in ("current_data", "prior_data", "statements", "schedules"):
+                nested_value = values.get(key)
+                if hasattr(nested_value, "model_dump"):
+                    values[key] = nested_value.model_dump()
+
             # If current_data and prior_data are passed, populate statements and schedules
             if "current_data" in values and "prior_data" in values:
                 curr = values["current_data"]
