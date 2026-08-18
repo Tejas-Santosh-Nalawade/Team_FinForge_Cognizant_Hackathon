@@ -28,3 +28,7 @@ build/
 .idea/
 *.swp
 .DS_Store
+
+DATASET/
+MATH_ENGINE/
+OUTPUT/
