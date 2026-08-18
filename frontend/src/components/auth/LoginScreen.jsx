@@ -77,11 +77,11 @@ export const LoginScreen = () => {
           <form className="space-y-4" onSubmit={submit}>
             <label className="block text-xs font-medium text-slate-300">
               Work email
-              <input value={email} onChange={(event) => setEmail(event.target.value)} type="email" required className="mt-1.5 w-full rounded-xl border border-slate-700 bg-slate-900/90 px-3 py-2.5 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-sky-400 focus:ring-2 focus:ring-sky-400/15" />
+              <input value={email} onChange={(event) => setEmail(event.target.value)} type="email" name="email" autoComplete="email" required className="mt-1.5 w-full rounded-xl border border-slate-700 bg-slate-900/90 px-3 py-2.5 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-sky-400 focus:ring-2 focus:ring-sky-400/15" />
             </label>
             <label className="block text-xs font-medium text-slate-300">
               Password
-              <input value={password} onChange={(event) => setPassword(event.target.value)} type="password" required className="mt-1.5 w-full rounded-xl border border-slate-700 bg-slate-900/90 px-3 py-2.5 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-sky-400 focus:ring-2 focus:ring-sky-400/15" />
+              <input value={password} onChange={(event) => setPassword(event.target.value)} type="password" name="password" autoComplete="current-password" required className="mt-1.5 w-full rounded-xl border border-slate-700 bg-slate-900/90 px-3 py-2.5 text-sm text-white outline-none transition placeholder:text-slate-600 focus:border-sky-400 focus:ring-2 focus:ring-sky-400/15" />
             </label>
             {error && <p className="rounded-lg border border-red-800/60 bg-red-950/40 px-3 py-2 text-xs text-red-200">{error}</p>}
             <button disabled={isSubmitting} type="submit" className="flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-indigo-500 px-4 py-3 text-sm font-semibold text-white shadow-lg shadow-sky-500/20 transition hover:from-sky-400 hover:to-indigo-400 disabled:cursor-not-allowed disabled:opacity-60">
