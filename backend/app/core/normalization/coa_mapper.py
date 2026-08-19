@@ -1,200 +1,255 @@
-import re
-from typing import Dict, Optional, Tuple
+"""Layer 2 canonical financial taxonomy mapper.
 
-# Canonical Chart of Accounts Dictionary
-CANONICAL_COA_MAP: Dict[str, str] = {
-    # Income Statement
-    "revenue": "revenue",
-    "total revenue": "revenue",
-    "revenues": "revenue",
-    "sales": "revenue",
-    "gross sales": "revenue",
-    "gross revenue": "revenue",
-    "top-line sales": "revenue",
-    "operating turnover": "revenue",
-    "net sales": "revenue",
-    
-    "cogs": "cogs",
-    "cost of goods sold": "cogs",
-    "cost of sales": "cogs",
-    "cost of revenue": "cogs",
-    "cost of services": "cogs",
-    
-    "gross profit": "gross_profit",
-    "gross margin": "gross_profit",
-    
-    "sga": "sga_expense",
-    "sg&a": "sga_expense",
-    "sg&a expense": "sga_expense",
-    "selling general & administrative": "sga_expense",
-    "selling, general and administrative": "sga_expense",
-    "operating expenses sga": "sga_expense",
-    
-    "rd": "rd_expense",
-    "r&d": "rd_expense",
-    "r&d expense": "rd_expense",
-    "research & development": "rd_expense",
-    "research and development": "rd_expense",
-    
-    "depreciation": "depreciation_amortization",
-    "amortization": "depreciation_amortization",
-    "d&a": "depreciation_amortization",
-    "depreciation & amortization": "depreciation_amortization",
-    "depreciation and amortization": "depreciation_amortization",
-    
-    "total operating expenses": "total_operating_expenses",
-    "total opex": "total_operating_expenses",
-    "operating expenses": "total_operating_expenses",
-    
-    "operating income": "operating_income",
-    "ebit": "operating_income",
-    "operating profit": "operating_income",
-    
-    "interest expense": "interest_expense",
-    "finance cost": "interest_expense",
-    "borrowing costs": "interest_expense",
-    
-    "non-operating income": "non_operating_income",
-    "other income": "non_operating_income",
-    "other income expense net": "non_operating_income",
-    
-    "income tax expense": "income_tax_expense",
-    "tax expense": "income_tax_expense",
-    "provision for income taxes": "income_tax_expense",
-    "income taxes": "income_tax_expense",
-    
-    "net income": "net_income",
-    "net profit": "net_income",
-    "bottom line": "net_income",
-    "net earnings": "net_income",
-    
-    # Balance Sheet - Assets
-    "cash and cash equivalents": "cash_and_cash_equivalents",
-    "cash & cash equivalents": "cash_and_cash_equivalents",
-    "cash": "cash_and_cash_equivalents",
-    "liquid cash": "cash_and_cash_equivalents",
-    
-    "accounts receivable": "accounts_receivable_net",
-    "accounts receivable net": "accounts_receivable_net",
-    "accounts receivable, net": "accounts_receivable_net",
-    "trade receivables": "accounts_receivable_net",
-    "trade and other receivables": "accounts_receivable_net",
-    "ar net": "accounts_receivable_net",
-    
-    "inventory": "inventory",
-    "inventories": "inventory",
-    "stock": "inventory",
-    
-    "prepaid expenses": "prepaid_expenses",
-    "prepaids and other current assets": "prepaid_expenses",
-    "prepaid expenses and other current assets": "prepaid_expenses",
-    
-    "total current assets": "total_current_assets",
-    "current assets": "total_current_assets",
-    
-    "ppe": "ppe_net",
-    "ppe net": "ppe_net",
-    "pp&e": "ppe_net",
-    "pp&e net": "ppe_net",
-    "pp&e, net": "ppe_net",
-    "property plant and equipment": "ppe_net",
-    "property, plant and equipment, net": "ppe_net",
-    "fixed assets": "ppe_net",
-    
-    "intangible assets": "intangible_assets",
-    "goodwill and intangibles": "intangible_assets",
-    
-    "total non-current assets": "total_non_current_assets",
-    "total non current assets": "total_non_current_assets",
-    "non-current assets": "total_non_current_assets",
-    
-    "total assets": "total_assets",
-    
-    # Balance Sheet - Liabilities
-    "accounts payable": "accounts_payable",
-    "trade payables": "accounts_payable",
-    "ap": "accounts_payable",
-    
-    "accrued expenses": "accrued_expenses",
-    "accrued liabilities": "accrued_expenses",
-    "other current liabilities": "accrued_expenses",
-    
-    "short-term debt": "short_term_debt",
-    "short term debt": "short_term_debt",
-    "current portion of lt debt": "current_portion_of_lt_debt",
-    "current portion of long-term debt": "current_portion_of_lt_debt",
-    
-    "total current liabilities": "total_current_liabilities",
-    "current liabilities": "total_current_liabilities",
-    
-    "long-term debt": "long_term_debt",
-    "long term debt": "long_term_debt",
-    "non-current debt": "long_term_debt",
-    
-    "total non-current liabilities": "total_non_current_liabilities",
-    "non-current liabilities": "total_non_current_liabilities",
-    
-    "total liabilities": "total_liabilities",
-    
-    # Balance Sheet - Equity
-    "common stock": "common_stock",
-    "share capital": "common_stock",
-    "additional paid-in capital": "additional_paid_in_capital",
-    "apic": "additional_paid_in_capital",
-    
-    "retained earnings": "retained_earnings",
-    "accumulated earnings": "retained_earnings",
-    "accumulated deficit": "retained_earnings",
-    
-    "accumulated other comprehensive income": "aoci",
-    "aoci": "aoci",
-    
-    "treasury stock": "treasury_stock",
-    
-    "total equity": "total_equity",
-    "total stockholders equity": "total_equity",
-    "total shareholders equity": "total_equity",
-    "stockholders equity": "total_equity",
-    
-    # Cash Flow
-    "net income starting": "net_income_starting",
-    "operating cash flow": "operating_cash_flow",
-    "cash from operations": "operating_cash_flow",
-    "investing cash flow": "investing_cash_flow",
-    "cash from investing": "investing_cash_flow",
-    "financing cash flow": "financing_cash_flow",
-    "cash from financing": "financing_cash_flow",
-    "net cash change": "net_cash_change",
-    "beginning cash": "beginning_cash",
-    "ending cash": "ending_cash",
-    "capital expenditures": "capital_expenditures",
-    "capex": "capital_expenditures",
-    "dividends paid": "dividends_paid"
+Maps heterogeneous Layer 1 labels to the exact Layer 3 field/code vocabulary.
+No human-readable display-name layer is produced.
+
+Matching strategy:
+  1. exact canonical name/code
+  2. exact alias after deterministic text normalization
+  3. abbreviation-expanded exact alias
+  4. controlled fuzzy match inside a caller-supplied context
+  5. UNMAPPED / AMBIGUOUS instead of guessing
+"""
+
+from __future__ import annotations
+
+import json
+import re
+import unicodedata
+from dataclasses import dataclass, asdict
+from difflib import SequenceMatcher
+from pathlib import Path
+from typing import Dict, Iterable, List, Optional, Tuple
+
+
+DEFAULT_TAXONOMY = Path(__file__).with_name("canonical_taxonomy.json")
+
+CONTEXT_PATHS = {
+    "balance_sheet": ("statement_fields", "balance_sheet"),
+    "income_statement": ("statement_fields", "income_statement"),
+    "cash_flow_statement": ("statement_fields", "cash_flow_statement"),
+    "equity_statement": ("statement_fields", "equity_statement"),
+    "ar_aging": ("schedule_fields", "ar_aging"),
+    "ppe_sched": ("schedule_fields", "ppe_sched"),
+    "debt_maturity": ("schedule_fields", "debt_maturity"),
+    "budget_metric": ("budget_metric_codes",),
+    "aob_driver": ("aob_driver_codes",),
+    "operational_driver": ("operational_driver_types",),
+    "associated_financial_metric": ("associated_financial_metrics",),
 }
 
 
-def clean_header_text(text: str) -> str:
-    """Strip special characters and extra spaces for matching."""
-    if not text:
-        return ""
-    text = str(text).lower().strip()
-    text = re.sub(r'[\(\)\[\],:\-_/]', ' ', text)
-    text = re.sub(r'\s+', ' ', text).strip()
-    return text
+@dataclass(frozen=True)
+class MappingResult:
+    original_label: str
+    canonical: Optional[str]
+    status: str
+    method: str
+    confidence: float
+    context: Optional[str]
+    normalized_label: str
+    alternatives: Tuple[str, ...] = ()
+
+    def to_dict(self) -> dict:
+        return asdict(self)
 
 
-def map_to_canonical_coa(raw_label: str) -> Tuple[Optional[str], float]:
+class CanonicalMapper:
+    def __init__(
+        self,
+        taxonomy_path: str | Path = DEFAULT_TAXONOMY,
+        fuzzy_threshold: float = 0.88,
+        ambiguity_margin: float = 0.035,
+    ) -> None:
+        self.taxonomy_path = Path(taxonomy_path)
+        self.taxonomy = json.loads(self.taxonomy_path.read_text(encoding="utf-8"))
+        self.fuzzy_threshold = fuzzy_threshold
+        self.ambiguity_margin = ambiguity_margin
+        self.abbreviations = {
+            self._basic_normalize(k): self._basic_normalize(v)
+            for k, v in self.taxonomy.get("abbreviation_expansions", {}).items()
+        }
+        self._indexes = {ctx: self._build_context_index(ctx) for ctx in CONTEXT_PATHS}
+
+    @staticmethod
+    def _basic_normalize(text: str) -> str:
+        text = unicodedata.normalize("NFKD", str(text))
+        text = text.replace("&", " and ")
+        text = text.replace("/", " ")
+        text = text.replace("–", "-").replace("—", "-")
+        text = text.lower().strip()
+        text = re.sub(r"\((loss|expense|repayments?|decrease)\)", r" \1 ", text)
+        text = re.sub(r"[^a-z0-9+><]+", " ", text)
+        text = re.sub(r"\s+", " ", text).strip()
+        return text
+
+    def normalize_label(self, label: str) -> str:
+        text = self._basic_normalize(label)
+        # Whole-label abbreviation first.
+        if text in self.abbreviations:
+            return self.abbreviations[text]
+        # Then token/phrase expansion, longest keys first.
+        for short in sorted(self.abbreviations, key=len, reverse=True):
+            if re.search(rf"(?<![a-z0-9]){re.escape(short)}(?![a-z0-9])", text):
+                text = re.sub(
+                    rf"(?<![a-z0-9]){re.escape(short)}(?![a-z0-9])",
+                    self.abbreviations[short],
+                    text,
+                )
+        return re.sub(r"\s+", " ", text).strip()
+
+    def _get_context_map(self, context: str) -> Dict[str, List[str]]:
+        if context not in CONTEXT_PATHS:
+            raise ValueError(
+                f"Unknown context {context!r}. Expected one of: {', '.join(sorted(CONTEXT_PATHS))}"
+            )
+        obj = self.taxonomy
+        for key in CONTEXT_PATHS[context]:
+            obj = obj[key]
+        return obj
+
+    def _build_context_index(self, context: str) -> dict:
+        mapping = self._get_context_map(context)
+        alias_to_canonicals: Dict[str, set] = {}
+        canonical_aliases: Dict[str, set] = {}
+
+        for canonical, aliases in mapping.items():
+            normalized_aliases = {self.normalize_label(canonical)}
+            normalized_aliases.update(self.normalize_label(a) for a in aliases)
+            canonical_aliases[canonical] = normalized_aliases
+            for alias in normalized_aliases:
+                alias_to_canonicals.setdefault(alias, set()).add(canonical)
+
+        return {
+            "alias_to_canonicals": alias_to_canonicals,
+            "canonical_aliases": canonical_aliases,
+        }
+
+    @staticmethod
+    def _token_score(a: str, b: str) -> float:
+        a_tokens, b_tokens = set(a.split()), set(b.split())
+        if not a_tokens or not b_tokens:
+            return 0.0
+        intersection = len(a_tokens & b_tokens)
+        union = len(a_tokens | b_tokens)
+        return intersection / union if union else 0.0
+
+    @classmethod
+    def _similarity(cls, a: str, b: str) -> float:
+        seq = SequenceMatcher(None, a, b).ratio()
+        token = cls._token_score(a, b)
+        # Sequence score handles spelling errors; token overlap handles word reordering.
+        return max(seq, 0.65 * seq + 0.35 * token, token)
+
+    def map_label(
+        self,
+        label: str,
+        context: str,
+        *,
+        allow_fuzzy: bool = True,
+    ) -> MappingResult:
+        original = str(label)
+        normalized = self.normalize_label(original)
+        idx = self._indexes[context]
+        exact = idx["alias_to_canonicals"].get(normalized, set())
+
+        if len(exact) == 1:
+            canonical = next(iter(exact))
+            method = "canonical_exact" if normalized == self.normalize_label(canonical) else "alias_exact"
+            return MappingResult(original, canonical, "MAPPED", method, 1.0, context, normalized)
+
+        if len(exact) > 1:
+            alts = tuple(sorted(exact))
+            return MappingResult(original, None, "AMBIGUOUS", "alias_collision", 1.0, context, normalized, alts)
+
+        if not allow_fuzzy or not normalized:
+            return MappingResult(original, None, "UNMAPPED", "none", 0.0, context, normalized)
+
+        scored: List[Tuple[float, str, str]] = []
+        for canonical, aliases in idx["canonical_aliases"].items():
+            best_alias = ""
+            best_score = 0.0
+            for alias in aliases:
+                score = self._similarity(normalized, alias)
+                if score > best_score:
+                    best_score, best_alias = score, alias
+            scored.append((best_score, canonical, best_alias))
+
+        scored.sort(reverse=True)
+        best_score, best_canonical, _ = scored[0]
+        second_score = scored[1][0] if len(scored) > 1 else 0.0
+
+        if best_score < self.fuzzy_threshold:
+            alternatives = tuple(c for s, c, _ in scored[:3] if s >= self.fuzzy_threshold - 0.08)
+            return MappingResult(original, None, "UNMAPPED", "fuzzy_below_threshold", round(best_score, 4), context, normalized, alternatives)
+
+        if second_score >= self.fuzzy_threshold and (best_score - second_score) < self.ambiguity_margin:
+            alternatives = tuple(c for s, c, _ in scored[:3] if (best_score - s) < self.ambiguity_margin)
+            return MappingResult(original, None, "AMBIGUOUS", "fuzzy_ambiguous", round(best_score, 4), context, normalized, alternatives)
+
+        return MappingResult(original, best_canonical, "MAPPED", "fuzzy_alias", round(best_score, 4), context, normalized)
+
+    def map_many(self, labels: Iterable[str], context: str, *, allow_fuzzy: bool = True) -> List[dict]:
+        return [self.map_label(x, context, allow_fuzzy=allow_fuzzy).to_dict() for x in labels]
+
+    def canonical_values(self, context: str) -> Tuple[str, ...]:
+        return tuple(self._get_context_map(context).keys())
+
+
+def map_to_canonical(label: str, context: str, taxonomy_path: str | Path = DEFAULT_TAXONOMY) -> Optional[str]:
+    """Convenience function returning only the exact Layer 3 canonical value or None."""
+    result = CanonicalMapper(taxonomy_path).map_label(label, context)
+    return result.canonical if result.status == "MAPPED" else None
+
+
+if __name__ == "__main__":
+    import argparse
+
+    parser = argparse.ArgumentParser(description="Map a financial label to Layer 3 canonical vocabulary.")
+    parser.add_argument("label")
+    parser.add_argument("--context", required=True, choices=sorted(CONTEXT_PATHS))
+    parser.add_argument("--no-fuzzy", action="store_true")
+    args = parser.parse_args()
+
+    result = CanonicalMapper().map_label(args.label, args.context, allow_fuzzy=not args.no_fuzzy)
+    print(json.dumps(result.to_dict(), indent=2))
+
+
+# ---------------------------------------------------------------------------
+# Backward-compatible API used by the existing Excel parser.
+# ---------------------------------------------------------------------------
+_DEFAULT_MAPPER = None
+
+def _get_default_mapper():
+    global _DEFAULT_MAPPER
+    if _DEFAULT_MAPPER is None:
+        _DEFAULT_MAPPER = CanonicalMapper()
+    return _DEFAULT_MAPPER
+
+def map_to_canonical_coa(raw_label: str, context: Optional[str] = None) -> Tuple[Optional[str], float]:
+    """Map a raw financial label to an exact Layer 3 field.
+
+    If context is supplied, mapping is restricted to that statement/schedule.
+    Without context, the label is evaluated across financial contexts and is
+    accepted only when all successful context matches agree on one canonical
+    field.
     """
-    Map raw financial line item string to canonical CoA field key.
-    Returns (canonical_key, confidence_score).
-    """
-    cleaned = clean_header_text(raw_label)
-    if cleaned in CANONICAL_COA_MAP:
-        return CANONICAL_COA_MAP[cleaned], 1.0
+    mapper = _get_default_mapper()
+    if context:
+        result = mapper.map_label(raw_label, context)
+        return (result.canonical, result.confidence) if result.status == "MAPPED" else (None, result.confidence)
 
-    # Try partial substring matching
-    for pattern, canonical in CANONICAL_COA_MAP.items():
-        if pattern == cleaned or pattern in cleaned:
-            return canonical, 0.9
-
+    financial_contexts = (
+        "balance_sheet", "income_statement", "cash_flow_statement",
+        "equity_statement", "ar_aging", "ppe_sched", "debt_maturity",
+    )
+    matches = []
+    for ctx in financial_contexts:
+        result = mapper.map_label(raw_label, ctx)
+        if result.status == "MAPPED" and result.canonical:
+            matches.append(result)
+    canonicals = {m.canonical for m in matches}
+    if len(canonicals) == 1:
+        best = max(matches, key=lambda x: x.confidence)
+        return best.canonical, best.confidence
     return None, 0.0

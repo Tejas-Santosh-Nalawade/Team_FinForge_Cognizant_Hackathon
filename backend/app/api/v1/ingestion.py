@@ -110,3 +110,67 @@ async def upload_financial_statements(
     except Exception as exc:
         db.rollback()
         raise HTTPException(status_code=400, detail=f"Ingestion failed: {str(exc)}") from exc
+
+
+@router.post("/normalize-bundle")
+async def normalize_layer1_zip(
+    file: UploadFile = File(...),
+    include_qualitative: bool = Form(False),
+) -> Dict[str, Any]:
+    """Layer 2 endpoint: infer metadata and normalize a Layer 1 ZIP without executing Layer 3."""
+    import tempfile
+    import zipfile
+    from pathlib import Path
+
+    from backend.app.core.normalization.layer2_service import normalize_layer1_bundle
+
+    filename = file.filename or "layer1_bundle.zip"
+    if not filename.lower().endswith(".zip"):
+        raise HTTPException(status_code=400, detail="normalize-bundle expects a .zip Layer 1 bundle")
+
+    content = await file.read()
+    try:
+        with tempfile.TemporaryDirectory(prefix="finforge_layer2_") as tmp:
+            root = Path(tmp)
+            zip_path = root / "bundle.zip"
+            zip_path.write_bytes(content)
+            extract_root = root / "extracted"
+            extract_root.mkdir()
+
+            with zipfile.ZipFile(zip_path) as zf:
+                resolved_root = extract_root.resolve()
+                for member in zf.infolist():
+                    target = (extract_root / member.filename).resolve()
+                    if resolved_root != target and resolved_root not in target.parents:
+                        raise HTTPException(status_code=400, detail=f"Unsafe ZIP member: {member.filename}")
+                zf.extractall(extract_root)
+
+            true_data = next((p for p in extract_root.rglob("True_data") if p.is_dir()), None)
+            input_root = true_data or extract_root
+            result = normalize_layer1_bundle(
+                [input_root],
+                include_qualitative=include_qualitative,
+            )
+            return {
+                "status": "success" if result["normalization_report"]["summary"].get("layer3_constructor_ready") else "review_required",
+                "layer": 2,
+                "input_root_detected": str(input_root.relative_to(extract_root)) if input_root != extract_root else ".",
+                "summary": result["normalization_report"]["summary"],
+                "detected_metadata": result["financial_statements"].get("metadata", {}),
+                "layer3_payload": result["financial_statements"],
+                "planning_payloads": {
+                    "annual_operating_budget": result.get("annual_operating_budget"),
+                    "rolling_forecast_4q": result.get("rolling_forecast_4q"),
+                    "rolling_forecast_8q": result.get("rolling_forecast_8q"),
+                    "operational_drivers": result.get("operational_drivers"),
+                },
+                "quality_issues": result["normalization_report"].get("quality_issues", []),
+                "unmapped": result["normalization_report"].get("unmapped", []),
+                "ambiguous": result["normalization_report"].get("ambiguous", []),
+                "unit_issues": result["normalization_report"].get("unit_issues", []),
+                "source_trace": result.get("source_trace", []),
+            }
+    except HTTPException:
+        raise
+    except Exception as exc:
+        raise HTTPException(status_code=400, detail=f"Layer 2 normalization failed: {str(exc)}") from exc
