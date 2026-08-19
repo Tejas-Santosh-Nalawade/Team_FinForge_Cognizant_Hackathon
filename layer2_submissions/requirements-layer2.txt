@@ -1,0 +1,2 @@
+# Layer 2 additions. The team backend already has the rest.
+jsonschema>=4.22.0
