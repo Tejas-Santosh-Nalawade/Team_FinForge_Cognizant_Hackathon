@@ -663,88 +663,164 @@ class QualitativeDocumentChunker:
     # BUILD GENERIC DOCUMENT SECTIONS
     # =========================================================
 
-    def _build_generic_sections(
-        self,
-        text: str
-    ):
-
-        text = self._clean_text(text)
-
-        if not text:
-            return []
-
-        lines = text.splitlines()
-
+    def _build_generic_sections(self, full_text: str):
+    
         sections = []
 
-        current_section = "General"
-        current_lines = []
+    # ---------------------------------------------------------
+    # PAGE-AWARE PROCESSING
+    # ---------------------------------------------------------
+    # The IFRS branch of chunk_pdf() adds page markers like:
+    #
+    # [PAGE 1]
+    # text from page 1
+    #
+    # [PAGE 2]
+    # text from page 2
+    #
+    # We split on those markers so that every section keeps
+    # its page_start and page_end metadata.
+    # ---------------------------------------------------------
 
-        for line in lines:
+        page_blocks = re.split(
+            r"\[PAGE\s+(\d+)\]",
+            full_text
+        )
 
-            stripped = line.strip()
+        current_section = None
 
-            if not stripped:
-                if current_lines:
-                    current_lines.append("")
+    # page_blocks structure:
+    #
+    # ["", "1", "page 1 text", "2", "page 2 text", ...]
+
+        for i in range(1, len(page_blocks), 2):
+
+            page_number = int(page_blocks[i])
+            page_text = page_blocks[i + 1].strip()
+
+            if not page_text:
                 continue
 
-            if self._looks_like_heading(stripped):
+        # -----------------------------------------------------
+        # Split page into paragraphs
+        # -----------------------------------------------------
 
-                if current_lines:
+            paragraphs = [
+                paragraph.strip()
+                for paragraph in page_text.split("\n\n")
+                if paragraph.strip()
+            ]
 
-                    section_text = self._clean_text(
-                        "\n".join(current_lines)
-                    )
+            for paragraph in paragraphs:
 
-                    if section_text:
+                lines = paragraph.splitlines()
+
+                first_line = (
+                    lines[0].strip()
+                    if lines
+                    else ""
+                )
+
+                is_heading = False
+
+            # -------------------------------------------------
+            # Detect IFRS headings
+            # -------------------------------------------------
+
+                if first_line:
+
+                # Common IFRS section headings
+                    if re.match(
+                        r"^(Objective|Scope|Definitions|Recognition|"
+                        r"Measurement|Presentation|Disclosure|"
+                        r"Classification|Impairment|Derecognition|"
+                        r"Transition|Effective date|Appendix|"
+                        r"Basis for Conclusions)",
+                        first_line,
+                        re.IGNORECASE
+                    ):
+                        is_heading = True
+
+                # Numbered headings
+                #
+                # Examples:
+                # 1 Scope
+                # 2 Recognition
+                # 3.1 Measurement
+                # 4.2.1 Classification
+                #
+                    elif re.match(
+                        r"^\d+(\.\d+)*\.?\s+",
+                        first_line
+                    ):
+                        is_heading = True
+
+                # Short title-like headings
+                    elif (
+                        len(first_line) <= 120
+                        and len(lines) <= 3
+                        and first_line
+                        and first_line[0].isupper()
+                    ):
+                        is_heading = True
+
+            # -------------------------------------------------
+            # NEW SECTION
+            # -------------------------------------------------
+
+                if is_heading:
+
+                    if current_section:
 
                         sections.append(
-                            {
-                                "section_title":
-                                    current_section,
-
-                                "page_start":
-                                    None,
-
-                                "page_end":
-                                    None,
-
-                                "text":
-                                    section_text,
-                            }
+                            current_section
                         )
 
-                current_section = stripped
-                current_lines = []
-
-            else:
-
-                current_lines.append(stripped)
-
-        if current_lines:
-
-            section_text = self._clean_text(
-                "\n".join(current_lines)
-            )
-
-            if section_text:
-
-                sections.append(
-                    {
-                        "section_title":
-                            current_section,
-
-                        "page_start":
-                            None,
-
-                        "page_end":
-                            None,
-
-                        "text":
-                            section_text,
+                    current_section = {
+                        "section_title": first_line,
+                        "text": paragraph,
+                        "page_start": page_number,
+                        "page_end": page_number,
                     }
-                )
+
+            # -------------------------------------------------
+            # CONTINUE CURRENT SECTION
+            # -------------------------------------------------
+
+                else:
+
+                # If the document starts with text before
+                # the first detected heading.
+                    if current_section is None:
+
+                        current_section = {
+                            "section_title": "General",
+                            "text": paragraph,
+                            "page_start": page_number,
+                            "page_end": page_number,
+                        }
+
+                    else:
+
+                        current_section["text"] += (
+                            "\n\n" + paragraph
+                        )
+
+                    # Update the ending page as the section
+                    # continues across pages.
+                        current_section["page_end"] = (
+                            page_number
+                        )
+
+    # ---------------------------------------------------------
+    # ADD FINAL SECTION
+    # ---------------------------------------------------------
+
+        if current_section:
+
+            sections.append(
+                current_section
+            )
 
         return sections
 
@@ -829,6 +905,57 @@ class QualitativeDocumentChunker:
         pages = self._extract_pages(
             pdf_path
         )
+
+        # ---------------------------------------------------------
+        # IFRS / GENERIC PDF CHUNKING
+        # ---------------------------------------------------------
+        #
+        # OCC documents use the specialized _build_sections()
+        # parser. IFRS documents use the generic section parser.
+        #
+        # This prevents IFRS PDFs from being forced through
+        # OCC-specific heading rules.
+        # ---------------------------------------------------------
+
+        if category == "IFRS":
+
+            page_text = []
+
+            for page_number, page in enumerate(
+                pages,
+                start=1
+            ):
+
+                cleaned_page = self._clean_page_text(
+                    page
+                )
+
+                if cleaned_page:
+
+                    page_text.append(
+                        f"[PAGE {page_number}]\n"
+                        f"{cleaned_page}"
+                    )
+
+            full_text = "\n\n".join(
+                page_text
+            )
+
+            sections = self._build_generic_sections(
+                full_text
+            )
+
+            return self._create_chunks(
+                sections,
+                category,
+                source_organization,
+                authority_status,
+                document_name
+            )
+
+        # ---------------------------------------------------------
+        # EXISTING OCC PDF CHUNKING
+        # ---------------------------------------------------------
 
         sections = self._build_sections(
             pages
