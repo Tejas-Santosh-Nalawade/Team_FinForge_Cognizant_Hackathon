@@ -1,0 +1,1316 @@
+{
+  "total_files": 14,
+  "total_chunks": 501,
+  "file_analysis": [
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\BOARD_OVERSIGHT_board_credit_risk_memo_2024.jsonl",
+      "records": 7,
+      "characters": 879,
+      "min_chunk_size": 44,
+      "max_chunk_size": 169,
+      "average_chunk_size": 125.57,
+      "section_count": 7,
+      "top_sections": [
+        [
+          "BOARD OVERSIGHT MEMO — FY2024 CREDIT RISK REVIEW",
+          1
+        ],
+        [
+          "Purpose",
+          1
+        ],
+        [
+          "Credit Risk",
+          1
+        ],
+        [
+          "Portfolio Monitoring",
+          1
+        ],
+        [
+          "Liquidity and Capital",
+          1
+        ],
+        [
+          "Board Oversight Actions",
+          1
+        ],
+        [
+          "Follow-Up",
+          1
+        ]
+      ],
+      "categories": {
+        "BOARD_OVERSIGHT": 7
+      },
+      "authority_statuses": {
+        "non_authoritative": 7
+      },
+      "unique_chunk_ids": 7,
+      "duplicate_chunk_ids": 0,
+      "text_hash": "592cc1281b1336e060798d7f90e46c11358dd25f23d3b4ad83dfb30fba3808e1"
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\BOARD_OVERSIGHT_board_credit_risk_memo_2025.jsonl",
+      "records": 8,
+      "characters": 1044,
+      "min_chunk_size": 110,
+      "max_chunk_size": 160,
+      "average_chunk_size": 130.5,
+      "section_count": 8,
+      "top_sections": [
+        [
+          "General",
+          1
+        ],
+        [
+          "Purpose",
+          1
+        ],
+        [
+          "Financial Performance",
+          1
+        ],
+        [
+          "Credit and Collection Risk",
+          1
+        ],
+        [
+          "Risk Appetite",
+          1
+        ],
+        [
+          "Management Actions",
+          1
+        ],
+        [
+          "Board Oversight Actions",
+          1
+        ],
+        [
+          "Follow-Up",
+          1
+        ]
+      ],
+      "categories": {
+        "BOARD_OVERSIGHT": 8
+      },
+      "authority_statuses": {
+        "non_authoritative": 8
+      },
+      "unique_chunk_ids": 8,
+      "duplicate_chunk_ids": 0,
+      "text_hash": "9617007a8d2a4d4bebc2c7cd77a44961626094253f247d26018148e0278b7c02"
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\BOARD_OVERSIGHT_board_credit_risk_memo_2026.jsonl",
+      "records": 8,
+      "characters": 1161,
+      "min_chunk_size": 87,
+      "max_chunk_size": 229,
+      "average_chunk_size": 145.12,
+      "section_count": 8,
+      "top_sections": [
+        [
+          "General",
+          1
+        ],
+        [
+          "Purpose",
+          1
+        ],
+        [
+          "Financial and Working-Capital Review",
+          1
+        ],
+        [
+          "Credit Risk",
+          1
+        ],
+        [
+          "Liquidity",
+          1
+        ],
+        [
+          "Risk Appetite and Controls",
+          1
+        ],
+        [
+          "Board Oversight Actions",
+          1
+        ],
+        [
+          "Follow-Up",
+          1
+        ]
+      ],
+      "categories": {
+        "BOARD_OVERSIGHT": 8
+      },
+      "authority_statuses": {
+        "non_authoritative": 8
+      },
+      "unique_chunk_ids": 8,
+      "duplicate_chunk_ids": 0,
+      "text_hash": "9d8d3a6a3ce242b8f13e23722bf90d232455a0b9647b1e0996775ff82de6c7af"
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\CREDIT_RISK_Lending_and_Loan_Portfolio_Risk_Management_2026.jsonl",
+      "records": 113,
+      "characters": 352452,
+      "min_chunk_size": 181,
+      "max_chunk_size": 5873,
+      "average_chunk_size": 3119.04,
+      "section_count": 73,
+      "top_sections": [
+        [
+          "Background",
+          9
+        ],
+        [
+          "Appendix A: Quantity of Credit Risk Indicators",
+          7
+        ],
+        [
+          "Retail Credit Structure and Sources of Repayment",
+          4
+        ],
+        [
+          "Training",
+          3
+        ],
+        [
+          "Loan Purchase Activities",
+          3
+        ],
+        [
+          "Model Risk Management",
+          3
+        ],
+        [
+          "Scope",
+          3
+        ],
+        [
+          "Determine Population, Areas of Focus, and Sample Size",
+          3
+        ],
+        [
+          "Strategic and Operational Planning",
+          2
+        ],
+        [
+          "Strategic Planning",
+          2
+        ]
+      ],
+      "categories": {
+        "CREDIT_RISK": 113
+      },
+      "authority_statuses": {
+        "official_OCC": 113
+      },
+      "unique_chunk_ids": 113,
+      "duplicate_chunk_ids": 0,
+      "text_hash": "d0489d385be695b5b53b8097ac73eb57b60346c67ffade7fcb504458fe93daf0"
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\IFRS_IFRS_1_First-time_Adoption.jsonl",
+      "records": 19,
+      "characters": 92203,
+      "min_chunk_size": 1807,
+      "max_chunk_size": 5941,
+      "average_chunk_size": 4852.79,
+      "section_count": 6,
+      "top_sections": [
+        [
+          "General",
+          7
+        ],
+        [
+          "Appendix D",
+          6
+        ],
+        [
+          "Appendix B",
+          2
+        ],
+        [
+          "Appendix C",
+          2
+        ],
+        [
+          "Appendix A",
+          1
+        ],
+        [
+          "Appendix E",
+          1
+        ]
+      ],
+      "categories": {
+        "IFRS": 19
+      },
+      "authority_statuses": {
+        "official_IFRS": 19
+      },
+      "unique_chunk_ids": 19,
+      "duplicate_chunk_ids": 0,
+      "text_hash": "0ba1e176b545ebaa1ad53d92575fc6614a1b005c1fbb51aee0dc53693f6feb54"
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\IFRS_IFRS_7_Financial_Instruments_Disclosures.jsonl",
+      "records": 29,
+      "characters": 146392,
+      "min_chunk_size": 2533,
+      "max_chunk_size": 5967,
+      "average_chunk_size": 5048.0,
+      "section_count": 5,
+      "top_sections": [
+        [
+          "General",
+          18
+        ],
+        [
+          "Appendix B",
+          8
+        ],
+        [
+          "Appendix A",
+          1
+        ],
+        [
+          "Disclosure of the net amounts presented in the statement of",
+          1
+        ],
+        [
+          "Appendix C",
+          1
+        ]
+      ],
+      "categories": {
+        "IFRS": 29
+      },
+      "authority_statuses": {
+        "official_IFRS": 29
+      },
+      "unique_chunk_ids": 29,
+      "duplicate_chunk_ids": 0,
+      "text_hash": "7ba71a7a35f29ed4763d3fae5678c1fcdfe585ebb4dafc0c2bbfb9812c2f49d0"
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\IFRS_IFRS_9_Financial_Instruments.jsonl",
+      "records": 111,
+      "characters": 486245,
+      "min_chunk_size": 1279,
+      "max_chunk_size": 5998,
+      "average_chunk_size": 4380.59,
+      "section_count": 10,
+      "top_sections": [
+        [
+          "Classification (Chapter 4)",
+          62
+        ],
+        [
+          "5.7 Gains and losses",
+          18
+        ],
+        [
+          "General",
+          10
+        ],
+        [
+          "Derecognition of financial assets (Section 3.2)",
+          8
+        ],
+        [
+          "5.2 Subsequent measurement of financial assets",
+          4
+        ],
+        [
+          "Appendix A",
+          3
+        ],
+        [
+          "Appendix B",
+          2
+        ],
+        [
+          "Effective date and transition (Chapter 7)",
+          2
+        ],
+        [
+          "recognition of a receivable from the buyer for payment on the trade date.",
+          1
+        ],
+        [
+          "Appendix C",
+          1
+        ]
+      ],
+      "categories": {
+        "IFRS": 111
+      },
+      "authority_statuses": {
+        "official_IFRS": 111
+      },
+      "unique_chunk_ids": 111,
+      "duplicate_chunk_ids": 0,
+      "text_hash": "dcf07f32adb5f1f95e42db4c16a4c31f7da6444d0f7ba2bf88919d8af4c119b9"
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\MDA_BOARD_combined.jsonl",
+      "records": 51,
+      "characters": 8531,
+      "min_chunk_size": 44,
+      "max_chunk_size": 590,
+      "average_chunk_size": 167.27,
+      "section_count": 29,
+      "top_sections": [
+        [
+          "Financial Performance Context",
+          4
+        ],
+        [
+          "Management Explanation",
+          4
+        ],
+        [
+          "Management Conclusion",
+          4
+        ],
+        [
+          "Purpose",
+          3
+        ],
+        [
+          "Board Oversight Actions",
+          3
+        ],
+        [
+          "Follow-Up",
+          3
+        ],
+        [
+          "Working Capital",
+          3
+        ],
+        [
+          "Cash Flow",
+          3
+        ],
+        [
+          "Credit Risk",
+          2
+        ],
+        [
+          "General",
+          2
+        ]
+      ],
+      "categories": {
+        "BOARD_OVERSIGHT": 23,
+        "MDA": 28
+      },
+      "authority_statuses": {
+        "non_authoritative": 51
+      },
+      "unique_chunk_ids": 51,
+      "duplicate_chunk_ids": 0,
+      "text_hash": "d409a78708ebbc257bb34866905f90a88b8fa9da73e050a20c03eac01010ebde"
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\MDA_MDA_REL_01_Credit_Terms.jsonl",
+      "records": 7,
+      "characters": 2118,
+      "min_chunk_size": 202,
+      "max_chunk_size": 590,
+      "average_chunk_size": 302.57,
+      "section_count": 7,
+      "top_sections": [
+        [
+          "SYNTHETIC TEST DATA",
+          1
+        ],
+        [
+          "Financial Performance Context",
+          1
+        ],
+        [
+          "Management Explanation",
+          1
+        ],
+        [
+          "Working Capital Impact",
+          1
+        ],
+        [
+          "Math Engine Flag: REL_01",
+          1
+        ],
+        [
+          "Relevant Context Keywords",
+          1
+        ],
+        [
+          "Management Conclusion",
+          1
+        ]
+      ],
+      "categories": {
+        "MDA": 7
+      },
+      "authority_statuses": {
+        "non_authoritative": 7
+      },
+      "unique_chunk_ids": 7,
+      "duplicate_chunk_ids": 0,
+      "text_hash": "95d2f00b4776fe9dbcde70ec8fa20662dd4469ed2034d1246ea733e27c513232"
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\MDA_prior_period_2024.jsonl",
+      "records": 6,
+      "characters": 896,
+      "min_chunk_size": 44,
+      "max_chunk_size": 231,
+      "average_chunk_size": 149.33,
+      "section_count": 6,
+      "top_sections": [
+        [
+          "PRIOR-PERIOD MD&A COMMENTARY — FY2024",
+          1
+        ],
+        [
+          "Financial Performance Context",
+          1
+        ],
+        [
+          "Working Capital",
+          1
+        ],
+        [
+          "Cash Flow",
+          1
+        ],
+        [
+          "Management Explanation",
+          1
+        ],
+        [
+          "Management Conclusion",
+          1
+        ]
+      ],
+      "categories": {
+        "MDA": 6
+      },
+      "authority_statuses": {
+        "non_authoritative": 6
+      },
+      "unique_chunk_ids": 6,
+      "duplicate_chunk_ids": 0,
+      "text_hash": "5bec21c7f294ef15d6649c9fedd1392cfa1b0fd830c7ec75a3360c5c5f7e2bdb"
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\MDA_prior_period_2025.jsonl",
+      "records": 7,
+      "characters": 1022,
+      "min_chunk_size": 44,
+      "max_chunk_size": 193,
+      "average_chunk_size": 146.0,
+      "section_count": 7,
+      "top_sections": [
+        [
+          "PRIOR-PERIOD MD&A COMMENTARY — FY2025",
+          1
+        ],
+        [
+          "Financial Performance Context",
+          1
+        ],
+        [
+          "Working Capital",
+          1
+        ],
+        [
+          "Operating Drivers",
+          1
+        ],
+        [
+          "Cash Flow",
+          1
+        ],
+        [
+          "Management Explanation",
+          1
+        ],
+        [
+          "Management Conclusion",
+          1
+        ]
+      ],
+      "categories": {
+        "MDA": 7
+      },
+      "authority_statuses": {
+        "non_authoritative": 7
+      },
+      "unique_chunk_ids": 7,
+      "duplicate_chunk_ids": 0,
+      "text_hash": "2e81fee7e939b89a315e6895b0cf19f225d3e9a966283b682b4cc5d299b4ef41"
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\MDA_prior_period_2026.jsonl",
+      "records": 7,
+      "characters": 1152,
+      "min_chunk_size": 44,
+      "max_chunk_size": 224,
+      "average_chunk_size": 164.57,
+      "section_count": 7,
+      "top_sections": [
+        [
+          "PRIOR-PERIOD MD&A COMMENTARY — FY2026",
+          1
+        ],
+        [
+          "Financial Performance Context",
+          1
+        ],
+        [
+          "Working Capital",
+          1
+        ],
+        [
+          "Cash Flow",
+          1
+        ],
+        [
+          "Operating Drivers",
+          1
+        ],
+        [
+          "Management Explanation",
+          1
+        ],
+        [
+          "Management Conclusion",
+          1
+        ]
+      ],
+      "categories": {
+        "MDA": 7
+      },
+      "authority_statuses": {
+        "non_authoritative": 7
+      },
+      "unique_chunk_ids": 7,
+      "duplicate_chunk_ids": 0,
+      "text_hash": "a90fdea604dd60d5dd4efd7d35bc8895b31fdf68447fb5289834a14faa4209d8"
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\MDA_REL_01_test.jsonl",
+      "records": 1,
+      "characters": 259,
+      "min_chunk_size": 259,
+      "max_chunk_size": 259,
+      "average_chunk_size": 259.0,
+      "section_count": 1,
+      "top_sections": [
+        [
+          "﻿REL_01 Test Context",
+          1
+        ]
+      ],
+      "categories": {
+        "MDA": 1
+      },
+      "authority_statuses": {
+        "non_authoritative": 1
+      },
+      "unique_chunk_ids": 1,
+      "duplicate_chunk_ids": 0,
+      "text_hash": "97b54b401256ab7e320bc80cef7d0f39ad844a7ae11074b5d38cf073b396b597"
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\US_GAAP_ASC_326_ASU_2016-13.jsonl",
+      "records": 127,
+      "characters": 659848,
+      "min_chunk_size": 551,
+      "max_chunk_size": 5923,
+      "average_chunk_size": 5195.65,
+      "section_count": 1,
+      "top_sections": [
+        [
+          "Introduction",
+          127
+        ]
+      ],
+      "categories": {
+        "US_GAAP": 127
+      },
+      "authority_statuses": {
+        "official_FASB_not_authoritative_standard": 127
+      },
+      "unique_chunk_ids": 127,
+      "duplicate_chunk_ids": 0,
+      "text_hash": "d67c5594f0e7c685c8bbbdeee586dea593ec968fc04c1f382a50592eed41e877"
+    }
+  ],
+  "credit_risk_similarity": [],
+  "cross_document_duplicate_chunks": [
+    {
+      "text_preview": "Synthetic test document — non-authoritative.",
+      "locations": [
+        {
+          "file": "BOARD_OVERSIGHT_board_credit_risk_memo_2024.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2024_0001"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2024_0001"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_prior_period_2024_0001"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_prior_period_2025_0001"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_prior_period_2026_0001"
+        },
+        {
+          "file": "MDA_prior_period_2024.jsonl",
+          "chunk_id": "MDA_prior_period_2024_0001"
+        },
+        {
+          "file": "MDA_prior_period_2025.jsonl",
+          "chunk_id": "MDA_prior_period_2025_0001"
+        },
+        {
+          "file": "MDA_prior_period_2026.jsonl",
+          "chunk_id": "MDA_prior_period_2026_0001"
+        }
+      ]
+    },
+    {
+      "text_preview": "This memo summarizes matters presented to the Board regarding credit risk, portfolio quality, and management oversight during FY2024.",
+      "locations": [
+        {
+          "file": "BOARD_OVERSIGHT_board_credit_risk_memo_2024.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2024_0002"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2024_0002"
+        }
+      ]
+    },
+    {
+      "text_preview": "Management reported that overall credit quality remained within the Board-approved risk appetite. Concentrations in selected customer and lending segments were reviewed.",
+      "locations": [
+        {
+          "file": "BOARD_OVERSIGHT_board_credit_risk_memo_2024.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2024_0003"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2024_0003"
+        }
+      ]
+    },
+    {
+      "text_preview": "Management was asked to continue monitoring delinquency trends, concentration exposure, customer payment behavior, and emerging credit risks.",
+      "locations": [
+        {
+          "file": "BOARD_OVERSIGHT_board_credit_risk_memo_2024.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2024_0004"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2024_0004"
+        }
+      ]
+    },
+    {
+      "text_preview": "The Board reviewed liquidity and capital indicators and requested that management maintain sufficient capacity to absorb adverse changes in credit conditions.",
+      "locations": [
+        {
+          "file": "BOARD_OVERSIGHT_board_credit_risk_memo_2024.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2024_0005"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2024_0005"
+        }
+      ]
+    },
+    {
+      "text_preview": "The Board requested periodic reporting on material changes in portfolio quality, risk concentrations, and credit-loss expectations.",
+      "locations": [
+        {
+          "file": "BOARD_OVERSIGHT_board_credit_risk_memo_2024.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2024_0006"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2024_0006"
+        }
+      ]
+    },
+    {
+      "text_preview": "Management was directed to provide an updated credit-risk dashboard at the next scheduled Board review.",
+      "locations": [
+        {
+          "file": "BOARD_OVERSIGHT_board_credit_risk_memo_2024.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2024_0007"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2024_0007"
+        }
+      ]
+    },
+    {
+      "text_preview": "BOARD OVERSIGHT MEMO — FY2025 RISK AND FINANCIAL PERFORMANCE REVIEW\nSynthetic test document — non-authoritative.",
+      "locations": [
+        {
+          "file": "BOARD_OVERSIGHT_board_credit_risk_memo_2025.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2025_0001"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2025_0001"
+        }
+      ]
+    },
+    {
+      "text_preview": "This memo records key matters discussed by the Board concerning financial performance, credit risk, working capital, and risk management.",
+      "locations": [
+        {
+          "file": "BOARD_OVERSIGHT_board_credit_risk_memo_2025.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2025_0002"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2025_0002"
+        }
+      ]
+    },
+    {
+      "text_preview": "Management presented revenue growth, operating expense trends, cash conversion, and working-capital movements.",
+      "locations": [
+        {
+          "file": "BOARD_OVERSIGHT_board_credit_risk_memo_2025.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2025_0003"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2025_0003"
+        }
+      ]
+    },
+    {
+      "text_preview": "The Board discussed the increase in Accounts Receivable and requested additional monitoring of customer payment behavior and overdue balances.",
+      "locations": [
+        {
+          "file": "BOARD_OVERSIGHT_board_credit_risk_memo_2025.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2025_0004"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2025_0004"
+        }
+      ]
+    },
+    {
+      "text_preview": "Management confirmed that material risk exposures continued to be evaluated against Board-approved risk appetite limits.",
+      "locations": [
+        {
+          "file": "BOARD_OVERSIGHT_board_credit_risk_memo_2025.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2025_0005"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2025_0005"
+        }
+      ]
+    },
+    {
+      "text_preview": "Management committed to strengthening collection monitoring for selected large customer contracts and improving reporting of aging and concentration indicators.",
+      "locations": [
+        {
+          "file": "BOARD_OVERSIGHT_board_credit_risk_memo_2025.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2025_0006"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2025_0006"
+        }
+      ]
+    },
+    {
+      "text_preview": "The Board requested quarterly reporting on receivables aging, customer concentrations, collection performance, and material changes in credit terms.",
+      "locations": [
+        {
+          "file": "BOARD_OVERSIGHT_board_credit_risk_memo_2025.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2025_0007"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2025_0007"
+        }
+      ]
+    },
+    {
+      "text_preview": "Management will report significant deviations from expected collection patterns to the appropriate Board committee.",
+      "locations": [
+        {
+          "file": "BOARD_OVERSIGHT_board_credit_risk_memo_2025.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2025_0008"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2025_0008"
+        }
+      ]
+    },
+    {
+      "text_preview": "BOARD OVERSIGHT MEMO — FY2026 CREDIT, LIQUIDITY, AND STRATEGIC OVERSIGHT\nSynthetic test document — non-authoritative.",
+      "locations": [
+        {
+          "file": "BOARD_OVERSIGHT_board_credit_risk_memo_2026.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2026_0001"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2026_0001"
+        }
+      ]
+    },
+    {
+      "text_preview": "This memo summarizes matters considered by the Board during the FY2026 oversight cycle.",
+      "locations": [
+        {
+          "file": "BOARD_OVERSIGHT_board_credit_risk_memo_2026.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2026_0002"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2026_0002"
+        }
+      ]
+    },
+    {
+      "text_preview": "Management reported revenue growth of approximately 12% and a 38% increase in Accounts Receivable. The Board discussed the effect of extended payment terms on cash conversion and working capital.",
+      "locations": [
+        {
+          "file": "BOARD_OVERSIGHT_board_credit_risk_memo_2026.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2026_0003"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2026_0003"
+        }
+      ]
+    },
+    {
+      "text_preview": "The Board reviewed customer concentration, payment behavior, receivables aging, and potential credit deterioration. Management explained that selected large multi-year contracts had payment terms exte",
+      "locations": [
+        {
+          "file": "BOARD_OVERSIGHT_board_credit_risk_memo_2026.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2026_0004"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2026_0004"
+        }
+      ]
+    },
+    {
+      "text_preview": "The Board requested continued monitoring of cash conversion and liquidity capacity while extended payment terms remain in effect.",
+      "locations": [
+        {
+          "file": "BOARD_OVERSIGHT_board_credit_risk_memo_2026.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2026_0005"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2026_0005"
+        }
+      ]
+    },
+    {
+      "text_preview": "Management confirmed that material exposures were being evaluated against established risk appetite and internal control processes.",
+      "locations": [
+        {
+          "file": "BOARD_OVERSIGHT_board_credit_risk_memo_2026.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2026_0006"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2026_0006"
+        }
+      ]
+    },
+    {
+      "text_preview": "The Board requested enhanced reporting on receivables aging, collections, customer concentrations, extended payment terms, and related working-capital effects.",
+      "locations": [
+        {
+          "file": "BOARD_OVERSIGHT_board_credit_risk_memo_2026.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2026_0007"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2026_0007"
+        }
+      ]
+    },
+    {
+      "text_preview": "Management will provide updated metrics and escalation of material adverse trends during subsequent Board reviews.",
+      "locations": [
+        {
+          "file": "BOARD_OVERSIGHT_board_credit_risk_memo_2026.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2026_0008"
+        },
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "BOARD_OVERSIGHT_board_credit_risk_memo_2026_0008"
+        }
+      ]
+    },
+    {
+      "text_preview": "This document has been created solely for testing the qualitative document ingestion and RAG matching pipeline. It is not an actual company filing, management report, board memo, or authoritative acco",
+      "locations": [
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_MDA_REL_01_Credit_Terms_0001"
+        },
+        {
+          "file": "MDA_MDA_REL_01_Credit_Terms.jsonl",
+          "chunk_id": "MDA_MDA_REL_01_Credit_Terms_0001"
+        }
+      ]
+    },
+    {
+      "text_preview": "During FY2026, Accounts Receivable increased by approximately 38% compared with the prior period, while Revenue increased by approximately 12%.\n\nThe increase in Accounts Receivable relative to Revenue",
+      "locations": [
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_MDA_REL_01_Credit_Terms_0002"
+        },
+        {
+          "file": "MDA_MDA_REL_01_Credit_Terms.jsonl",
+          "chunk_id": "MDA_MDA_REL_01_Credit_Terms_0002"
+        }
+      ]
+    },
+    {
+      "text_preview": "During the period, the company extended standard customer credit terms from 30 days to 60 days for selected large multi-year contracts.\n\nThe extended payment terms were provided to support the closing",
+      "locations": [
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_MDA_REL_01_Credit_Terms_0003"
+        },
+        {
+          "file": "MDA_MDA_REL_01_Credit_Terms.jsonl",
+          "chunk_id": "MDA_MDA_REL_01_Credit_Terms_0003"
+        }
+      ]
+    },
+    {
+      "text_preview": "The increase in trade receivables temporarily increased working capital requirements because cash collection occurs later under the extended customer payment terms.\n\nManagement continues to monitor cu",
+      "locations": [
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_MDA_REL_01_Credit_Terms_0004"
+        },
+        {
+          "file": "MDA_MDA_REL_01_Credit_Terms.jsonl",
+          "chunk_id": "MDA_MDA_REL_01_Credit_Terms_0004"
+        }
+      ]
+    },
+    {
+      "text_preview": "Flag condition: Accounts Receivable growth of approximately 38% compared with Revenue growth of approximately 12%.\n\nPotential qualitative explanation: customer credit terms were extended from 30 days ",
+      "locations": [
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_MDA_REL_01_Credit_Terms_0005"
+        },
+        {
+          "file": "MDA_MDA_REL_01_Credit_Terms.jsonl",
+          "chunk_id": "MDA_MDA_REL_01_Credit_Terms_0005"
+        }
+      ]
+    },
+    {
+      "text_preview": "REL_01, Accounts Receivable, trade receivables, Revenue, credit terms, customer payment terms, 30 days, 60 days, extended payment terms, multi-year contracts, large customer contracts, working capital",
+      "locations": [
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_MDA_REL_01_Credit_Terms_0006"
+        },
+        {
+          "file": "MDA_MDA_REL_01_Credit_Terms.jsonl",
+          "chunk_id": "MDA_MDA_REL_01_Credit_Terms_0006"
+        }
+      ]
+    },
+    {
+      "text_preview": "Management believes that the increase in Accounts Receivable relative to Revenue is primarily explained by the temporary impact of extended customer payment terms on selected large multi-year contract",
+      "locations": [
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_MDA_REL_01_Credit_Terms_0007"
+        },
+        {
+          "file": "MDA_MDA_REL_01_Credit_Terms.jsonl",
+          "chunk_id": "MDA_MDA_REL_01_Credit_Terms_0007"
+        }
+      ]
+    },
+    {
+      "text_preview": "Revenue increased approximately 8% compared with FY2023. Operating expenses increased approximately 6%, reflecting additional personnel and technology investments.",
+      "locations": [
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_prior_period_2024_0002"
+        },
+        {
+          "file": "MDA_prior_period_2024.jsonl",
+          "chunk_id": "MDA_prior_period_2024_0002"
+        }
+      ]
+    },
+    {
+      "text_preview": "Accounts Receivable increased approximately 10% compared with the prior period. Management attributed the increase primarily to higher sales volume and a temporary increase in customer payment terms f",
+      "locations": [
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_prior_period_2024_0003"
+        },
+        {
+          "file": "MDA_prior_period_2024.jsonl",
+          "chunk_id": "MDA_prior_period_2024_0003"
+        }
+      ]
+    },
+    {
+      "text_preview": "Operating cash flow remained positive, although cash conversion was affected by the increase in trade receivables.",
+      "locations": [
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_prior_period_2024_0004"
+        },
+        {
+          "file": "MDA_prior_period_2024.jsonl",
+          "chunk_id": "MDA_prior_period_2024_0004"
+        }
+      ]
+    },
+    {
+      "text_preview": "Management continued to monitor customer collections, overdue balances, and changes in payment behavior. No material deterioration in the overall customer credit profile was identified during the peri",
+      "locations": [
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_prior_period_2024_0005"
+        },
+        {
+          "file": "MDA_prior_period_2024.jsonl",
+          "chunk_id": "MDA_prior_period_2024_0005"
+        }
+      ]
+    },
+    {
+      "text_preview": "Management believes the FY2024 working-capital changes were primarily related to business growth and temporary customer payment-term changes.",
+      "locations": [
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_prior_period_2024_0006"
+        },
+        {
+          "file": "MDA_prior_period_2024.jsonl",
+          "chunk_id": "MDA_prior_period_2024_0006"
+        }
+      ]
+    },
+    {
+      "text_preview": "Revenue increased approximately 11% compared with FY2024. Operating expenses increased approximately 9%, mainly due to higher employee costs and expanded operating capacity.",
+      "locations": [
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_prior_period_2025_0002"
+        },
+        {
+          "file": "MDA_prior_period_2025.jsonl",
+          "chunk_id": "MDA_prior_period_2025_0002"
+        }
+      ]
+    },
+    {
+      "text_preview": "Accounts Receivable increased approximately 18%, exceeding the rate of revenue growth. Management attributed part of the increase to extended payment terms on selected large customer contracts.",
+      "locations": [
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_prior_period_2025_0003"
+        },
+        {
+          "file": "MDA_prior_period_2025.jsonl",
+          "chunk_id": "MDA_prior_period_2025_0003"
+        }
+      ]
+    },
+    {
+      "text_preview": "Headcount increased approximately 7% during the year to support business expansion. Management continued to evaluate productivity and staffing requirements across operating functions.",
+      "locations": [
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_prior_period_2025_0004"
+        },
+        {
+          "file": "MDA_prior_period_2025.jsonl",
+          "chunk_id": "MDA_prior_period_2025_0004"
+        }
+      ]
+    },
+    {
+      "text_preview": "The increase in trade receivables created additional working-capital requirements and temporarily reduced cash conversion.",
+      "locations": [
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_prior_period_2025_0005"
+        },
+        {
+          "file": "MDA_prior_period_2025.jsonl",
+          "chunk_id": "MDA_prior_period_2025_0005"
+        }
+      ]
+    },
+    {
+      "text_preview": "Management stated that collection performance remained within expected ranges, while certain large contracts had longer payment cycles than the standard customer terms.",
+      "locations": [
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_prior_period_2025_0006"
+        },
+        {
+          "file": "MDA_prior_period_2025.jsonl",
+          "chunk_id": "MDA_prior_period_2025_0006"
+        }
+      ]
+    },
+    {
+      "text_preview": "Management expects working-capital efficiency to improve as the affected contracts move through their normal billing and collection cycles.",
+      "locations": [
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_prior_period_2025_0007"
+        },
+        {
+          "file": "MDA_prior_period_2025.jsonl",
+          "chunk_id": "MDA_prior_period_2025_0007"
+        }
+      ]
+    },
+    {
+      "text_preview": "Revenue increased approximately 12% compared with FY2025. Operating expenses increased approximately 10%, primarily due to personnel expansion, technology investments, and increased operating activity",
+      "locations": [
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_prior_period_2026_0002"
+        },
+        {
+          "file": "MDA_prior_period_2026.jsonl",
+          "chunk_id": "MDA_prior_period_2026_0002"
+        }
+      ]
+    },
+    {
+      "text_preview": "Accounts Receivable increased approximately 38%, materially faster than revenue. Management identified extended customer payment terms from 30 days to 60 days for selected large multi-year contracts a",
+      "locations": [
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_prior_period_2026_0003"
+        },
+        {
+          "file": "MDA_prior_period_2026.jsonl",
+          "chunk_id": "MDA_prior_period_2026_0003"
+        }
+      ]
+    },
+    {
+      "text_preview": "The increase in outstanding trade receivables temporarily increased working-capital requirements because cash collections occurred later under the extended payment terms.",
+      "locations": [
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_prior_period_2026_0004"
+        },
+        {
+          "file": "MDA_prior_period_2026.jsonl",
+          "chunk_id": "MDA_prior_period_2026_0004"
+        }
+      ]
+    },
+    {
+      "text_preview": "Headcount increased approximately 9% to support higher business volumes and customer commitments. Management continued monitoring utilization and staffing efficiency.",
+      "locations": [
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_prior_period_2026_0005"
+        },
+        {
+          "file": "MDA_prior_period_2026.jsonl",
+          "chunk_id": "MDA_prior_period_2026_0005"
+        }
+      ]
+    },
+    {
+      "text_preview": "Management continues to monitor customer collections, outstanding invoices, aging trends, and payment behavior for customers receiving extended terms.",
+      "locations": [
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_prior_period_2026_0006"
+        },
+        {
+          "file": "MDA_prior_period_2026.jsonl",
+          "chunk_id": "MDA_prior_period_2026_0006"
+        }
+      ]
+    },
+    {
+      "text_preview": "Management believes the increase in Accounts Receivable relative to Revenue is primarily explained by the temporary impact of extended customer payment terms on selected large multi-year contracts.",
+      "locations": [
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_prior_period_2026_0007"
+        },
+        {
+          "file": "MDA_prior_period_2026.jsonl",
+          "chunk_id": "MDA_prior_period_2026_0007"
+        }
+      ]
+    },
+    {
+      "text_preview": "Accounts Receivable increased by 38% while Revenue increased by 12%.\n\nManagement explanation: selected large multi-year contracts were given\nextended customer payment terms from 30 days to 60 days.\n\nT",
+      "locations": [
+        {
+          "file": "MDA_BOARD_combined.jsonl",
+          "chunk_id": "MDA_REL_01_test_0001"
+        },
+        {
+          "file": "MDA_REL_01_test.jsonl",
+          "chunk_id": "MDA_REL_01_test_0001"
+        }
+      ]
+    }
+  ],
+  "quality_checks": {
+    "empty_chunks": 0,
+    "oversized_chunks": 0,
+    "missing_metadata": 0,
+    "cross_document_duplicate_chunks": 48
+  }
+}

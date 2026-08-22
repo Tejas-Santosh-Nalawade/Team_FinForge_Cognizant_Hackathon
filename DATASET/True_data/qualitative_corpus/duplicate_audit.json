@@ -1,0 +1,184 @@
+{
+  "input_directory": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks",
+  "total_files": 14,
+  "total_duplicate_groups": 0,
+  "files": [
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\BOARD_OVERSIGHT_board_credit_risk_memo_2024.jsonl",
+      "records": 7,
+      "content_hash": "a92f521347ff16e704a9b4d642c2b7316a385a13d0eb463eddfd36cd75e44ef9",
+      "file_hash": "5af2b2149bd72bd31649b0a27cd68017702eb58acfc9f2fd89e7d1c57c5e040e",
+      "document_names": [
+        "board_credit_risk_memo_2024"
+      ],
+      "categories": [
+        "BOARD_OVERSIGHT"
+      ]
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\BOARD_OVERSIGHT_board_credit_risk_memo_2025.jsonl",
+      "records": 8,
+      "content_hash": "391419da2893918227f3c32a78521f74c127b5f01ae84e720d55e8923b1ff439",
+      "file_hash": "ad59707c9928d3aa120fdb9f08463170638b988713900b599190f30f014e15f9",
+      "document_names": [
+        "board_credit_risk_memo_2025"
+      ],
+      "categories": [
+        "BOARD_OVERSIGHT"
+      ]
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\BOARD_OVERSIGHT_board_credit_risk_memo_2026.jsonl",
+      "records": 8,
+      "content_hash": "53fad26dd90766c6b3fe159045834e149b12b79ec2a17fb6d9a6f97114c6ce0c",
+      "file_hash": "a1aed6d33ba3cae9d56540b9f0379f6cb7872f68a05dcdd6730f219185cae415",
+      "document_names": [
+        "board_credit_risk_memo_2026"
+      ],
+      "categories": [
+        "BOARD_OVERSIGHT"
+      ]
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\CREDIT_RISK_Lending_and_Loan_Portfolio_Risk_Management_2026.jsonl",
+      "records": 113,
+      "content_hash": "cde7f6b1853f1a9209ceab50d77bd484d27e599c4833920744203d24683befff",
+      "file_hash": "c2a1aaf0090b4e4146f04df03824913f59692f773ffe1be2feee951095009e21",
+      "document_names": [
+        "Lending_and_Loan_Portfolio_Risk_Management_2026"
+      ],
+      "categories": [
+        "CREDIT_RISK"
+      ]
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\IFRS_IFRS_1_First-time_Adoption.jsonl",
+      "records": 19,
+      "content_hash": "f6590ecfe3e4aea5b685c50ba8ca941e22cb5dd9769640eab3632d12c0ca356b",
+      "file_hash": "45192b699cea508453d2ccafc207cafe859612aabfb4d8914dc27bed5f754b2e",
+      "document_names": [
+        "IFRS 1 First-time Adoption of International Financial Reporting Standards"
+      ],
+      "categories": [
+        "IFRS"
+      ]
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\IFRS_IFRS_7_Financial_Instruments_Disclosures.jsonl",
+      "records": 29,
+      "content_hash": "a21771c72431f56c9c444a490097ef3db8eb0dba64852206f28c2327e0590325",
+      "file_hash": "5d71da38ddfc2866d91462574a87307a0ab9cbaf706eb4950db63ab938c72887",
+      "document_names": [
+        "IFRS 7 Financial Instruments: Disclosures"
+      ],
+      "categories": [
+        "IFRS"
+      ]
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\IFRS_IFRS_9_Financial_Instruments.jsonl",
+      "records": 111,
+      "content_hash": "f1832f91205eb185172bbd5255623bc1068fdfa70279b4679081de386bc3e14a",
+      "file_hash": "451115e1af983d724e0f306e159ee4312b8ea599ea4bf06818b03b9ca7d08027",
+      "document_names": [
+        "IFRS 9 Financial Instruments"
+      ],
+      "categories": [
+        "IFRS"
+      ]
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\MDA_BOARD_combined.jsonl",
+      "records": 51,
+      "content_hash": "f06c9b95b9964daf74f4db99882c7eaf401b2c0b8a55d75045365bc3d02b0925",
+      "file_hash": "6c275446ab568dc7ebb5bf4b9bfd2f7804aa5e426256cd5d2e732aa93eb22c28",
+      "document_names": [
+        "MDA_REL_01_Credit_Terms",
+        "REL_01_test",
+        "board_credit_risk_memo_2024",
+        "board_credit_risk_memo_2025",
+        "board_credit_risk_memo_2026",
+        "prior_period_2024",
+        "prior_period_2025",
+        "prior_period_2026"
+      ],
+      "categories": [
+        "BOARD_OVERSIGHT",
+        "MDA"
+      ]
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\MDA_MDA_REL_01_Credit_Terms.jsonl",
+      "records": 7,
+      "content_hash": "b1c8c619f195c68b912b3b0dc02186a7a4ddd1e6183749305ebc8bd32f5375fc",
+      "file_hash": "a1d7704a239d35dbd0b2a25887e75bf24b874c7faa032861fe12741aa623a525",
+      "document_names": [
+        "MDA_REL_01_Credit_Terms"
+      ],
+      "categories": [
+        "MDA"
+      ]
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\MDA_prior_period_2024.jsonl",
+      "records": 6,
+      "content_hash": "3ca1b79d455adffffd87fa18bc5ccd4e5c7ae1b5c8ae50298e320207ee110404",
+      "file_hash": "7438a96e3afd2a660919aacf247d18dd814a21f2d1727c86f7c5d630e15a5f9c",
+      "document_names": [
+        "prior_period_2024"
+      ],
+      "categories": [
+        "MDA"
+      ]
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\MDA_prior_period_2025.jsonl",
+      "records": 7,
+      "content_hash": "20a635bb113c5ff620d88c88f10f828c2c024e13d0a773fd1d5200bceff1dccb",
+      "file_hash": "fee73eedb1ce66fde55d8e26682730e1bf0a435f189688d5a383181bb2aa8fd1",
+      "document_names": [
+        "prior_period_2025"
+      ],
+      "categories": [
+        "MDA"
+      ]
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\MDA_prior_period_2026.jsonl",
+      "records": 7,
+      "content_hash": "332c4d97b18ca2089d20ae08e13acf638acd6d4aae093dafc91bfd3e25c29949",
+      "file_hash": "03f747989b8370309b83ae22fd2a54052c2386be00c3e99366a4aab13535bbb0",
+      "document_names": [
+        "prior_period_2026"
+      ],
+      "categories": [
+        "MDA"
+      ]
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\MDA_REL_01_test.jsonl",
+      "records": 1,
+      "content_hash": "3338a4949bd67568fa3d873c18c998f2f4fca74bce914df3ff0f3e2f3b6065da",
+      "file_hash": "f8955ed57f012124b8a68d9d4cbbc06b26872a67675fa4fbee2ac0e71ad8180f",
+      "document_names": [
+        "REL_01_test"
+      ],
+      "categories": [
+        "MDA"
+      ]
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\US_GAAP_ASC_326_ASU_2016-13.jsonl",
+      "records": 127,
+      "content_hash": "298665dbf00b25ba13c380ac9fea2557431ff13fad6196377ebe1ec321851fb6",
+      "file_hash": "60fef0322c778ee386dc3f043cd9b04fc212e255f276e51e786135b3c9d5d11c",
+      "document_names": [
+        "ASC_326_ASU_2016-13"
+      ],
+      "categories": [
+        "US_GAAP"
+      ]
+    }
+  ],
+  "duplicate_groups": []
+}
