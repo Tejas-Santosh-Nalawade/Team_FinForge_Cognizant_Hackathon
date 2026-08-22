@@ -1,7 +1,7 @@
-﻿import json
+﻿﻿import json
 from pathlib import Path
 
-from FPA_ENGINE.qualitative_chunking import QualitativeDocumentChunker
+from core.fpa.qualitative_chunking import QualitativeDocumentChunker
 
 
 PDF_PATH = Path(

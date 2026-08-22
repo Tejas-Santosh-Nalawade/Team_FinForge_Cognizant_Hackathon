@@ -1,4 +1,4 @@
-from FPA_ENGINE.source_registry import SourceRegistry
+from core.fpa.source_registry import SourceRegistry
 
 
 def build_source_catalog() -> SourceRegistry:

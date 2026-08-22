@@ -2,8 +2,8 @@ from pathlib import Path
 
 import pandas as pd
 
-from FPA_ENGINE.source_catalog import build_source_catalog
-from FPA_ENGINE.planning_source_discovery import PlanningSourceDiscovery
+from core.fpa.source_catalog import build_source_catalog
+from core.fpa.planning_source_discovery import PlanningSourceDiscovery
 
 
 class SourceAvailabilityValidator:

@@ -4,7 +4,8 @@ from typing import Optional
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
-LOCAL_DATABASE_PATH = Path(__file__).resolve().parents[1] / "finforge_audit.db"
+BACKEND_DIR = Path(__file__).resolve().parents[1]
+LOCAL_DATABASE_PATH = BACKEND_DIR / "finforge_audit.db"
 
 
 class Settings(BaseSettings):
@@ -54,7 +55,7 @@ class Settings(BaseSettings):
     LOCAL_STORAGE_DIR: str = "./result"
 
     model_config = SettingsConfigDict(
-        env_file=".env",
+        env_file=str(BACKEND_DIR / ".env"),
         env_file_encoding="utf-8",
         extra="ignore"
     )

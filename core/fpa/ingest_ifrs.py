@@ -1,4 +1,4 @@
-from qualitative_document_ingestion import QualitativeDocumentIngestion
+from core.fpa.qualitative_document_ingestion import QualitativeDocumentIngestion
 
 
 # Create the existing ingestion engine

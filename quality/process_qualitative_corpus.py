@@ -1,7 +1,7 @@
-﻿import json
+﻿﻿import json
 from pathlib import Path
 
-from FPA_ENGINE.qualitative_chunking import QualitativeDocumentChunker
+from core.fpa.qualitative_chunking import QualitativeDocumentChunker
 
 
 CORPUS_ROOT = Path("DATASET/True_data/qualitative_corpus")

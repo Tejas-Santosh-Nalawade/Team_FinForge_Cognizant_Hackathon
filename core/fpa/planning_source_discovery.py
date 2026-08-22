@@ -3,7 +3,7 @@ from typing import Dict
 
 import pandas as pd
 
-from FPA_ENGINE.source_catalog import build_source_catalog
+from core.fpa.source_catalog import build_source_catalog
 
 
 class PlanningSourceDiscovery:

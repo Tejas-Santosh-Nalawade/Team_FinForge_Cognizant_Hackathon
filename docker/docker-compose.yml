@@ -6,20 +6,10 @@ services:
     container_name: finforge-backend
     ports:
       - "8000:8000"
+    env_file:
+      - ../backend/.env
     environment:
-      - APP_NAME=Apex Global Technologies Inc. - FP&A & Audit Assurance Suite
-      - APP_VERSION=3.0.0
-      - DEBUG=True
-      - ENVIRONMENT=development
-      - DATABASE_URL=sqlite:///./finforge_audit.db
-      - JWT_SECRET_KEY=replace-with-a-long-random-secret
-      - JWT_ALGORITHM=HS256
-      - ACCESS_TOKEN_EXPIRE_MINUTES=480
-      - DEMO_USER_EMAIL=auditor@apexglobal.com
-      - DEMO_USER_PASSWORD=FinForge!2026
-      - ALLOWED_ORIGINS=http://localhost:3000,http://127.0.0.1:3000
-      - R2_BUCKET_NAME=finforge-audit-vault
-      - GEMINI_MODEL=gemini-1.5-pro
+      - ALLOWED_ORIGINS=${ALLOWED_ORIGINS:-http://localhost:3000,http://127.0.0.1:3000,http://localhost:5173,http://127.0.0.1:5173}
     volumes:
       - ../result:/app/result
       - ../finforge_audit.db:/app/finforge_audit.db
@@ -29,7 +19,7 @@ services:
       context: ..
       dockerfile: docker/Dockerfile.frontend
       args:
-        VITE_API_URL: http://localhost:8000/api/v1
+        VITE_API_URL: ${VITE_API_URL:-http://localhost:8000/api/v1}
     container_name: finforge-frontend
     ports:
       - "3000:80"

@@ -1,6 +1,6 @@
-﻿from pathlib import Path
+﻿﻿from pathlib import Path
 import json
-from FPA_ENGINE.qualitative_chunking import QualitativeDocumentChunker
+from core.fpa.qualitative_chunking import QualitativeDocumentChunker
 
 ROOT = Path("DATASET/True_data/qualitative_corpus")
 OUTPUT = ROOT / "processed_chunks"

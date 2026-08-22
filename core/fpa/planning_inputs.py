@@ -1,5 +1,5 @@
-from FPA_ENGINE.forecast_policy import ForecastPolicy
-from FPA_ENGINE.planning_excel_ingestion import PlanningExcelIngestion
+from core.fpa.forecast_policy import ForecastPolicy
+from core.fpa.planning_excel_ingestion import PlanningExcelIngestion
 
 
 def build_current_planning_input_status(

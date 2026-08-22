@@ -3,7 +3,7 @@ from typing import Dict
 
 import pandas as pd
 
-from FPA_ENGINE.planning_schema import (
+from core.fpa.planning_schema import (
     PlanningInput,
     validate_planning_input,
 )
