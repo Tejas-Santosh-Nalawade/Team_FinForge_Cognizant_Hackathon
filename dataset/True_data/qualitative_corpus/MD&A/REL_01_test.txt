@@ -1,0 +1,8 @@
+﻿REL_01 Test Context
+
+Accounts Receivable increased by 38% while Revenue increased by 12%.
+
+Management explanation: selected large multi-year contracts were given
+extended customer payment terms from 30 days to 60 days.
+
+This explains the increase in outstanding trade receivables.

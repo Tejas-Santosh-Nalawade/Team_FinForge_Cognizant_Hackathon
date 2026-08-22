@@ -1,0 +1,123 @@
+{
+  "corpus_name": "Qualitative FP&A Corpus",
+  "version": "1.0",
+  "description": "Manifest of normalized qualitative documents prepared for downstream retrieval and RAG consumption.",
+  "document_count": 2,
+  "total_chunks": 240,
+  "documents": [
+    {
+      "source_file": "CREDIT_RISK_Lending_and_Loan_Portfolio_Risk_Management_2026.jsonl",
+      "document_name": "Lending_and_Loan_Portfolio_Risk_Management_2026",
+      "category": [
+        "CREDIT_RISK"
+      ],
+      "source_organization": [
+        "OCC"
+      ],
+      "authority_status": [
+        "official_OCC"
+      ],
+      "chunk_count": 113,
+      "character_count": 352452,
+      "section_count": 73,
+      "sections": [
+        "Addressing Liberal Underwriting Practices",
+        "Appendix A: Quantity of Credit Risk Indicators",
+        "Assessing Underwriting Policies",
+        "Assessing Underwriting Practices",
+        "Automated Credit Approval Processes",
+        "Background",
+        "Board and Management Oversight",
+        "Capitalization of Interest",
+        "Collections",
+        "Commercial Credit Collateral",
+        "Commercial Credit Structure and Sources of Repayment",
+        "Committees",
+        "Compliance Risk",
+        "Concentration Risk",
+        "Credit Administration",
+        "Credit Risk",
+        "Credit Risk-Rating Systems",
+        "Credit Underwriting",
+        "Credit Underwriting Reviews",
+        "Determine Population, Areas of Focus, and Sample Size",
+        "Exceptions",
+        "Exportation of Interest Rates",
+        "External Audit",
+        "Foreclosure and Repossession",
+        "Fraud Risk",
+        "Independent Credit Risk Review",
+        "Interest Rate Risk",
+        "Internal Audit",
+        "Internal Control Questionnaire",
+        "Internal Controls and Information Systems",
+        "Internal and External Audit",
+        "Lending Authorities",
+        "Lending Examinations and Ongoing Supervision",
+        "Loan Administration",
+        "Loan Booking",
+        "Loan Closing",
+        "Loan Life Cycle",
+        "Loan Purchase Activities",
+        "Loan Sampling",
+        "Loan Sampling Overview",
+        "Loan Servicing and Monitoring",
+        "Loan-Level Stress Test Example",
+        "Management and Board Reports",
+        "Model Risk Management",
+        "Nonaccrual Status",
+        "Ongoing Supervision",
+        "Operational Planning",
+        "Operational Risk",
+        "Overview",
+        "Personnel",
+        "Portfolio Management",
+        "Portfolio Stress Testing",
+        "Post-Closing Reviews",
+        "Pre-Closing Reviews",
+        "Price Risk",
+        "Pricing Strategies",
+        "Problem Loan Management",
+        "Refinance Risk",
+        "Report of Examination and Supervisory Letter Considerations",
+        "Retail Credit Structure and Sources of Repayment",
+        "Risk Appetite",
+        "Risk Layering",
+        "Scope",
+        "Scope of Credit Underwriting Reviews",
+        "Secondary Marketing",
+        "Separation of Duties",
+        "Strategic Planning",
+        "Strategic Risk",
+        "Strategic and Operational Planning",
+        "Stress Testing",
+        "Structural Weaknesses",
+        "Training",
+        "Unidentified Exceptions"
+      ],
+      "first_chunk_id": "CREDIT_RISK_0001",
+      "last_chunk_id": "CREDIT_RISK_0113"
+    },
+    {
+      "source_file": "US_GAAP_ASC_326_ASU_2016-13.jsonl",
+      "document_name": "ASC_326_ASU_2016-13",
+      "category": [
+        "US_GAAP"
+      ],
+      "source_organization": [
+        "FASB"
+      ],
+      "authority_status": [
+        "official_FASB_not_authoritative_standard"
+      ],
+      "chunk_count": 127,
+      "character_count": 659848,
+      "section_count": 1,
+      "sections": [
+        "Introduction"
+      ],
+      "first_chunk_id": "US_GAAP_0001",
+      "last_chunk_id": "US_GAAP_0127"
+    }
+  ]
+}

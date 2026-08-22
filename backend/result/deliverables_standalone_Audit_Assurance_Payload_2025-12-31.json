@@ -1,0 +1,27 @@
+{
+  "metadata": {
+    "client_name": "Apex Global Technologies Inc.",
+    "period": "2025-12-31",
+    "framework": "US GAAP / IFRS",
+    "review_stage": "CY_DRAFT_FS",
+    "risk_status": "CLEAN",
+    "overall_materiality": 440000.0,
+    "performance_materiality": 330000.0,
+    "trivial_threshold": 22000.0,
+    "total_procedures": 56,
+    "passed_procedures": 54,
+    "flagged_procedures": 2
+  },
+  "audit_conclusion": {
+    "overall_status": "CLEAN",
+    "procedures_passed": 54
+  },
+  "waivers_ledger": [],
+  "procedures_matrix": [],
+  "analytics": {
+    "ratios": [],
+    "balance_sheet": [],
+    "income_statement": []
+  },
+  "findings_and_rag": []
+}

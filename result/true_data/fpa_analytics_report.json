@@ -1,0 +1,554 @@
+{
+  "engagement": {
+    "client_name": "AsterNova Technologies Ltd.",
+    "period": "2026-03-31",
+    "currency": "INR",
+    "scale": "EXACT",
+    "framework": "US GAAP / IFRS",
+    "review_stage": "CY_DRAFT_FS"
+  },
+  "analytics": {
+    "income_statement": [
+      {
+        "line_item": "Revenue",
+        "prior_period": 1258.59,
+        "current_period": 1406.5,
+        "variance": 147.91,
+        "variance_pct": 11.75,
+        "threshold_status": "NO",
+        "commentary": "Revenue changed by $+147.91 (+11.8%) YoY."
+      },
+      {
+        "line_item": "Cost of Goods Sold",
+        "prior_period": 576.81,
+        "current_period": 634.85,
+        "variance": 58.04,
+        "variance_pct": 10.06,
+        "threshold_status": "NO",
+        "commentary": "Cost of Goods Sold changed by $+58.04 (+10.1%) YoY."
+      },
+      {
+        "line_item": "Gross Profit",
+        "prior_period": 681.78,
+        "current_period": 771.65,
+        "variance": 89.87,
+        "variance_pct": 13.18,
+        "threshold_status": "NO",
+        "commentary": "Gross Profit changed by $+89.87 (+13.2%) YoY."
+      },
+      {
+        "line_item": "SG&A Expense",
+        "prior_period": 336.02,
+        "current_period": 353.65,
+        "variance": 17.63,
+        "variance_pct": 5.25,
+        "threshold_status": "NO",
+        "commentary": "SG&A Expense changed by $+17.63 (+5.2%) YoY."
+      },
+      {
+        "line_item": "R&D Expense",
+        "prior_period": 84.63,
+        "current_period": 110.38,
+        "variance": 25.75,
+        "variance_pct": 30.43,
+        "threshold_status": "NO",
+        "commentary": "R&D Expense changed by $+25.75 (+30.4%) YoY."
+      },
+      {
+        "line_item": "Depreciation & Amortization",
+        "prior_period": 32.76,
+        "current_period": 40.4,
+        "variance": 7.64,
+        "variance_pct": 23.32,
+        "threshold_status": "NO",
+        "commentary": "Depreciation & Amortization changed by $+7.64 (+23.3%) YoY."
+      },
+      {
+        "line_item": "Total Operating Expenses",
+        "prior_period": 453.41,
+        "current_period": 504.43,
+        "variance": 51.02,
+        "variance_pct": 11.25,
+        "threshold_status": "NO",
+        "commentary": "Total Operating Expenses changed by $+51.02 (+11.2%) YoY."
+      },
+      {
+        "line_item": "Operating Income",
+        "prior_period": 228.36,
+        "current_period": 267.22,
+        "variance": 38.86,
+        "variance_pct": 17.02,
+        "threshold_status": "NO",
+        "commentary": "Operating Income changed by $+38.86 (+17.0%) YoY."
+      },
+      {
+        "line_item": "Interest Expense",
+        "prior_period": 23.73,
+        "current_period": 20.27,
+        "variance": -3.46,
+        "variance_pct": -14.58,
+        "threshold_status": "NO",
+        "commentary": "Interest Expense changed by $-3.46 (-14.6%) YoY."
+      },
+      {
+        "line_item": "Income Tax Expense",
+        "prior_period": 56.2,
+        "current_period": 60.55,
+        "variance": 4.35,
+        "variance_pct": 7.74,
+        "threshold_status": "NO",
+        "commentary": "Income Tax Expense changed by $+4.35 (+7.7%) YoY."
+      },
+      {
+        "line_item": "Net Income",
+        "prior_period": 149.69,
+        "current_period": 190.98,
+        "variance": 41.29,
+        "variance_pct": 27.58,
+        "threshold_status": "NO",
+        "commentary": "Net Income changed by $+41.29 (+27.6%) YoY."
+      }
+    ],
+    "balance_sheet": [
+      {
+        "line_item": "Cash & Cash Equivalents",
+        "prior_period": 469.12,
+        "current_period": 570.8,
+        "variance": 101.68,
+        "variance_pct": 21.67,
+        "threshold_status": "NO",
+        "commentary": "Cash & Cash Equivalents changed by $+101.68 (+21.7%) YoY."
+      },
+      {
+        "line_item": "Accounts Receivable, net",
+        "prior_period": 183.5,
+        "current_period": 201.7,
+        "variance": 18.2,
+        "variance_pct": 9.92,
+        "threshold_status": "NO",
+        "commentary": "Accounts Receivable, net changed by $+18.20 (+9.9%) YoY."
+      },
+      {
+        "line_item": "Inventory",
+        "prior_period": 81.73,
+        "current_period": 90.47,
+        "variance": 8.74,
+        "variance_pct": 10.69,
+        "threshold_status": "NO",
+        "commentary": "Inventory changed by $+8.74 (+10.7%) YoY."
+      },
+      {
+        "line_item": "Prepaid Expenses",
+        "prior_period": 49.58,
+        "current_period": 36.53,
+        "variance": -13.05,
+        "variance_pct": -26.32,
+        "threshold_status": "NO",
+        "commentary": "Prepaid Expenses changed by $-13.05 (-26.3%) YoY."
+      },
+      {
+        "line_item": "Total Current Assets",
+        "prior_period": 783.92,
+        "current_period": 899.5,
+        "variance": 115.58,
+        "variance_pct": 14.74,
+        "threshold_status": "NO",
+        "commentary": "Total Current Assets changed by $+115.58 (+14.7%) YoY."
+      },
+      {
+        "line_item": "PP&E, net",
+        "prior_period": 254.25,
+        "current_period": 279.78,
+        "variance": 25.53,
+        "variance_pct": 10.04,
+        "threshold_status": "NO",
+        "commentary": "PP&E, net changed by $+25.53 (+10.0%) YoY."
+      },
+      {
+        "line_item": "Total Assets",
+        "prior_period": 1103.41,
+        "current_period": 1243.43,
+        "variance": 140.02,
+        "variance_pct": 12.69,
+        "threshold_status": "NO",
+        "commentary": "Total Assets changed by $+140.02 (+12.7%) YoY."
+      },
+      {
+        "line_item": "Accounts Payable",
+        "prior_period": 67.02,
+        "current_period": 62.98,
+        "variance": -4.04,
+        "variance_pct": -6.03,
+        "threshold_status": "NO",
+        "commentary": "Accounts Payable changed by $-4.04 (-6.0%) YoY."
+      },
+      {
+        "line_item": "Accrued Expenses",
+        "prior_period": 160.33,
+        "current_period": 205.72,
+        "variance": 45.39,
+        "variance_pct": 28.31,
+        "threshold_status": "NO",
+        "commentary": "Accrued Expenses changed by $+45.39 (+28.3%) YoY."
+      },
+      {
+        "line_item": "Total Current Liabilities",
+        "prior_period": 328.43,
+        "current_period": 372.24,
+        "variance": 43.81,
+        "variance_pct": 13.34,
+        "threshold_status": "NO",
+        "commentary": "Total Current Liabilities changed by $+43.81 (+13.3%) YoY."
+      },
+      {
+        "line_item": "Long-term Debt",
+        "prior_period": 294.82,
+        "current_period": 284.71,
+        "variance": -10.11,
+        "variance_pct": -3.43,
+        "threshold_status": "NO",
+        "commentary": "Long-term Debt changed by $-10.11 (-3.4%) YoY."
+      },
+      {
+        "line_item": "Total Liabilities",
+        "prior_period": 623.26,
+        "current_period": 656.95,
+        "variance": 33.69,
+        "variance_pct": 5.41,
+        "threshold_status": "NO",
+        "commentary": "Total Liabilities changed by $+33.69 (+5.4%) YoY."
+      },
+      {
+        "line_item": "Common Stock",
+        "prior_period": 131.34,
+        "current_period": 131.34,
+        "variance": 0.0,
+        "variance_pct": 0.0,
+        "threshold_status": "NO",
+        "commentary": "Common Stock changed by $+0.00 (+0.0%) YoY."
+      },
+      {
+        "line_item": "Retained Earnings",
+        "prior_period": 184.48,
+        "current_period": 290.81,
+        "variance": 106.33,
+        "variance_pct": 57.64,
+        "threshold_status": "NO",
+        "commentary": "Retained Earnings changed by $+106.33 (+57.6%) YoY."
+      },
+      {
+        "line_item": "Total Equity",
+        "prior_period": 480.15,
+        "current_period": 586.48,
+        "variance": 106.33,
+        "variance_pct": 22.15,
+        "threshold_status": "NO",
+        "commentary": "Total Equity changed by $+106.33 (+22.1%) YoY."
+      }
+    ],
+    "ratios": [
+      {
+        "category": "Liquidity",
+        "name": "Current Ratio",
+        "formula": "Total Current Assets / Total Current Liabilities",
+        "prior_period": 2.39,
+        "current_period": 2.42,
+        "benchmark": "1.00x to 3.00x",
+        "status": "PASS",
+        "assessment": "Current Ratio is 2.42x vs prior period 2.39."
+      },
+      {
+        "category": "Liquidity",
+        "name": "Quick Ratio (Acid-Test)",
+        "formula": "(Cash & Cash Equivalents + Accounts Receivable) / Total Current Liabilities",
+        "prior_period": 1.99,
+        "current_period": 2.08,
+        "benchmark": ">= 1.00x",
+        "status": "PASS",
+        "assessment": "Quick Ratio (Acid-Test) is 2.08x vs prior period 1.99."
+      },
+      {
+        "category": "Leverage",
+        "name": "Debt-to-Equity Ratio",
+        "formula": "(Short-Term Debt + Long-Term Debt) / Total Stockholders' Equity",
+        "prior_period": 0.82,
+        "current_period": 0.66,
+        "benchmark": "0.10x to 4.00x",
+        "status": "PASS",
+        "assessment": "Debt-to-Equity Ratio is 0.66x vs prior period 0.82."
+      },
+      {
+        "category": "Solvency",
+        "name": "Interest Coverage Ratio",
+        "formula": "Operating Income / Interest Expense",
+        "prior_period": 9.62,
+        "current_period": 13.18,
+        "benchmark": ">= 2.50x",
+        "status": "PASS",
+        "assessment": "Interest Coverage Ratio is 13.18x vs prior period 9.62."
+      },
+      {
+        "category": "Activity",
+        "name": "Days Sales Outstanding (DSO)",
+        "formula": "(Accounts Receivable / Total Revenue) * 365",
+        "prior_period": 53.2,
+        "current_period": 52.3,
+        "benchmark": "30 to 90 Days",
+        "status": "PASS",
+        "assessment": "Days Sales Outstanding (DSO) is 52.3 Days vs prior period 53.20."
+      },
+      {
+        "category": "Activity",
+        "name": "Days Inventory Outstanding (DIO)",
+        "formula": "(Ending Inventory / Cost of Goods Sold) * 365",
+        "prior_period": 51.7,
+        "current_period": 52.0,
+        "benchmark": "<= 90 Days",
+        "status": "PASS",
+        "assessment": "Days Inventory Outstanding (DIO) is 52.0 Days vs prior period 51.70."
+      },
+      {
+        "category": "Activity",
+        "name": "Days Payable Outstanding (DPO)",
+        "formula": "(Accounts Payable / Cost of Goods Sold) * 365",
+        "prior_period": 42.4,
+        "current_period": 36.2,
+        "benchmark": "<= 90 Days",
+        "status": "PASS",
+        "assessment": "Days Payable Outstanding (DPO) is 36.2 Days vs prior period 42.40."
+      },
+      {
+        "category": "Activity",
+        "name": "Cash Conversion Cycle (CCC)",
+        "formula": "DIO + DSO - DPO",
+        "prior_period": 62.5,
+        "current_period": 68.1,
+        "benchmark": "<= 90 Days",
+        "status": "PASS",
+        "assessment": "Cash Conversion Cycle (CCC) is 68.1 Days vs prior period 62.50."
+      },
+      {
+        "category": "Profitability",
+        "name": "Gross Profit Margin",
+        "formula": "((Revenue - COGS) / Revenue) * 100",
+        "prior_period": 54.17,
+        "current_period": 54.86,
+        "benchmark": "10.0% to 90.0%",
+        "status": "PASS",
+        "assessment": "Gross Profit Margin is 54.9% vs prior period 54.17."
+      },
+      {
+        "category": "Profitability",
+        "name": "Operating Profit Margin",
+        "formula": "(Operating Income / Revenue) * 100",
+        "prior_period": 18.14,
+        "current_period": 19.0,
+        "benchmark": ">= 15.0%",
+        "status": "PASS",
+        "assessment": "Operating Profit Margin is 19.0% vs prior period 18.14."
+      },
+      {
+        "category": "Profitability",
+        "name": "Effective Tax Rate",
+        "formula": "(Income Tax Expense / Pre-Tax Income (EBT)) * 100",
+        "prior_period": 27.3,
+        "current_period": 24.07,
+        "benchmark": "15.0% to 35.0%",
+        "status": "PASS",
+        "assessment": "Effective Tax Rate is 24.1% vs prior period 27.30."
+      }
+    ],
+    "relationship_disconnects": [
+      {
+        "rule_id": "REL_01",
+        "rule_name": "Revenue vs Accounts Receivable Growth Disconnect",
+        "category": "Relationship Disconnect",
+        "description": "Checks if AR growth significantly outpaces revenue expansion",
+        "expected": 0.0,
+        "actual": 0.0,
+        "difference": 0.0,
+        "confidence": 0.95,
+        "recommended_action": "",
+        "audit_implication": "Premature revenue recognition, unrecorded sales returns, or under-provisioning of credit losses.",
+        "metric_value": -1.83,
+        "threshold": 20.0,
+        "status": "PASS",
+        "evidence": []
+      },
+      {
+        "rule_id": "REL_02",
+        "rule_name": "Revenue vs COGS Expansion Disconnect",
+        "category": "Relationship Disconnect",
+        "description": "Checks for divergence between revenue and cost of goods sold growth rates",
+        "expected": 0.0,
+        "actual": 0.0,
+        "difference": 0.0,
+        "confidence": 0.95,
+        "recommended_action": "",
+        "audit_implication": "Unrecorded purchases, inventory misstatement, or aggressive margin inflation.",
+        "metric_value": 1.69,
+        "threshold": 15.0,
+        "status": "PASS",
+        "evidence": []
+      },
+      {
+        "rule_id": "REL_03",
+        "rule_name": "Inventory vs COGS Growth Disconnect",
+        "category": "Relationship Disconnect",
+        "description": "Checks if inventory buildup outpaces cost of goods sold growth",
+        "expected": 0.0,
+        "actual": 0.0,
+        "difference": 0.0,
+        "confidence": 0.95,
+        "recommended_action": "",
+        "audit_implication": "Slow-moving or obsolete inventory, or improper capitalization of period expenses.",
+        "metric_value": 0.63,
+        "threshold": 25.0,
+        "status": "PASS",
+        "evidence": []
+      },
+      {
+        "rule_id": "REL_04",
+        "rule_name": "CapEx / PP&E Expansion vs Depreciation Inversion",
+        "category": "Relationship Disconnect",
+        "description": "Checks if PP&E expands while depreciation expense decreases",
+        "expected": 0.0,
+        "actual": 0.0,
+        "difference": 0.0,
+        "confidence": 0.95,
+        "recommended_action": "",
+        "audit_implication": "Omitted depreciation expense, improper useful-life extensions, or unrecorded asset retirements.",
+        "metric_value": 7.64,
+        "threshold": 0.0,
+        "status": "PASS",
+        "evidence": []
+      },
+      {
+        "rule_id": "REL_05",
+        "rule_name": "Debt Incurrence vs Interest Expense Inversion",
+        "category": "Relationship Disconnect",
+        "description": "Checks if debt balance increases while interest expense decreases",
+        "expected": 0.0,
+        "actual": 0.0,
+        "difference": 0.0,
+        "confidence": 0.95,
+        "recommended_action": "",
+        "audit_implication": "Unrecorded interest expense, unaccrued interest liabilities, or misclassified loan fees.",
+        "metric_value": -3.46,
+        "threshold": 0.0,
+        "status": "PASS",
+        "evidence": []
+      },
+      {
+        "rule_id": "REL_06",
+        "rule_name": "Profit Growth vs Tax Expense Inversion",
+        "category": "Relationship Disconnect",
+        "description": "Checks if pre-tax profit increases while tax expense decreases",
+        "expected": 0.0,
+        "actual": 0.0,
+        "difference": 0.0,
+        "confidence": 0.95,
+        "recommended_action": "",
+        "audit_implication": "Understated income tax provision or unrecorded tax liabilities.",
+        "metric_value": 4.35,
+        "threshold": 0.0,
+        "status": "PASS",
+        "evidence": []
+      }
+    ],
+    "bva_attainment": {
+      "bva_line_items": [
+        {
+          "line_item": "Revenue",
+          "actual_amount": 1406.5,
+          "budget_amount": 1519.02,
+          "dollar_variance": -112.52,
+          "pct_variance": -7.41,
+          "attainment_pct": 92.59,
+          "status": "ON TARGET"
+        },
+        {
+          "line_item": "Cost of Goods Sold",
+          "actual_amount": 634.85,
+          "budget_amount": 685.64,
+          "dollar_variance": -50.79,
+          "pct_variance": -7.41,
+          "attainment_pct": 92.59,
+          "status": "ON TARGET"
+        },
+        {
+          "line_item": "Operating Expenses",
+          "actual_amount": 504.43,
+          "budget_amount": 529.65,
+          "dollar_variance": -25.22,
+          "pct_variance": -4.76,
+          "attainment_pct": 95.24,
+          "status": "ON TARGET"
+        }
+      ],
+      "driver_unit_variances": {
+        "realized_revenue_per_unit": 13023.15,
+        "revenue_per_headcount": 2704807.69,
+        "opex_per_headcount": 970057.69,
+        "actual_volume": 108000.0,
+        "actual_headcount": 520.0
+      }
+    },
+    "cash_runway_velocity": {
+      "cash_conversion_cycle_days": 68.1,
+      "total_cash_reserves": 570.8,
+      "trailing_operating_cash_flow": 259.92,
+      "monthly_net_cash_burn": 10.0,
+      "cash_runway_months": 57.1,
+      "runway_guardrail_status": "HEALTHY",
+      "runway_alert_triggered": false
+    },
+    "historical_baseline_analytics": {
+      "cagr_3yr": {
+        "revenue_cagr_pct": 5.71,
+        "gross_profit_cagr_pct": 6.39,
+        "opex_cagr_pct": 5.48,
+        "revenue_yoy_pct": 11.75,
+        "gross_profit_yoy_pct": 13.18,
+        "opex_yoy_pct": 11.25
+      },
+      "margin_trajectories": {
+        "current_gross_margin_pct": 54.86,
+        "prior_gross_margin_pct": 54.17,
+        "gross_margin_bps_shift": 69.0,
+        "current_operating_margin_pct": 19.0,
+        "prior_operating_margin_pct": 18.14,
+        "operating_margin_bps_shift": 86.0,
+        "current_net_margin_pct": 13.58,
+        "prior_net_margin_pct": 11.89,
+        "net_margin_bps_shift": 169.0
+      },
+      "driver_unit_cost_shifts": {
+        "current_rev_per_unit": 0.01,
+        "prior_rev_per_unit": 0.01,
+        "current_rev_per_employee": 2.7,
+        "prior_rev_per_employee": 2.57,
+        "current_opex_per_employee": 0.97,
+        "prior_opex_per_employee": 0.93
+      },
+      "working_capital_velocity_shifts": {
+        "current_dso_days": 52.3,
+        "prior_dso_days": 53.2,
+        "current_dio_days": 52.0,
+        "prior_dio_days": 51.7,
+        "current_dpo_days": 36.2,
+        "prior_dpo_days": 42.4,
+        "current_ccc_days": 68.1,
+        "prior_ccc_days": 62.5,
+        "ccc_days_shift": 5.6
+      }
+    }
+  },
+  "findings": [],
+  "conclusion": {
+    "overall_status": "CLEARED",
+    "total_procedures_run": 56,
+    "procedures_passed": 56,
+    "text": "All 56 procedures completed cleanly with status CLEARED."
+  }
+}

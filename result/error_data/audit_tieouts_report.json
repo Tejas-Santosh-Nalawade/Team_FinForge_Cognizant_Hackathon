@@ -1,0 +1,569 @@
+{
+  "engagement": {
+    "client_name": "AsterNova Technologies Ltd.",
+    "period": "2026-03-31",
+    "currency": "INR",
+    "scale": "EXACT",
+    "framework": "US GAAP / IFRS",
+    "review_stage": "CY_DRAFT_FS"
+  },
+  "procedures": [
+    {
+      "step": 1,
+      "category": "mathematical accuracy",
+      "procedure": "Balance Sheet Equilibrium: Total Assets == Total Liabilities + Total Stockholders' Equity",
+      "reference": "MATH_01",
+      "status": "FAIL",
+      "issue": "Discrepancy of $149.54: Expected $1,369.62, Actual $1,519.16",
+      "resolution": "Audit Action: REJECTED - Investigate source extraction and post audit adjustment."
+    },
+    {
+      "step": 2,
+      "category": "mathematical accuracy",
+      "procedure": "Current Assets Footing: Total Current Assets == Cash + AR + Inventory + Prepaid Expenses",
+      "reference": "MATH_02",
+      "status": "FAIL",
+      "issue": "Discrepancy of $359.61: Expected $1,050.56, Actual $690.95",
+      "resolution": "Audit Action: REJECTED - Investigate source extraction and post audit adjustment."
+    },
+    {
+      "step": 3,
+      "category": "mathematical accuracy",
+      "procedure": "Total Assets Footing: Total Assets == Total Current Assets + Total Non-Current Assets",
+      "reference": "MATH_03",
+      "status": "FAIL",
+      "issue": "Discrepancy of $373.44: Expected $1,145.72, Actual $1,519.16",
+      "resolution": "Audit Action: REJECTED - Investigate source extraction and post audit adjustment."
+    },
+    {
+      "step": 4,
+      "category": "mathematical accuracy",
+      "procedure": "Current Liabilities Footing: Total Current Liabilities == AP + Short-Term Debt + Current LT Debt + Accrued Expenses",
+      "reference": "MATH_04",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 5,
+      "category": "mathematical accuracy",
+      "procedure": "Total Liabilities Footing: Total Liabilities == Total Current Liabilities + Total Non-Current Liabilities",
+      "reference": "MATH_05",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 6,
+      "category": "mathematical accuracy",
+      "procedure": "Stockholders' Equity Footing: Equity == Common Stock + APIC + Retained Earnings + AOCI - Treasury Stock",
+      "reference": "MATH_06",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 7,
+      "category": "mathematical accuracy",
+      "procedure": "Gross Profit Calculation: Gross Profit == Revenue - Cost of Goods Sold",
+      "reference": "MATH_07",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 8,
+      "category": "mathematical accuracy",
+      "procedure": "Operating Income Calculation: Operating Income == Gross Profit - Operating Expenses",
+      "reference": "MATH_08",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 9,
+      "category": "mathematical accuracy",
+      "procedure": "Net Income Calculation: Net Income == Operating Income + Non-Operating Income - Interest Expense - Income Tax Expense",
+      "reference": "MATH_09",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 10,
+      "category": "mathematical accuracy",
+      "procedure": "Cash Flow Net Change: Net Change in Cash == Operating CF + Investing CF + Financing CF",
+      "reference": "MATH_10",
+      "status": "FAIL",
+      "issue": "Discrepancy of $39.97: Expected $242.68, Actual $202.71",
+      "resolution": "Audit Action: REJECTED - Investigate source extraction and post audit adjustment."
+    },
+    {
+      "step": 11,
+      "category": "mathematical accuracy",
+      "procedure": "Cash Flow Ending Cash: Ending Cash == Beginning Cash + Net Change in Cash",
+      "reference": "MATH_11",
+      "status": "FAIL",
+      "issue": "Discrepancy of $130.49: Expected $468.24, Actual $598.73",
+      "resolution": "Audit Action: REJECTED - Investigate source extraction and post audit adjustment."
+    },
+    {
+      "step": 12,
+      "category": "internal consistency and cross statement tie outs",
+      "procedure": "Net Income Reconciliation: IS Net Income == CFS Operating CF Starting Net Income",
+      "reference": "TIEOUT_01",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 13,
+      "category": "internal consistency and cross statement tie outs",
+      "procedure": "Ending Cash Tie-Out: CFS Ending Cash == Balance Sheet Cash & Cash Equivalents",
+      "reference": "TIEOUT_02",
+      "status": "FAIL",
+      "issue": "Discrepancy of $90.51: Expected $508.22, Actual $598.73",
+      "resolution": "Audit Action: REJECTED - Investigate source extraction and post audit adjustment."
+    },
+    {
+      "step": 14,
+      "category": "internal consistency and cross statement tie outs",
+      "procedure": "Depreciation Cross-Check: IS Depreciation Expense == CFS Non-Cash D&A Add-back",
+      "reference": "TIEOUT_03",
+      "status": "FLAGGED",
+      "issue": "Discrepancy of $31.02: Expected $28.45, Actual $59.47",
+      "resolution": "Audit Action: REVIEW REQUIRED - Investigate source extraction and post audit adjustment."
+    },
+    {
+      "step": 15,
+      "category": "internal consistency and cross statement tie outs",
+      "procedure": "Retained Earnings Roll-Forward: Ending RE == Beginning RE + Current Net Income - Dividends Declared",
+      "reference": "TIEOUT_04",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 16,
+      "category": "prior year comparative tie-outs",
+      "procedure": "Comparative Assets: Current Report PY Total Assets == Audited Prior-Year Total Assets",
+      "reference": "PY_01",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 17,
+      "category": "prior year comparative tie-outs",
+      "procedure": "Comparative Cash: Current Report PY Cash == Audited Prior-Year Cash",
+      "reference": "PY_02",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 18,
+      "category": "prior year comparative tie-outs",
+      "procedure": "Comparative Retained Earnings: Current Report PY Retained Earnings == Audited Prior-Year Retained Earnings",
+      "reference": "PY_03",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 19,
+      "category": "prior year comparative tie-outs",
+      "procedure": "Comparative Revenue: Current Report PY Revenue == Audited Prior-Year Revenue",
+      "reference": "PY_04",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 20,
+      "category": "prior year comparative tie-outs",
+      "procedure": "Comparative Net Income: Current Report PY Net Income == Audited Prior-Year Net Income",
+      "reference": "PY_05",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 21,
+      "category": "disclosure and footnote schedule tie-outs",
+      "procedure": "AR Aging Schedule Footing: Gross AR (Footnote) == Sum of Aging Buckets",
+      "reference": "NOTE_01",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 22,
+      "category": "disclosure and footnote schedule tie-outs",
+      "procedure": "Net AR Footnote Calculation: Net AR (Footnote) == Gross AR - Allowance for Credit Losses",
+      "reference": "NOTE_02",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 23,
+      "category": "disclosure and footnote schedule tie-outs",
+      "procedure": "AR Footnote to Balance Sheet: Note Net AR == Balance Sheet Net Accounts Receivable",
+      "reference": "NOTE_03",
+      "status": "FAIL",
+      "issue": "Discrepancy of $77.39: Expected $341.79, Actual $264.40",
+      "resolution": "Audit Action: REJECTED - Investigate source extraction and post audit adjustment."
+    },
+    {
+      "step": 24,
+      "category": "disclosure and footnote schedule tie-outs",
+      "procedure": "PP&E Footnote Net Book Value: Ending Net PP&E == Ending Gross PP&E - Ending Accumulated Depreciation",
+      "reference": "NOTE_04",
+      "status": "FAIL",
+      "issue": "Discrepancy of $115.40: Expected $368.89, Actual $253.49",
+      "resolution": "Audit Action: REJECTED - Investigate source extraction and post audit adjustment."
+    },
+    {
+      "step": 25,
+      "category": "disclosure and footnote schedule tie-outs",
+      "procedure": "PP&E Footnote to Balance Sheet: Note Net PP&E == Balance Sheet Net Property, Plant & Equipment",
+      "reference": "NOTE_05",
+      "status": "FAIL",
+      "issue": "Discrepancy of $115.40: Expected $368.89, Actual $253.49",
+      "resolution": "Audit Action: REJECTED - Investigate source extraction and post audit adjustment."
+    },
+    {
+      "step": 26,
+      "category": "disclosure and footnote schedule tie-outs",
+      "procedure": "Debt Maturity Schedule Sum: Total Future Debt Maturities == Sum of Scheduled Debt",
+      "reference": "NOTE_06",
+      "status": "FAIL",
+      "issue": "Discrepancy of $44.25: Expected $472.45, Actual $428.20",
+      "resolution": "Audit Action: REJECTED - Investigate source extraction and post audit adjustment."
+    },
+    {
+      "step": 27,
+      "category": "disclosure and footnote schedule tie-outs",
+      "procedure": "Short-Term Debt Maturity Match: Year 1 Debt Maturity == Balance Sheet Current Portion of LT Debt",
+      "reference": "NOTE_07",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 28,
+      "category": "disclosure and footnote schedule tie-outs",
+      "procedure": "Long-Term Debt Maturity Match: Sum of Years 2-Thereafter Maturities == Balance Sheet Long-Term Debt",
+      "reference": "NOTE_08",
+      "status": "FAIL",
+      "issue": "Discrepancy of $80.62: Expected $325.79, Actual $406.41",
+      "resolution": "Audit Action: REJECTED - Investigate source extraction and post audit adjustment."
+    }
+  ],
+  "findings": [
+    {
+      "id": "FINDING-001",
+      "category": "Math Engine Assertion (MATH_01)",
+      "severity": "Critical",
+      "description": "Balance Sheet Equilibrium: Total Assets == Total Liabilities + Total Stockholders' Equity",
+      "expected": 1369.62,
+      "actual": 1519.16,
+      "difference": 149.54,
+      "confidence": 1.0,
+      "recommended_action": "Rule failure conclusion: REJECTED. Reconcile underlying trial balance accounts.",
+      "status": "OPEN",
+      "evidence": [
+        "Rule Reference: MATH_01",
+        "Source Ref: BS Line: Total Assets vs Total Liabilities & Equity"
+      ]
+    },
+    {
+      "id": "FINDING-002",
+      "category": "Math Engine Assertion (MATH_02)",
+      "severity": "Critical",
+      "description": "Current Assets Footing: Total Current Assets == Cash + AR + Inventory + Prepaid Expenses",
+      "expected": 1050.56,
+      "actual": 690.95,
+      "difference": 359.61,
+      "confidence": 1.0,
+      "recommended_action": "Rule failure conclusion: REJECTED. Reconcile underlying trial balance accounts.",
+      "status": "OPEN",
+      "evidence": [
+        "Rule Reference: MATH_02",
+        "Source Ref: BS Line: Total Current Assets"
+      ]
+    },
+    {
+      "id": "FINDING-003",
+      "category": "Math Engine Assertion (MATH_03)",
+      "severity": "Critical",
+      "description": "Total Assets Footing: Total Assets == Total Current Assets + Total Non-Current Assets",
+      "expected": 1145.72,
+      "actual": 1519.16,
+      "difference": 373.44,
+      "confidence": 1.0,
+      "recommended_action": "Rule failure conclusion: REJECTED. Reconcile underlying trial balance accounts.",
+      "status": "OPEN",
+      "evidence": [
+        "Rule Reference: MATH_03",
+        "Source Ref: BS Line: Total Assets"
+      ]
+    },
+    {
+      "id": "FINDING-004",
+      "category": "Math Engine Assertion (MATH_10)",
+      "severity": "Critical",
+      "description": "Cash Flow Net Change: Net Change in Cash == Operating CF + Investing CF + Financing CF",
+      "expected": 242.68,
+      "actual": 202.71,
+      "difference": 39.97,
+      "confidence": 1.0,
+      "recommended_action": "Rule failure conclusion: REJECTED. Reconcile underlying trial balance accounts.",
+      "status": "OPEN",
+      "evidence": [
+        "Rule Reference: MATH_10",
+        "Source Ref: CFS Line: Net Increase/(Decrease) in Cash"
+      ]
+    },
+    {
+      "id": "FINDING-005",
+      "category": "Math Engine Assertion (MATH_11)",
+      "severity": "Critical",
+      "description": "Cash Flow Ending Cash: Ending Cash == Beginning Cash + Net Change in Cash",
+      "expected": 468.24,
+      "actual": 598.73,
+      "difference": 130.49,
+      "confidence": 1.0,
+      "recommended_action": "Rule failure conclusion: REJECTED. Reconcile underlying trial balance accounts.",
+      "status": "OPEN",
+      "evidence": [
+        "Rule Reference: MATH_11",
+        "Source Ref: CFS Line: Cash and Cash Equivalents at End of Period"
+      ]
+    },
+    {
+      "id": "FINDING-006",
+      "category": "Math Engine Assertion (TIEOUT_02)",
+      "severity": "Critical",
+      "description": "Ending Cash Tie-Out: CFS Ending Cash == Balance Sheet Cash & Cash Equivalents",
+      "expected": 508.22,
+      "actual": 598.73,
+      "difference": 90.51,
+      "confidence": 1.0,
+      "recommended_action": "Rule failure conclusion: REJECTED. Reconcile underlying trial balance accounts.",
+      "status": "OPEN",
+      "evidence": [
+        "Rule Reference: TIEOUT_02",
+        "Source Ref: CFS Ending Cash vs BS Cash"
+      ]
+    },
+    {
+      "id": "FINDING-007",
+      "category": "Math Engine Assertion (TIEOUT_03)",
+      "severity": "Medium",
+      "description": "Depreciation Cross-Check: IS Depreciation Expense == CFS Non-Cash D&A Add-back",
+      "expected": 28.45,
+      "actual": 59.47,
+      "difference": 31.02,
+      "confidence": 1.0,
+      "recommended_action": "Rule failure conclusion: REVIEW REQUIRED. Reconcile underlying trial balance accounts.",
+      "status": "OPEN",
+      "evidence": [
+        "Rule Reference: TIEOUT_03",
+        "Source Ref: IS vs CFS: Depreciation & Amortization"
+      ]
+    },
+    {
+      "id": "FINDING-008",
+      "category": "Math Engine Assertion (NOTE_03)",
+      "severity": "Critical",
+      "description": "AR Footnote to Balance Sheet: Note Net AR == Balance Sheet Net Accounts Receivable",
+      "expected": 341.79,
+      "actual": 264.4,
+      "difference": 77.39,
+      "confidence": 1.0,
+      "recommended_action": "Rule failure conclusion: REJECTED. Reconcile underlying trial balance accounts.",
+      "status": "OPEN",
+      "evidence": [
+        "Rule Reference: NOTE_03",
+        "Source Ref: Note Net AR vs BS Accounts Receivable Net"
+      ]
+    },
+    {
+      "id": "FINDING-009",
+      "category": "Math Engine Assertion (NOTE_04)",
+      "severity": "Critical",
+      "description": "PP&E Footnote Net Book Value: Ending Net PP&E == Ending Gross PP&E - Ending Accumulated Depreciation",
+      "expected": 368.89,
+      "actual": 253.49,
+      "difference": 115.4,
+      "confidence": 1.0,
+      "recommended_action": "Rule failure conclusion: REJECTED. Reconcile underlying trial balance accounts.",
+      "status": "OPEN",
+      "evidence": [
+        "Rule Reference: NOTE_04",
+        "Source Ref: Note PP&E Net Book Value"
+      ]
+    },
+    {
+      "id": "FINDING-010",
+      "category": "Math Engine Assertion (NOTE_05)",
+      "severity": "Critical",
+      "description": "PP&E Footnote to Balance Sheet: Note Net PP&E == Balance Sheet Net Property, Plant & Equipment",
+      "expected": 368.89,
+      "actual": 253.49,
+      "difference": 115.4,
+      "confidence": 1.0,
+      "recommended_action": "Rule failure conclusion: REJECTED. Reconcile underlying trial balance accounts.",
+      "status": "OPEN",
+      "evidence": [
+        "Rule Reference: NOTE_05",
+        "Source Ref: Note Net PP&E vs BS PP&E Net"
+      ]
+    },
+    {
+      "id": "FINDING-011",
+      "category": "Math Engine Assertion (NOTE_06)",
+      "severity": "Critical",
+      "description": "Debt Maturity Schedule Sum: Total Future Debt Maturities == Sum of Scheduled Debt",
+      "expected": 472.45,
+      "actual": 428.2,
+      "difference": 44.25,
+      "confidence": 1.0,
+      "recommended_action": "Rule failure conclusion: REJECTED. Reconcile underlying trial balance accounts.",
+      "status": "OPEN",
+      "evidence": [
+        "Rule Reference: NOTE_06",
+        "Source Ref: Note Debt Schedule Total"
+      ]
+    },
+    {
+      "id": "FINDING-012",
+      "category": "Math Engine Assertion (NOTE_08)",
+      "severity": "Critical",
+      "description": "Long-Term Debt Maturity Match: Sum of Years 2-Thereafter Maturities == Balance Sheet Long-Term Debt",
+      "expected": 325.79,
+      "actual": 406.41,
+      "difference": 80.62,
+      "confidence": 1.0,
+      "recommended_action": "Rule failure conclusion: REJECTED. Reconcile underlying trial balance accounts.",
+      "status": "OPEN",
+      "evidence": [
+        "Rule Reference: NOTE_08",
+        "Source Ref: Note (Years 2+) vs BS Long-Term Debt"
+      ]
+    },
+    {
+      "id": "FINDING-013",
+      "category": "Relationship Disconnect (REL_01)",
+      "severity": "Medium",
+      "description": "Checks if AR growth significantly outpaces revenue expansion",
+      "expected": 20.0,
+      "actual": 38.76,
+      "difference": 18.76,
+      "confidence": 0.95,
+      "recommended_action": "Rule failure conclusion: REVIEW REQUIRED. Premature revenue recognition, unrecorded sales returns, or under-provisioning of credit losses.",
+      "status": "OPEN",
+      "evidence": [
+        "Rule Reference: REL_01"
+      ]
+    },
+    {
+      "id": "FINDING-014",
+      "category": "Relationship Disconnect (REL_03)",
+      "severity": "Medium",
+      "description": "Checks if inventory buildup outpaces cost of goods sold growth",
+      "expected": 25.0,
+      "actual": 61.34,
+      "difference": 36.34,
+      "confidence": 0.95,
+      "recommended_action": "Rule failure conclusion: REVIEW REQUIRED. Slow-moving or obsolete inventory, or improper capitalization of period expenses.",
+      "status": "OPEN",
+      "evidence": [
+        "Rule Reference: REL_03"
+      ]
+    },
+    {
+      "id": "FINDING-015",
+      "category": "Relationship Disconnect (REL_04)",
+      "severity": "Medium",
+      "description": "Checks if PP&E expands while depreciation expense decreases",
+      "expected": 0.0,
+      "actual": -26.92,
+      "difference": 26.92,
+      "confidence": 0.95,
+      "recommended_action": "Rule failure conclusion: REVIEW REQUIRED. Omitted depreciation expense, improper useful-life extensions, or unrecorded asset retirements.",
+      "status": "OPEN",
+      "evidence": [
+        "Rule Reference: REL_04"
+      ]
+    },
+    {
+      "id": "FINDING-016",
+      "category": "Financial Ratio (RATIO_05)",
+      "severity": "Medium",
+      "description": "Ratio Days Sales Outstanding (DSO) value (92.1 Days) outside benchmark (30 to 90 Days)",
+      "expected": 0.0,
+      "actual": 92.1,
+      "difference": 0.0,
+      "confidence": 1.0,
+      "recommended_action": "Rule failure conclusion: REVIEW REQUIRED. Review ratio baseline with treasury.",
+      "status": "OPEN",
+      "evidence": [
+        "Benchmark: 30 to 90 Days"
+      ]
+    },
+    {
+      "id": "FINDING-017",
+      "category": "Financial Ratio (RATIO_06)",
+      "severity": "Medium",
+      "description": "Ratio Days Inventory Outstanding (DIO) value (107.3 Days) outside benchmark (<= 90 Days)",
+      "expected": 0.0,
+      "actual": 107.3,
+      "difference": 0.0,
+      "confidence": 1.0,
+      "recommended_action": "Rule failure conclusion: REVIEW REQUIRED. Review ratio baseline with treasury.",
+      "status": "OPEN",
+      "evidence": [
+        "Benchmark: <= 90 Days"
+      ]
+    },
+    {
+      "id": "FINDING-018",
+      "category": "Financial Ratio (RATIO_07)",
+      "severity": "Medium",
+      "description": "Ratio Days Payable Outstanding (DPO) value (105.7 Days) outside benchmark (<= 90 Days)",
+      "expected": 0.0,
+      "actual": 105.7,
+      "difference": 0.0,
+      "confidence": 1.0,
+      "recommended_action": "Rule failure conclusion: REVIEW REQUIRED. Review ratio baseline with treasury.",
+      "status": "OPEN",
+      "evidence": [
+        "Benchmark: <= 90 Days"
+      ]
+    },
+    {
+      "id": "FINDING-019",
+      "category": "Financial Ratio (RATIO_08)",
+      "severity": "Medium",
+      "description": "Ratio Cash Conversion Cycle (CCC) value (93.7 Days) outside benchmark (<= 90 Days)",
+      "expected": 0.0,
+      "actual": 93.7,
+      "difference": 0.0,
+      "confidence": 1.0,
+      "recommended_action": "Rule failure conclusion: REVIEW REQUIRED. Review ratio baseline with treasury.",
+      "status": "OPEN",
+      "evidence": [
+        "Benchmark: <= 90 Days"
+      ]
+    }
+  ],
+  "conclusion": {
+    "overall_status": "REJECTED",
+    "total_procedures_run": 28,
+    "procedures_passed": 16,
+    "text": "Deterministic Mechanical Audit Rules (28 Rules): 16 / 28 passed."
+  }
+}

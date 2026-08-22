@@ -1,0 +1,45 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "AnnualOperatingBudget",
+  "description": "Annual Operating Budget (AOB) financial target baselines and driver targets",
+  "type": "object",
+  "required": ["company", "fiscal_year", "currency", "scale", "line_items", "drivers"],
+  "properties": {
+    "company": { "type": "string", "example": "AsterNova Technologies Ltd." },
+    "fiscal_year": { "type": "string", "pattern": "^FY[0-9]{4}$", "example": "FY2026" },
+    "currency": { "type": "string", "example": "INR" },
+    "scale": { "type": "string", "enum": ["EXACT", "THOUSANDS", "MILLIONS", "BILLIONS"], "example": "MILLIONS" },
+    "line_items": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["metric", "canonical_code", "category", "amount"],
+        "properties": {
+          "metric": { "type": "string", "example": "Selling, General & Administrative" },
+          "canonical_code": { 
+            "type": "string", 
+            "enum": ["REVENUE", "COGS", "SGA", "RND", "DA", "OPEX", "CAPEX", "TAX_EXPENSE", "NET_INCOME"] 
+          },
+          "category": { 
+            "type": "string", 
+            "enum": ["Revenue", "Direct Cost", "Operating Expense", "Capital Expenditure", "Tax"] 
+          },
+          "amount": { "type": "number", "example": 409.61 }
+        }
+      }
+    },
+    "drivers": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["driver_name", "driver_code", "value", "unit"],
+        "properties": {
+          "driver_name": { "type": "string", "example": "Headcount" },
+          "driver_code": { "type": "string", "enum": ["HEADCOUNT", "OPERATING_VOLUME", "PRICE_PER_UNIT"] },
+          "value": { "type": "number", "example": 520 },
+          "unit": { "type": "string", "example": "employees" }
+        }
+      }
+    }
+  }
+}

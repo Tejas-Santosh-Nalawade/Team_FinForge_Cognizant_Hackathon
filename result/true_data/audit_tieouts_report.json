@@ -1,0 +1,271 @@
+{
+  "engagement": {
+    "client_name": "AsterNova Technologies Ltd.",
+    "period": "2026-03-31",
+    "currency": "INR",
+    "scale": "EXACT",
+    "framework": "US GAAP / IFRS",
+    "review_stage": "CY_DRAFT_FS"
+  },
+  "procedures": [
+    {
+      "step": 1,
+      "category": "mathematical accuracy",
+      "procedure": "Balance Sheet Equilibrium: Total Assets == Total Liabilities + Total Stockholders' Equity",
+      "reference": "MATH_01",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 2,
+      "category": "mathematical accuracy",
+      "procedure": "Current Assets Footing: Total Current Assets == Cash + AR + Inventory + Prepaid Expenses",
+      "reference": "MATH_02",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 3,
+      "category": "mathematical accuracy",
+      "procedure": "Total Assets Footing: Total Assets == Total Current Assets + Total Non-Current Assets",
+      "reference": "MATH_03",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 4,
+      "category": "mathematical accuracy",
+      "procedure": "Current Liabilities Footing: Total Current Liabilities == AP + Short-Term Debt + Current LT Debt + Accrued Expenses",
+      "reference": "MATH_04",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 5,
+      "category": "mathematical accuracy",
+      "procedure": "Total Liabilities Footing: Total Liabilities == Total Current Liabilities + Total Non-Current Liabilities",
+      "reference": "MATH_05",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 6,
+      "category": "mathematical accuracy",
+      "procedure": "Stockholders' Equity Footing: Equity == Common Stock + APIC + Retained Earnings + AOCI - Treasury Stock",
+      "reference": "MATH_06",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 7,
+      "category": "mathematical accuracy",
+      "procedure": "Gross Profit Calculation: Gross Profit == Revenue - Cost of Goods Sold",
+      "reference": "MATH_07",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 8,
+      "category": "mathematical accuracy",
+      "procedure": "Operating Income Calculation: Operating Income == Gross Profit - Operating Expenses",
+      "reference": "MATH_08",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 9,
+      "category": "mathematical accuracy",
+      "procedure": "Net Income Calculation: Net Income == Operating Income + Non-Operating Income - Interest Expense - Income Tax Expense",
+      "reference": "MATH_09",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 10,
+      "category": "mathematical accuracy",
+      "procedure": "Cash Flow Net Change: Net Change in Cash == Operating CF + Investing CF + Financing CF",
+      "reference": "MATH_10",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 11,
+      "category": "mathematical accuracy",
+      "procedure": "Cash Flow Ending Cash: Ending Cash == Beginning Cash + Net Change in Cash",
+      "reference": "MATH_11",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 12,
+      "category": "internal consistency and cross statement tie outs",
+      "procedure": "Net Income Reconciliation: IS Net Income == CFS Operating CF Starting Net Income",
+      "reference": "TIEOUT_01",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 13,
+      "category": "internal consistency and cross statement tie outs",
+      "procedure": "Ending Cash Tie-Out: CFS Ending Cash == Balance Sheet Cash & Cash Equivalents",
+      "reference": "TIEOUT_02",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 14,
+      "category": "internal consistency and cross statement tie outs",
+      "procedure": "Depreciation Cross-Check: IS Depreciation Expense == CFS Non-Cash D&A Add-back",
+      "reference": "TIEOUT_03",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 15,
+      "category": "internal consistency and cross statement tie outs",
+      "procedure": "Retained Earnings Roll-Forward: Ending RE == Beginning RE + Current Net Income - Dividends Declared",
+      "reference": "TIEOUT_04",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 16,
+      "category": "prior year comparative tie-outs",
+      "procedure": "Comparative Assets: Current Report PY Total Assets == Audited Prior-Year Total Assets",
+      "reference": "PY_01",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 17,
+      "category": "prior year comparative tie-outs",
+      "procedure": "Comparative Cash: Current Report PY Cash == Audited Prior-Year Cash",
+      "reference": "PY_02",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 18,
+      "category": "prior year comparative tie-outs",
+      "procedure": "Comparative Retained Earnings: Current Report PY Retained Earnings == Audited Prior-Year Retained Earnings",
+      "reference": "PY_03",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 19,
+      "category": "prior year comparative tie-outs",
+      "procedure": "Comparative Revenue: Current Report PY Revenue == Audited Prior-Year Revenue",
+      "reference": "PY_04",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 20,
+      "category": "prior year comparative tie-outs",
+      "procedure": "Comparative Net Income: Current Report PY Net Income == Audited Prior-Year Net Income",
+      "reference": "PY_05",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 21,
+      "category": "disclosure and footnote schedule tie-outs",
+      "procedure": "AR Aging Schedule Footing: Gross AR (Footnote) == Sum of Aging Buckets",
+      "reference": "NOTE_01",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 22,
+      "category": "disclosure and footnote schedule tie-outs",
+      "procedure": "Net AR Footnote Calculation: Net AR (Footnote) == Gross AR - Allowance for Credit Losses",
+      "reference": "NOTE_02",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 23,
+      "category": "disclosure and footnote schedule tie-outs",
+      "procedure": "AR Footnote to Balance Sheet: Note Net AR == Balance Sheet Net Accounts Receivable",
+      "reference": "NOTE_03",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 24,
+      "category": "disclosure and footnote schedule tie-outs",
+      "procedure": "PP&E Footnote Net Book Value: Ending Net PP&E == Ending Gross PP&E - Ending Accumulated Depreciation",
+      "reference": "NOTE_04",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 25,
+      "category": "disclosure and footnote schedule tie-outs",
+      "procedure": "PP&E Footnote to Balance Sheet: Note Net PP&E == Balance Sheet Net Property, Plant & Equipment",
+      "reference": "NOTE_05",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 26,
+      "category": "disclosure and footnote schedule tie-outs",
+      "procedure": "Debt Maturity Schedule Sum: Total Future Debt Maturities == Sum of Scheduled Debt",
+      "reference": "NOTE_06",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 27,
+      "category": "disclosure and footnote schedule tie-outs",
+      "procedure": "Short-Term Debt Maturity Match: Year 1 Debt Maturity == Balance Sheet Current Portion of LT Debt",
+      "reference": "NOTE_07",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    },
+    {
+      "step": 28,
+      "category": "disclosure and footnote schedule tie-outs",
+      "procedure": "Long-Term Debt Maturity Match: Sum of Years 2-Thereafter Maturities == Balance Sheet Long-Term Debt",
+      "reference": "NOTE_08",
+      "status": "PASS",
+      "issue": null,
+      "resolution": "no action required."
+    }
+  ],
+  "findings": [],
+  "conclusion": {
+    "overall_status": "CLEARED",
+    "total_procedures_run": 28,
+    "procedures_passed": 28,
+    "text": "Deterministic Mechanical Audit Rules (28 Rules): 28 / 28 passed."
+  }
+}

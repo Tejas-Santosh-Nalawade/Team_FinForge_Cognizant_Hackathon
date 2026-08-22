@@ -1,0 +1,150 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "StructuredAuditOutputReport",
+  "description": "Standardized Financial Statement Audit Engagement Output Report Schema (56-Rule Suite)",
+  "type": "object",
+  "required": [
+    "engagement",
+    "procedures",
+    "analytics",
+    "findings",
+    "conclusion"
+  ],
+  "properties": {
+    "engagement": {
+      "type": "object",
+      "description": "Metadata regarding client entity, reporting period, currency, scale, and framework.",
+      "required": ["client_name", "period", "currency", "scale", "framework", "review_stage"],
+      "properties": {
+        "client_name": { "type": "string", "example": "Apex Global Technologies Inc." },
+        "period": { "type": "string", "format": "date", "example": "2025-12-31" },
+        "currency": { "type": "string", "example": "USD" },
+        "scale": { "type": "string", "example": "EXACT" },
+        "framework": { "type": "string", "example": "US GAAP / IFRS" },
+        "review_stage": { "type": "string", "example": "CY_DRAFT_FS" }
+      }
+    },
+    "procedures": {
+      "type": "array",
+      "description": "Sequential step-by-step audit procedures log across all 56 rules.",
+      "items": {
+        "type": "object",
+        "required": ["step", "category", "procedure", "reference", "status", "issue", "resolution"],
+        "properties": {
+          "step": { "type": "integer", "example": 1 },
+          "category": {
+            "type": "string",
+            "enum": [
+              "mathematical accuracy",
+              "internal consistency and cross statement tie outs",
+              "prior year comparative tie-outs",
+              "disclosure and footnote schedule tie-outs",
+              "Horizontal & Vertical Analytics",
+              "Analytics Variance Flagging",
+              "Relationship Disconnect Audit",
+              "Financial Ratio - Liquidity",
+              "Financial Ratio - Leverage",
+              "Financial Ratio - Solvency",
+              "Financial Ratio - Activity",
+              "Financial Ratio - Profitability",
+              "Input Assumption Guardrail"
+            ]
+          },
+          "procedure": { "type": "string", "example": "Balance Sheet Equilibrium: Total Assets == Total Liabilities + Total Stockholders' Equity" },
+          "reference": { "type": "string", "example": "MATH_01" },
+          "status": { "type": "string", "enum": ["PASS", "FLAGGED", "FAIL"] },
+          "issue": { "type": ["string", "null"], "example": null },
+          "resolution": { "type": "string", "example": "no action required." }
+        }
+      }
+    },
+    "analytics": {
+      "type": "object",
+      "description": "Financial analytics tables: Income Statement variances, Balance Sheet variances, and Ratios.",
+      "required": ["income_statement", "balance_sheet", "ratios"],
+      "properties": {
+        "income_statement": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["line_item", "prior_period", "current_period", "variance", "variance_pct", "threshold_status", "commentary"],
+            "properties": {
+              "line_item": { "type": "string", "example": "Revenue" },
+              "prior_period": { "type": "number", "example": 18000000.0 },
+              "current_period": { "type": "number", "example": 22000000.0 },
+              "variance": { "type": "number", "example": 4000000.0 },
+              "variance_pct": { "type": "number", "example": 22.22 },
+              "threshold_status": { "type": "string", "enum": ["YES", "NO"] },
+              "commentary": { "type": "string", "example": "Revenue changed by $+4,000,000.00 (+22.2%) YoY." }
+            }
+          }
+        },
+        "balance_sheet": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["line_item", "prior_period", "current_period", "variance", "variance_pct", "threshold_status", "commentary"],
+            "properties": {
+              "line_item": { "type": "string", "example": "Cash & Cash Equivalents" },
+              "prior_period": { "type": "number", "example": 8500000.0 },
+              "current_period": { "type": "number", "example": 12450000.0 },
+              "variance": { "type": "number", "example": 3950000.0 },
+              "variance_pct": { "type": "number", "example": 46.47 },
+              "threshold_status": { "type": "string", "enum": ["YES", "NO"] },
+              "commentary": { "type": "string", "example": "Cash & Cash Equivalents changed by $+3,950,000.00 (+46.5%) YoY." }
+            }
+          }
+        },
+        "ratios": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["category", "name", "formula", "prior_period", "current_period", "benchmark", "status", "assessment"],
+            "properties": {
+              "category": { "type": "string", "example": "Liquidity" },
+              "name": { "type": "string", "example": "Current Ratio" },
+              "formula": { "type": "string", "example": "Total Current Assets / Total Current Liabilities" },
+              "prior_period": { "type": "number", "example": 5.78 },
+              "current_period": { "type": "number", "example": 5.75 },
+              "benchmark": { "type": "string", "example": "1.00x to 3.00x" },
+              "status": { "type": "string", "enum": ["PASS", "WARNING", "CRITICAL"] },
+              "assessment": { "type": "string", "example": "Current Ratio is 5.75x vs prior period 5.78." }
+            }
+          }
+        }
+      }
+    },
+    "findings": {
+      "type": "array",
+      "description": "List of flagged audit exceptions and findings requiring review or resolution.",
+      "items": {
+        "type": "object",
+        "required": ["id", "category", "severity", "description", "expected", "actual", "difference", "confidence", "recommended_action", "status", "evidence"],
+        "properties": {
+          "id": { "type": "string", "example": "FINDING-001" },
+          "category": { "type": "string", "example": "Financial Ratio (RATIO_10)" },
+          "severity": { "type": "string", "enum": ["Low", "Medium", "High", "Critical"] },
+          "description": { "type": "string", "example": "Ratio Operating Profit Margin value (13.8%) outside benchmark (>= 15.0%)" },
+          "expected": { "type": "number", "example": 0.0 },
+          "actual": { "type": "number", "example": 13.82 },
+          "difference": { "type": "number", "example": 0.0 },
+          "confidence": { "type": "number", "example": 1.0 },
+          "recommended_action": { "type": "string", "example": "Rule failure conclusion: REVIEW REQUIRED. Review ratio baseline with treasury." },
+          "status": { "type": "string", "enum": ["OPEN", "RESOLVED", "WAIVED"] },
+          "evidence": { "type": "array", "items": { "type": "string" }, "example": ["Benchmark: >= 15.0%"] }
+        }
+      }
+    },
+    "conclusion": {
+      "type": "object",
+      "description": "Executive summary audit conclusion status and statistics.",
+      "required": ["overall_status", "total_procedures_run", "procedures_passed", "text"],
+      "properties": {
+        "overall_status": { "type": "string", "enum": ["CLEARED", "REVIEW REQUIRED", "REJECTED"] },
+        "total_procedures_run": { "type": "integer", "example": 56 },
+        "procedures_passed": { "type": "integer", "example": 54 },
+        "text": { "type": "string", "example": "1 procedure exception(s) flagged with REVIEW REQUIRED status out of 56 procedures executed." }
+      }
+    }
+  }
+}

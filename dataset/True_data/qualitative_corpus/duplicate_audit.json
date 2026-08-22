@@ -1,0 +1,32 @@
+{
+  "input_directory": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks",
+  "total_files": 2,
+  "total_duplicate_groups": 0,
+  "files": [
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\CREDIT_RISK_Lending_and_Loan_Portfolio_Risk_Management_2026.jsonl",
+      "records": 113,
+      "content_hash": "cde7f6b1853f1a9209ceab50d77bd484d27e599c4833920744203d24683befff",
+      "file_hash": "c2a1aaf0090b4e4146f04df03824913f59692f773ffe1be2feee951095009e21",
+      "document_names": [
+        "Lending_and_Loan_Portfolio_Risk_Management_2026"
+      ],
+      "categories": [
+        "CREDIT_RISK"
+      ]
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\US_GAAP_ASC_326_ASU_2016-13.jsonl",
+      "records": 127,
+      "content_hash": "298665dbf00b25ba13c380ac9fea2557431ff13fad6196377ebe1ec321851fb6",
+      "file_hash": "60fef0322c778ee386dc3f043cd9b04fc212e255f276e51e786135b3c9d5d11c",
+      "document_names": [
+        "ASC_326_ASU_2016-13"
+      ],
+      "categories": [
+        "US_GAAP"
+      ]
+    }
+  ],
+  "duplicate_groups": []
+}

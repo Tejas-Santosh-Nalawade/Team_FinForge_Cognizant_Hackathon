@@ -1,0 +1,98 @@
+{
+  "total_files": 2,
+  "total_chunks": 240,
+  "file_analysis": [
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\CREDIT_RISK_Lending_and_Loan_Portfolio_Risk_Management_2026.jsonl",
+      "records": 113,
+      "characters": 352452,
+      "min_chunk_size": 181,
+      "max_chunk_size": 5873,
+      "average_chunk_size": 3119.04,
+      "section_count": 73,
+      "top_sections": [
+        [
+          "Background",
+          9
+        ],
+        [
+          "Appendix A: Quantity of Credit Risk Indicators",
+          7
+        ],
+        [
+          "Retail Credit Structure and Sources of Repayment",
+          4
+        ],
+        [
+          "Training",
+          3
+        ],
+        [
+          "Loan Purchase Activities",
+          3
+        ],
+        [
+          "Model Risk Management",
+          3
+        ],
+        [
+          "Scope",
+          3
+        ],
+        [
+          "Determine Population, Areas of Focus, and Sample Size",
+          3
+        ],
+        [
+          "Strategic and Operational Planning",
+          2
+        ],
+        [
+          "Strategic Planning",
+          2
+        ]
+      ],
+      "categories": {
+        "CREDIT_RISK": 113
+      },
+      "authority_statuses": {
+        "official_OCC": 113
+      },
+      "unique_chunk_ids": 113,
+      "duplicate_chunk_ids": 0,
+      "text_hash": "d0489d385be695b5b53b8097ac73eb57b60346c67ffade7fcb504458fe93daf0"
+    },
+    {
+      "file": "DATASET\\True_data\\qualitative_corpus\\normalized_chunks\\US_GAAP_ASC_326_ASU_2016-13.jsonl",
+      "records": 127,
+      "characters": 659848,
+      "min_chunk_size": 551,
+      "max_chunk_size": 5923,
+      "average_chunk_size": 5195.65,
+      "section_count": 1,
+      "top_sections": [
+        [
+          "Introduction",
+          127
+        ]
+      ],
+      "categories": {
+        "US_GAAP": 127
+      },
+      "authority_statuses": {
+        "official_FASB_not_authoritative_standard": 127
+      },
+      "unique_chunk_ids": 127,
+      "duplicate_chunk_ids": 0,
+      "text_hash": "d67c5594f0e7c685c8bbbdeee586dea593ec968fc04c1f382a50592eed41e877"
+    }
+  ],
+  "credit_risk_similarity": [],
+  "cross_document_duplicate_chunks": [],
+  "quality_checks": {
+    "empty_chunks": 0,
+    "oversized_chunks": 0,
+    "missing_metadata": 0,
+    "cross_document_duplicate_chunks": 0
+  }
+}
